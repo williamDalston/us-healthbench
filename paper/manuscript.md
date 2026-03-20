@@ -251,8 +251,8 @@ Public-facing health AI should be judged not only by whether it answers, but by 
 ## Data and Code Availability
 
 The US-HealthBench benchmark, evaluation code, and documentation are available at:
-- **GitHub:** [https://github.com/walston-health/us-healthbench](https://github.com/walston-health/us-healthbench)
-- **Hugging Face:** [https://huggingface.co/datasets/walston-health/us-healthbench](https://huggingface.co/datasets/walston-health/us-healthbench)
+- **GitHub:** [https://github.com/williamDalston/us-healthbench](https://github.com/williamDalston/us-healthbench)
+- **Hugging Face:** [https://huggingface.co/datasets/williamDalston/us-healthbench](https://huggingface.co/datasets/williamDalston/us-healthbench)
 - **Zenodo:** [DOI to be assigned upon archival]
 
 **Responsible use.** This benchmark is intended for research evaluation of AI systems, not for consumer-facing deployment. The benchmark includes adversarial items containing health misinformation that are labeled for evaluation purposes only. Researchers using the benchmark should not surface raw adversarial content to end users. System outputs generated during evaluation should not be treated as medical advice. We encourage researchers to report both aggregate metrics and disaggregated results by language and topic to avoid masking performance disparities.

@@ -50,7 +50,7 @@ us-healthbench/
 
 ```bash
 # Clone and install
-git clone https://github.com/walston-health/us-healthbench.git
+git clone https://github.com/williamDalston/us-healthbench.git
 cd us-healthbench
 pip install -e ".[dev]"
 
@@ -84,7 +84,7 @@ python -m src.systems.rag
          Evaluating LLM Systems on Official U.S. Public-Health Guidance},
   author={Alston, William},
   year={2026},
-  url={https://github.com/walston-health/us-healthbench}
+  url={https://github.com/williamDalston/us-healthbench}
 }
 ```
 

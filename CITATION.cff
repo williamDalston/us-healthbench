@@ -4,8 +4,8 @@ message: "If you use this benchmark, please cite it as below."
 type: dataset
 authors:
   - name: "William Alston"
-repository-code: "https://github.com/walston-health/us-healthbench"
-url: "https://github.com/walston-health/us-healthbench"
+repository-code: "https://github.com/williamDalston/us-healthbench"
+url: "https://github.com/williamDalston/us-healthbench"
 license: Apache-2.0
 version: "1.0.0"
 date-released: "2026-03-19"

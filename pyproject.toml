@@ -69,8 +69,8 @@ dev = [
 ]
 
 [project.urls]
-Repository = "https://github.com/walston-health/us-healthbench"
-Documentation = "https://github.com/walston-health/us-healthbench/tree/main/docs"
+Repository = "https://github.com/williamDalston/us-healthbench"
+Documentation = "https://github.com/williamDalston/us-healthbench/tree/main/docs"
 
 [tool.ruff]
 target-version = "py310"

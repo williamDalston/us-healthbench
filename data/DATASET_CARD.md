@@ -95,7 +95,7 @@ All source documents are published by U.S. federal agencies on .gov domains for 
          Evaluating LLM Systems on Official U.S. Public-Health Guidance},
   author={Alston, William},
   year={2026},
-  url={https://github.com/walston-health/us-healthbench}
+  url={https://github.com/williamDalston/us-healthbench}
 }
 ```
 
