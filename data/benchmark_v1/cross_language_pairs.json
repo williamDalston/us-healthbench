@@ -1,0 +1,1717 @@
+[
+  {
+    "pair_id": "pair_0001",
+    "en_item_id": "ushb_000476",
+    "es_item_id": "ushb_001323",
+    "topic": "chronic_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0002",
+    "en_item_id": "ushb_001821",
+    "es_item_id": "ushb_001869",
+    "topic": "chronic_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0003",
+    "en_item_id": "ushb_001787",
+    "es_item_id": "ushb_001954",
+    "topic": "chronic_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0004",
+    "en_item_id": "ushb_000737",
+    "es_item_id": "ushb_001213",
+    "topic": "chronic_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0005",
+    "en_item_id": "ushb_000724",
+    "es_item_id": "ushb_001969",
+    "topic": "chronic_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0006",
+    "en_item_id": "ushb_001253",
+    "es_item_id": "ushb_001872",
+    "topic": "chronic_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0007",
+    "en_item_id": "ushb_000323",
+    "es_item_id": "ushb_001673",
+    "topic": "chronic_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0008",
+    "en_item_id": "ushb_000441",
+    "es_item_id": "ushb_000596",
+    "topic": "chronic_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0009",
+    "en_item_id": "ushb_000004",
+    "es_item_id": "ushb_001976",
+    "topic": "chronic_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0010",
+    "en_item_id": "ushb_000918",
+    "es_item_id": "ushb_001714",
+    "topic": "chronic_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0011",
+    "en_item_id": "ushb_001070",
+    "es_item_id": "ushb_001710",
+    "topic": "chronic_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0012",
+    "en_item_id": "ushb_000814",
+    "es_item_id": "ushb_001965",
+    "topic": "chronic_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0013",
+    "en_item_id": "ushb_000767",
+    "es_item_id": "ushb_001073",
+    "topic": "chronic_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0014",
+    "en_item_id": "ushb_001690",
+    "es_item_id": "ushb_001820",
+    "topic": "chronic_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0015",
+    "en_item_id": "ushb_000779",
+    "es_item_id": "ushb_001541",
+    "topic": "chronic_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0016",
+    "en_item_id": "ushb_000845",
+    "es_item_id": "ushb_001808",
+    "topic": "chronic_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0017",
+    "en_item_id": "ushb_000711",
+    "es_item_id": "ushb_001678",
+    "topic": "chronic_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0018",
+    "en_item_id": "ushb_001135",
+    "es_item_id": "ushb_001478",
+    "topic": "chronic_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0019",
+    "en_item_id": "ushb_000625",
+    "es_item_id": "ushb_000630",
+    "topic": "chronic_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0020",
+    "en_item_id": "ushb_000229",
+    "es_item_id": "ushb_001863",
+    "topic": "chronic_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0021",
+    "en_item_id": "ushb_000715",
+    "es_item_id": "ushb_001309",
+    "topic": "chronic_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0022",
+    "en_item_id": "ushb_000919",
+    "es_item_id": "ushb_001934",
+    "topic": "chronic_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0023",
+    "en_item_id": "ushb_000275",
+    "es_item_id": "ushb_001125",
+    "topic": "food_safety",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0024",
+    "en_item_id": "ushb_001298",
+    "es_item_id": "ushb_001483",
+    "topic": "food_safety",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0025",
+    "en_item_id": "ushb_000158",
+    "es_item_id": "ushb_001117",
+    "topic": "food_safety",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0026",
+    "en_item_id": "ushb_001054",
+    "es_item_id": "ushb_001084",
+    "topic": "food_safety",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0027",
+    "en_item_id": "ushb_000341",
+    "es_item_id": "ushb_001700",
+    "topic": "food_safety",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0028",
+    "en_item_id": "ushb_001299",
+    "es_item_id": "ushb_001823",
+    "topic": "food_safety",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0029",
+    "en_item_id": "ushb_000079",
+    "es_item_id": "ushb_000463",
+    "topic": "food_safety",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0030",
+    "en_item_id": "ushb_000298",
+    "es_item_id": "ushb_000650",
+    "topic": "food_safety",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0031",
+    "en_item_id": "ushb_000470",
+    "es_item_id": "ushb_000692",
+    "topic": "food_safety",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0032",
+    "en_item_id": "ushb_000436",
+    "es_item_id": "ushb_001091",
+    "topic": "food_safety",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0033",
+    "en_item_id": "ushb_000536",
+    "es_item_id": "ushb_001779",
+    "topic": "food_safety",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0034",
+    "en_item_id": "ushb_000577",
+    "es_item_id": "ushb_000690",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0035",
+    "en_item_id": "ushb_000451",
+    "es_item_id": "ushb_000727",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0036",
+    "en_item_id": "ushb_001146",
+    "es_item_id": "ushb_001719",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0037",
+    "en_item_id": "ushb_000866",
+    "es_item_id": "ushb_001319",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0038",
+    "en_item_id": "ushb_001425",
+    "es_item_id": "ushb_001908",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0039",
+    "en_item_id": "ushb_000132",
+    "es_item_id": "ushb_001806",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0040",
+    "en_item_id": "ushb_000087",
+    "es_item_id": "ushb_001860",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0041",
+    "en_item_id": "ushb_000233",
+    "es_item_id": "ushb_000510",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0042",
+    "en_item_id": "ushb_000686",
+    "es_item_id": "ushb_001268",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0043",
+    "en_item_id": "ushb_000658",
+    "es_item_id": "ushb_001038",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0044",
+    "en_item_id": "ushb_000937",
+    "es_item_id": "ushb_001841",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0045",
+    "en_item_id": "ushb_000328",
+    "es_item_id": "ushb_000965",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0046",
+    "en_item_id": "ushb_000792",
+    "es_item_id": "ushb_001396",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0047",
+    "en_item_id": "ushb_000325",
+    "es_item_id": "ushb_000403",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0048",
+    "en_item_id": "ushb_000205",
+    "es_item_id": "ushb_000255",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0049",
+    "en_item_id": "ushb_001296",
+    "es_item_id": "ushb_001557",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0050",
+    "en_item_id": "ushb_000854",
+    "es_item_id": "ushb_001347",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0051",
+    "en_item_id": "ushb_000174",
+    "es_item_id": "ushb_001560",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0052",
+    "en_item_id": "ushb_001186",
+    "es_item_id": "ushb_001349",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0053",
+    "en_item_id": "ushb_000405",
+    "es_item_id": "ushb_000941",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0054",
+    "en_item_id": "ushb_000971",
+    "es_item_id": "ushb_001395",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0055",
+    "en_item_id": "ushb_001057",
+    "es_item_id": "ushb_001825",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0056",
+    "en_item_id": "ushb_000036",
+    "es_item_id": "ushb_000829",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0057",
+    "en_item_id": "ushb_001399",
+    "es_item_id": "ushb_001586",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0058",
+    "en_item_id": "ushb_000219",
+    "es_item_id": "ushb_000549",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0059",
+    "en_item_id": "ushb_000603",
+    "es_item_id": "ushb_001394",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0060",
+    "en_item_id": "ushb_000861",
+    "es_item_id": "ushb_001171",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0061",
+    "en_item_id": "ushb_001441",
+    "es_item_id": "ushb_001886",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0062",
+    "en_item_id": "ushb_000614",
+    "es_item_id": "ushb_001584",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0063",
+    "en_item_id": "ushb_001641",
+    "es_item_id": "ushb_001657",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0064",
+    "en_item_id": "ushb_000283",
+    "es_item_id": "ushb_000751",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0065",
+    "en_item_id": "ushb_001816",
+    "es_item_id": "ushb_001971",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0066",
+    "en_item_id": "ushb_000528",
+    "es_item_id": "ushb_001097",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0067",
+    "en_item_id": "ushb_000428",
+    "es_item_id": "ushb_001036",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0068",
+    "en_item_id": "ushb_000207",
+    "es_item_id": "ushb_000607",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0069",
+    "en_item_id": "ushb_000118",
+    "es_item_id": "ushb_001413",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0070",
+    "en_item_id": "ushb_001191",
+    "es_item_id": "ushb_001534",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0071",
+    "en_item_id": "ushb_000186",
+    "es_item_id": "ushb_000190",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0072",
+    "en_item_id": "ushb_001231",
+    "es_item_id": "ushb_001287",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0073",
+    "en_item_id": "ushb_000704",
+    "es_item_id": "ushb_001741",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0074",
+    "en_item_id": "ushb_001126",
+    "es_item_id": "ushb_001928",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0075",
+    "en_item_id": "ushb_001768",
+    "es_item_id": "ushb_001996",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0076",
+    "en_item_id": "ushb_000787",
+    "es_item_id": "ushb_001850",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0077",
+    "en_item_id": "ushb_000810",
+    "es_item_id": "ushb_001894",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0078",
+    "en_item_id": "ushb_000266",
+    "es_item_id": "ushb_000593",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0079",
+    "en_item_id": "ushb_000538",
+    "es_item_id": "ushb_001252",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0080",
+    "en_item_id": "ushb_000183",
+    "es_item_id": "ushb_001305",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0081",
+    "en_item_id": "ushb_000232",
+    "es_item_id": "ushb_000773",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0082",
+    "en_item_id": "ushb_000735",
+    "es_item_id": "ushb_001526",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0083",
+    "en_item_id": "ushb_000291",
+    "es_item_id": "ushb_001434",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0084",
+    "en_item_id": "ushb_000693",
+    "es_item_id": "ushb_001575",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0085",
+    "en_item_id": "ushb_000300",
+    "es_item_id": "ushb_000948",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0086",
+    "en_item_id": "ushb_000432",
+    "es_item_id": "ushb_000617",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0087",
+    "en_item_id": "ushb_000638",
+    "es_item_id": "ushb_001289",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0088",
+    "en_item_id": "ushb_001688",
+    "es_item_id": "ushb_001810",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0089",
+    "en_item_id": "ushb_001047",
+    "es_item_id": "ushb_002013",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0090",
+    "en_item_id": "ushb_001343",
+    "es_item_id": "ushb_001837",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0091",
+    "en_item_id": "ushb_001030",
+    "es_item_id": "ushb_001544",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0092",
+    "en_item_id": "ushb_000785",
+    "es_item_id": "ushb_001050",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0093",
+    "en_item_id": "ushb_000125",
+    "es_item_id": "ushb_000853",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0094",
+    "en_item_id": "ushb_000618",
+    "es_item_id": "ushb_001915",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0095",
+    "en_item_id": "ushb_000942",
+    "es_item_id": "ushb_001635",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0096",
+    "en_item_id": "ushb_001774",
+    "es_item_id": "ushb_001880",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0097",
+    "en_item_id": "ushb_000461",
+    "es_item_id": "ushb_001274",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0098",
+    "en_item_id": "ushb_000669",
+    "es_item_id": "ushb_000788",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0099",
+    "en_item_id": "ushb_000742",
+    "es_item_id": "ushb_001326",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0100",
+    "en_item_id": "ushb_000308",
+    "es_item_id": "ushb_001466",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0101",
+    "en_item_id": "ushb_000851",
+    "es_item_id": "ushb_001444",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0102",
+    "en_item_id": "ushb_001925",
+    "es_item_id": "ushb_001937",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0103",
+    "en_item_id": "ushb_001136",
+    "es_item_id": "ushb_001154",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0104",
+    "en_item_id": "ushb_000222",
+    "es_item_id": "ushb_000443",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0105",
+    "en_item_id": "ushb_000498",
+    "es_item_id": "ushb_001511",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0106",
+    "en_item_id": "ushb_000075",
+    "es_item_id": "ushb_000519",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0107",
+    "en_item_id": "ushb_000987",
+    "es_item_id": "ushb_001847",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0108",
+    "en_item_id": "ushb_000016",
+    "es_item_id": "ushb_000017",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0109",
+    "en_item_id": "ushb_000958",
+    "es_item_id": "ushb_001685",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0110",
+    "en_item_id": "ushb_001066",
+    "es_item_id": "ushb_001704",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0111",
+    "en_item_id": "ushb_000089",
+    "es_item_id": "ushb_000871",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0112",
+    "en_item_id": "ushb_001039",
+    "es_item_id": "ushb_001792",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0113",
+    "en_item_id": "ushb_000444",
+    "es_item_id": "ushb_001650",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0114",
+    "en_item_id": "ushb_000597",
+    "es_item_id": "ushb_001110",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0115",
+    "en_item_id": "ushb_000095",
+    "es_item_id": "ushb_000580",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0116",
+    "en_item_id": "ushb_000352",
+    "es_item_id": "ushb_000980",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0117",
+    "en_item_id": "ushb_000231",
+    "es_item_id": "ushb_000719",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0118",
+    "en_item_id": "ushb_000280",
+    "es_item_id": "ushb_002010",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0119",
+    "en_item_id": "ushb_001418",
+    "es_item_id": "ushb_001930",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0120",
+    "en_item_id": "ushb_000218",
+    "es_item_id": "ushb_000709",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0121",
+    "en_item_id": "ushb_000756",
+    "es_item_id": "ushb_001803",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0122",
+    "en_item_id": "ushb_000252",
+    "es_item_id": "ushb_000642",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0123",
+    "en_item_id": "ushb_000559",
+    "es_item_id": "ushb_001458",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0124",
+    "en_item_id": "ushb_001502",
+    "es_item_id": "ushb_001762",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0125",
+    "en_item_id": "ushb_001465",
+    "es_item_id": "ushb_002015",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0126",
+    "en_item_id": "ushb_001270",
+    "es_item_id": "ushb_001931",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0127",
+    "en_item_id": "ushb_000370",
+    "es_item_id": "ushb_000923",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0128",
+    "en_item_id": "ushb_000159",
+    "es_item_id": "ushb_001369",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0129",
+    "en_item_id": "ushb_000685",
+    "es_item_id": "ushb_000878",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0130",
+    "en_item_id": "ushb_001216",
+    "es_item_id": "ushb_001548",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0131",
+    "en_item_id": "ushb_000425",
+    "es_item_id": "ushb_001333",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0132",
+    "en_item_id": "ushb_001509",
+    "es_item_id": "ushb_001691",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0133",
+    "en_item_id": "ushb_000107",
+    "es_item_id": "ushb_000539",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0134",
+    "en_item_id": "ushb_000309",
+    "es_item_id": "ushb_000581",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0135",
+    "en_item_id": "ushb_000928",
+    "es_item_id": "ushb_001504",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0136",
+    "en_item_id": "ushb_000361",
+    "es_item_id": "ushb_001975",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0137",
+    "en_item_id": "ushb_000083",
+    "es_item_id": "ushb_000676",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0138",
+    "en_item_id": "ushb_000446",
+    "es_item_id": "ushb_000569",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0139",
+    "en_item_id": "ushb_001582",
+    "es_item_id": "ushb_001756",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0140",
+    "en_item_id": "ushb_000188",
+    "es_item_id": "ushb_001917",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0141",
+    "en_item_id": "ushb_000823",
+    "es_item_id": "ushb_001029",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0142",
+    "en_item_id": "ushb_000882",
+    "es_item_id": "ushb_001867",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0143",
+    "en_item_id": "ushb_000143",
+    "es_item_id": "ushb_000360",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0144",
+    "en_item_id": "ushb_000282",
+    "es_item_id": "ushb_001699",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0145",
+    "en_item_id": "ushb_000695",
+    "es_item_id": "ushb_001814",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0146",
+    "en_item_id": "ushb_000120",
+    "es_item_id": "ushb_000988",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0147",
+    "en_item_id": "ushb_000627",
+    "es_item_id": "ushb_000743",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0148",
+    "en_item_id": "ushb_000499",
+    "es_item_id": "ushb_001416",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0149",
+    "en_item_id": "ushb_001173",
+    "es_item_id": "ushb_001500",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0150",
+    "en_item_id": "ushb_001045",
+    "es_item_id": "ushb_001408",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0151",
+    "en_item_id": "ushb_000322",
+    "es_item_id": "ushb_001569",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0152",
+    "en_item_id": "ushb_001581",
+    "es_item_id": "ushb_001797",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0153",
+    "en_item_id": "ushb_000251",
+    "es_item_id": "ushb_000293",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0154",
+    "en_item_id": "ushb_000009",
+    "es_item_id": "ushb_000193",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0155",
+    "en_item_id": "ushb_000276",
+    "es_item_id": "ushb_000796",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0156",
+    "en_item_id": "ushb_000285",
+    "es_item_id": "ushb_000579",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0157",
+    "en_item_id": "ushb_001205",
+    "es_item_id": "ushb_001742",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0158",
+    "en_item_id": "ushb_000712",
+    "es_item_id": "ushb_001364",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0159",
+    "en_item_id": "ushb_001315",
+    "es_item_id": "ushb_001601",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0160",
+    "en_item_id": "ushb_000841",
+    "es_item_id": "ushb_001760",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0161",
+    "en_item_id": "ushb_000521",
+    "es_item_id": "ushb_001445",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0162",
+    "en_item_id": "ushb_000062",
+    "es_item_id": "ushb_001973",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0163",
+    "en_item_id": "ushb_001392",
+    "es_item_id": "ushb_001520",
+    "topic": "general",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0164",
+    "en_item_id": "ushb_001468",
+    "es_item_id": "ushb_001777",
+    "topic": "infectious_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0165",
+    "en_item_id": "ushb_000165",
+    "es_item_id": "ushb_001014",
+    "topic": "infectious_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0166",
+    "en_item_id": "ushb_000175",
+    "es_item_id": "ushb_001439",
+    "topic": "infectious_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0167",
+    "en_item_id": "ushb_000588",
+    "es_item_id": "ushb_000660",
+    "topic": "infectious_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0168",
+    "en_item_id": "ushb_000185",
+    "es_item_id": "ushb_000713",
+    "topic": "infectious_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0169",
+    "en_item_id": "ushb_000059",
+    "es_item_id": "ushb_001754",
+    "topic": "infectious_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0170",
+    "en_item_id": "ushb_000029",
+    "es_item_id": "ushb_001764",
+    "topic": "infectious_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0171",
+    "en_item_id": "ushb_000889",
+    "es_item_id": "ushb_001848",
+    "topic": "infectious_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0172",
+    "en_item_id": "ushb_001531",
+    "es_item_id": "ushb_001720",
+    "topic": "infectious_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0173",
+    "en_item_id": "ushb_000049",
+    "es_item_id": "ushb_000657",
+    "topic": "infectious_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0174",
+    "en_item_id": "ushb_000160",
+    "es_item_id": "ushb_000382",
+    "topic": "infectious_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0175",
+    "en_item_id": "ushb_000571",
+    "es_item_id": "ushb_001387",
+    "topic": "infectious_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0176",
+    "en_item_id": "ushb_001684",
+    "es_item_id": "ushb_001783",
+    "topic": "infectious_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0177",
+    "en_item_id": "ushb_000181",
+    "es_item_id": "ushb_000540",
+    "topic": "infectious_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0178",
+    "en_item_id": "ushb_001594",
+    "es_item_id": "ushb_001672",
+    "topic": "infectious_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0179",
+    "en_item_id": "ushb_000661",
+    "es_item_id": "ushb_000934",
+    "topic": "infectious_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0180",
+    "en_item_id": "ushb_000481",
+    "es_item_id": "ushb_000828",
+    "topic": "infectious_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0181",
+    "en_item_id": "ushb_001321",
+    "es_item_id": "ushb_001895",
+    "topic": "infectious_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0182",
+    "en_item_id": "ushb_000025",
+    "es_item_id": "ushb_001620",
+    "topic": "infectious_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0183",
+    "en_item_id": "ushb_000911",
+    "es_item_id": "ushb_001190",
+    "topic": "infectious_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0184",
+    "en_item_id": "ushb_000044",
+    "es_item_id": "ushb_000924",
+    "topic": "infectious_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0185",
+    "en_item_id": "ushb_001572",
+    "es_item_id": "ushb_001791",
+    "topic": "infectious_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0186",
+    "en_item_id": "ushb_000440",
+    "es_item_id": "ushb_000485",
+    "topic": "infectious_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0187",
+    "en_item_id": "ushb_000221",
+    "es_item_id": "ushb_000793",
+    "topic": "infectious_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0188",
+    "en_item_id": "ushb_001130",
+    "es_item_id": "ushb_001924",
+    "topic": "infectious_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0189",
+    "en_item_id": "ushb_000518",
+    "es_item_id": "ushb_000677",
+    "topic": "infectious_disease",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0190",
+    "en_item_id": "ushb_000001",
+    "es_item_id": "ushb_001301",
+    "topic": "insurance_access",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0191",
+    "en_item_id": "ushb_001712",
+    "es_item_id": "ushb_001916",
+    "topic": "insurance_access",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0192",
+    "en_item_id": "ushb_000076",
+    "es_item_id": "ushb_001120",
+    "topic": "insurance_access",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0193",
+    "en_item_id": "ushb_000330",
+    "es_item_id": "ushb_001334",
+    "topic": "insurance_access",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0194",
+    "en_item_id": "ushb_000602",
+    "es_item_id": "ushb_001123",
+    "topic": "insurance_access",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0195",
+    "en_item_id": "ushb_000169",
+    "es_item_id": "ushb_000504",
+    "topic": "insurance_access",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0196",
+    "en_item_id": "ushb_000344",
+    "es_item_id": "ushb_000720",
+    "topic": "insurance_access",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0197",
+    "en_item_id": "ushb_000881",
+    "es_item_id": "ushb_001929",
+    "topic": "insurance_access",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0198",
+    "en_item_id": "ushb_000027",
+    "es_item_id": "ushb_001565",
+    "topic": "insurance_access",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0199",
+    "en_item_id": "ushb_000930",
+    "es_item_id": "ushb_001836",
+    "topic": "insurance_access",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0200",
+    "en_item_id": "ushb_000306",
+    "es_item_id": "ushb_001667",
+    "topic": "insurance_access",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0201",
+    "en_item_id": "ushb_000857",
+    "es_item_id": "ushb_001043",
+    "topic": "insurance_access",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0202",
+    "en_item_id": "ushb_000290",
+    "es_item_id": "ushb_000835",
+    "topic": "insurance_access",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0203",
+    "en_item_id": "ushb_001593",
+    "es_item_id": "ushb_001713",
+    "topic": "mental_health_substance",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0204",
+    "en_item_id": "ushb_001245",
+    "es_item_id": "ushb_001676",
+    "topic": "mental_health_substance",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0205",
+    "en_item_id": "ushb_000273",
+    "es_item_id": "ushb_001597",
+    "topic": "mental_health_substance",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0206",
+    "en_item_id": "ushb_000525",
+    "es_item_id": "ushb_000816",
+    "topic": "mental_health_substance",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0207",
+    "en_item_id": "ushb_001355",
+    "es_item_id": "ushb_001864",
+    "topic": "mental_health_substance",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0208",
+    "en_item_id": "ushb_000478",
+    "es_item_id": "ushb_001452",
+    "topic": "mental_health_substance",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0209",
+    "en_item_id": "ushb_000350",
+    "es_item_id": "ushb_000832",
+    "topic": "mental_health_substance",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0210",
+    "en_item_id": "ushb_000037",
+    "es_item_id": "ushb_001350",
+    "topic": "mental_health_substance",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0211",
+    "en_item_id": "ushb_000586",
+    "es_item_id": "ushb_001802",
+    "topic": "mental_health_substance",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0212",
+    "en_item_id": "ushb_000514",
+    "es_item_id": "ushb_001622",
+    "topic": "mental_health_substance",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0213",
+    "en_item_id": "ushb_001815",
+    "es_item_id": "ushb_001858",
+    "topic": "mental_health_substance",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0214",
+    "en_item_id": "ushb_000401",
+    "es_item_id": "ushb_001939",
+    "topic": "pregnancy_maternal",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0215",
+    "en_item_id": "ushb_001209",
+    "es_item_id": "ushb_001913",
+    "topic": "pregnancy_maternal",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0216",
+    "en_item_id": "ushb_000612",
+    "es_item_id": "ushb_001203",
+    "topic": "pregnancy_maternal",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0217",
+    "en_item_id": "ushb_001155",
+    "es_item_id": "ushb_001265",
+    "topic": "pregnancy_maternal",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0218",
+    "en_item_id": "ushb_000770",
+    "es_item_id": "ushb_001263",
+    "topic": "pregnancy_maternal",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0219",
+    "en_item_id": "ushb_000458",
+    "es_item_id": "ushb_001927",
+    "topic": "respiratory_illness",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0220",
+    "en_item_id": "ushb_000897",
+    "es_item_id": "ushb_001658",
+    "topic": "respiratory_illness",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0221",
+    "en_item_id": "ushb_000417",
+    "es_item_id": "ushb_000957",
+    "topic": "respiratory_illness",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0222",
+    "en_item_id": "ushb_000136",
+    "es_item_id": "ushb_000654",
+    "topic": "respiratory_illness",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0223",
+    "en_item_id": "ushb_000932",
+    "es_item_id": "ushb_001771",
+    "topic": "respiratory_illness",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0224",
+    "en_item_id": "ushb_000645",
+    "es_item_id": "ushb_001749",
+    "topic": "respiratory_illness",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0225",
+    "en_item_id": "ushb_000501",
+    "es_item_id": "ushb_001943",
+    "topic": "respiratory_illness",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0226",
+    "en_item_id": "ushb_000964",
+    "es_item_id": "ushb_001035",
+    "topic": "respiratory_illness",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0227",
+    "en_item_id": "ushb_000769",
+    "es_item_id": "ushb_000884",
+    "topic": "respiratory_illness",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0228",
+    "en_item_id": "ushb_000573",
+    "es_item_id": "ushb_001903",
+    "topic": "respiratory_illness",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0229",
+    "en_item_id": "ushb_001075",
+    "es_item_id": "ushb_001668",
+    "topic": "respiratory_illness",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0230",
+    "en_item_id": "ushb_000007",
+    "es_item_id": "ushb_000272",
+    "topic": "respiratory_illness",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0231",
+    "en_item_id": "ushb_000506",
+    "es_item_id": "ushb_001603",
+    "topic": "respiratory_illness",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0232",
+    "en_item_id": "ushb_001244",
+    "es_item_id": "ushb_001638",
+    "topic": "respiratory_illness",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0233",
+    "en_item_id": "ushb_000157",
+    "es_item_id": "ushb_001234",
+    "topic": "respiratory_illness",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0234",
+    "en_item_id": "ushb_000213",
+    "es_item_id": "ushb_001680",
+    "topic": "vaccination",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0235",
+    "en_item_id": "ushb_001087",
+    "es_item_id": "ushb_001731",
+    "topic": "vaccination",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0236",
+    "en_item_id": "ushb_000286",
+    "es_item_id": "ushb_001640",
+    "topic": "vaccination",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0237",
+    "en_item_id": "ushb_000591",
+    "es_item_id": "ushb_001006",
+    "topic": "vaccination",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0238",
+    "en_item_id": "ushb_000168",
+    "es_item_id": "ushb_001718",
+    "topic": "vaccination",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0239",
+    "en_item_id": "ushb_000355",
+    "es_item_id": "ushb_000474",
+    "topic": "vaccination",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0240",
+    "en_item_id": "ushb_000018",
+    "es_item_id": "ushb_000333",
+    "topic": "vaccination",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0241",
+    "en_item_id": "ushb_000055",
+    "es_item_id": "ushb_000892",
+    "topic": "vaccination",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0242",
+    "en_item_id": "ushb_000320",
+    "es_item_id": "ushb_000925",
+    "topic": "vaccination",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0243",
+    "en_item_id": "ushb_000473",
+    "es_item_id": "ushb_000999",
+    "topic": "vaccination",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0244",
+    "en_item_id": "ushb_000179",
+    "es_item_id": "ushb_001308",
+    "topic": "vaccination",
+    "semantic_equivalence_verified": false
+  },
+  {
+    "pair_id": "pair_0245",
+    "en_item_id": "ushb_000189",
+    "es_item_id": "ushb_001748",
+    "topic": "vaccination",
+    "semantic_equivalence_verified": false
+  }
+]

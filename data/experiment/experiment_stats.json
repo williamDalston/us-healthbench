@@ -1,0 +1,800 @@
+{
+  "main_results": {
+    "llm_only": {
+      "factual_correctness": {
+        "mean": 0.495,
+        "ci_lower": 0.4644,
+        "ci_upper": 0.5257
+      },
+      "source_support": {
+        "mean": 0.1188,
+        "ci_lower": 0.099,
+        "ci_upper": 0.1396
+      },
+      "safety": {
+        "mean": 1.8911,
+        "ci_lower": 1.8713,
+        "ci_upper": 1.9109
+      },
+      "uncertainty_handling": {
+        "mean": 1.0757,
+        "ci_lower": 1.0639,
+        "ci_upper": 1.0881
+      },
+      "clarity": {
+        "mean": 1.0891,
+        "ci_lower": 1.0594,
+        "ci_upper": 1.1183
+      },
+      "grounded_safety_score": {
+        "mean": 0.4351,
+        "ci_lower": 0.4291,
+        "ci_upper": 0.4411
+      },
+      "fabricated_citation_rate": 0.0,
+      "unsupported_medical_recommendation_rate": 0.0,
+      "false_reassurance_rate": 0.0599,
+      "omission_of_escalation_advice_rate": 0.0
+    },
+    "rag": {
+      "factual_correctness": {
+        "mean": 1.4005,
+        "ci_lower": 1.3649,
+        "ci_upper": 1.4356
+      },
+      "source_support": {
+        "mean": 1.0,
+        "ci_lower": 1.0,
+        "ci_upper": 1.0
+      },
+      "safety": {
+        "mean": 1.7109,
+        "ci_lower": 1.6802,
+        "ci_upper": 1.7416
+      },
+      "uncertainty_handling": {
+        "mean": 1.4124,
+        "ci_lower": 1.3906,
+        "ci_upper": 1.4342
+      },
+      "clarity": {
+        "mean": 1.9238,
+        "ci_lower": 1.9109,
+        "ci_upper": 1.9361
+      },
+      "grounded_safety_score": {
+        "mean": 0.6744,
+        "ci_lower": 0.6679,
+        "ci_upper": 0.681
+      },
+      "fabricated_citation_rate": 0.0,
+      "unsupported_medical_recommendation_rate": 0.003,
+      "false_reassurance_rate": 0.0851,
+      "omission_of_escalation_advice_rate": 0.0
+    },
+    "citation_rag": {
+      "factual_correctness": {
+        "mean": 1.4005,
+        "ci_lower": 1.3644,
+        "ci_upper": 1.4356
+      },
+      "source_support": {
+        "mean": 1.9406,
+        "ci_lower": 1.9302,
+        "ci_upper": 1.9505
+      },
+      "safety": {
+        "mean": 1.7109,
+        "ci_lower": 1.6802,
+        "ci_upper": 1.7416
+      },
+      "uncertainty_handling": {
+        "mean": 1.4119,
+        "ci_lower": 1.3901,
+        "ci_upper": 1.4337
+      },
+      "clarity": {
+        "mean": 1.9446,
+        "ci_lower": 1.9327,
+        "ci_upper": 1.9559
+      },
+      "grounded_safety_score": {
+        "mean": 0.8155,
+        "ci_lower": 0.8085,
+        "ci_upper": 0.8224
+      },
+      "fabricated_citation_rate": 0.0,
+      "unsupported_medical_recommendation_rate": 0.003,
+      "false_reassurance_rate": 0.0851,
+      "omission_of_escalation_advice_rate": 0.0
+    },
+    "agent_pipeline": {
+      "factual_correctness": {
+        "mean": 1.5708,
+        "ci_lower": 1.5391,
+        "ci_upper": 1.602
+      },
+      "source_support": {
+        "mean": 1.9376,
+        "ci_lower": 1.9267,
+        "ci_upper": 1.948
+      },
+      "safety": {
+        "mean": 1.6584,
+        "ci_lower": 1.6257,
+        "ci_upper": 1.6911
+      },
+      "uncertainty_handling": {
+        "mean": 1.5436,
+        "ci_lower": 1.5218,
+        "ci_upper": 1.5653
+      },
+      "clarity": {
+        "mean": 1.9347,
+        "ci_lower": 1.9233,
+        "ci_upper": 1.9455
+      },
+      "grounded_safety_score": {
+        "mean": 0.83,
+        "ci_lower": 0.8234,
+        "ci_upper": 0.8366
+      },
+      "fabricated_citation_rate": 0.0,
+      "unsupported_medical_recommendation_rate": 0.002,
+      "false_reassurance_rate": 0.1416,
+      "omission_of_escalation_advice_rate": 0.0
+    }
+  },
+  "stratified_by_topic": {
+    "insurance_access": {
+      "llm_only": {
+        "n": 338,
+        "gss_mean": 0.3499,
+        "factual_correctness": 0.3462,
+        "source_support": 0.0,
+        "safety": 1.5444,
+        "uncertainty_handling": 1.0059,
+        "clarity": 0.9379
+      },
+      "rag": {
+        "n": 338,
+        "gss_mean": 0.6265,
+        "factual_correctness": 1.426,
+        "source_support": 1.0,
+        "safety": 1.426,
+        "uncertainty_handling": 1.2071,
+        "clarity": 1.858
+      },
+      "citation_rag": {
+        "n": 338,
+        "gss_mean": 0.7748,
+        "factual_correctness": 1.4142,
+        "source_support": 2.0,
+        "safety": 1.426,
+        "uncertainty_handling": 1.2041,
+        "clarity": 1.9408
+      },
+      "agent_pipeline": {
+        "n": 338,
+        "gss_mean": 0.7785,
+        "factual_correctness": 1.5947,
+        "source_support": 2.0,
+        "safety": 1.2663,
+        "uncertainty_handling": 1.3373,
+        "clarity": 2.0
+      }
+    },
+    "chronic_disease": {
+      "llm_only": {
+        "n": 122,
+        "gss_mean": 0.5111,
+        "factual_correctness": 0.9016,
+        "source_support": 0.2459,
+        "safety": 1.8852,
+        "uncertainty_handling": 1.2951,
+        "clarity": 1.1885
+      },
+      "rag": {
+        "n": 122,
+        "gss_mean": 0.673,
+        "factual_correctness": 1.3852,
+        "source_support": 1.0,
+        "safety": 1.7377,
+        "uncertainty_handling": 1.5492,
+        "clarity": 1.8852
+      },
+      "citation_rag": {
+        "n": 122,
+        "gss_mean": 0.8055,
+        "factual_correctness": 1.3934,
+        "source_support": 1.877,
+        "safety": 1.7377,
+        "uncertainty_handling": 1.5492,
+        "clarity": 1.9016
+      },
+      "agent_pipeline": {
+        "n": 122,
+        "gss_mean": 0.8098,
+        "factual_correctness": 1.5902,
+        "source_support": 1.8361,
+        "safety": 1.7705,
+        "uncertainty_handling": 1.623,
+        "clarity": 1.8279
+      }
+    },
+    "respiratory_illness": {
+      "llm_only": {
+        "n": 496,
+        "gss_mean": 0.409,
+        "factual_correctness": 0.2903,
+        "source_support": 0.0605,
+        "safety": 1.9274,
+        "uncertainty_handling": 1.0544,
+        "clarity": 1.1069
+      },
+      "rag": {
+        "n": 496,
+        "gss_mean": 0.6635,
+        "factual_correctness": 1.246,
+        "source_support": 1.0,
+        "safety": 1.7339,
+        "uncertainty_handling": 1.4113,
+        "clarity": 1.9395
+      },
+      "citation_rag": {
+        "n": 496,
+        "gss_mean": 0.8097,
+        "factual_correctness": 1.252,
+        "source_support": 1.9698,
+        "safety": 1.7339,
+        "uncertainty_handling": 1.4113,
+        "clarity": 1.9395
+      },
+      "agent_pipeline": {
+        "n": 496,
+        "gss_mean": 0.8227,
+        "factual_correctness": 1.4597,
+        "source_support": 1.9698,
+        "safety": 1.6331,
+        "uncertainty_handling": 1.5282,
+        "clarity": 1.9657
+      }
+    },
+    "general": {
+      "llm_only": {
+        "n": 593,
+        "gss_mean": 0.4299,
+        "factual_correctness": 0.3895,
+        "source_support": 0.0506,
+        "safety": 2.0,
+        "uncertainty_handling": 1.032,
+        "clarity": 1.0793
+      },
+      "rag": {
+        "n": 593,
+        "gss_mean": 0.7222,
+        "factual_correctness": 1.5464,
+        "source_support": 1.0,
+        "safety": 1.8078,
+        "uncertainty_handling": 1.4874,
+        "clarity": 1.941
+      },
+      "citation_rag": {
+        "n": 593,
+        "gss_mean": 0.868,
+        "factual_correctness": 1.543,
+        "source_support": 1.9747,
+        "safety": 1.8078,
+        "uncertainty_handling": 1.4874,
+        "clarity": 1.9494
+      },
+      "agent_pipeline": {
+        "n": 593,
+        "gss_mean": 0.8835,
+        "factual_correctness": 1.656,
+        "source_support": 1.973,
+        "safety": 1.7538,
+        "uncertainty_handling": 1.6509,
+        "clarity": 1.9696
+      }
+    },
+    "vaccination": {
+      "llm_only": {
+        "n": 159,
+        "gss_mean": 0.4695,
+        "factual_correctness": 0.5975,
+        "source_support": 0.1887,
+        "safety": 1.9874,
+        "uncertainty_handling": 1.1006,
+        "clarity": 1.0503
+      },
+      "rag": {
+        "n": 159,
+        "gss_mean": 0.6525,
+        "factual_correctness": 1.2767,
+        "source_support": 1.0,
+        "safety": 1.7862,
+        "uncertainty_handling": 1.3019,
+        "clarity": 1.9308
+      },
+      "citation_rag": {
+        "n": 159,
+        "gss_mean": 0.7899,
+        "factual_correctness": 1.2893,
+        "source_support": 1.9057,
+        "safety": 1.7862,
+        "uncertainty_handling": 1.3019,
+        "clarity": 1.9686
+      },
+      "agent_pipeline": {
+        "n": 159,
+        "gss_mean": 0.8187,
+        "factual_correctness": 1.4969,
+        "source_support": 1.9057,
+        "safety": 1.8239,
+        "uncertainty_handling": 1.4151,
+        "clarity": 1.9057
+      }
+    },
+    "infectious_disease": {
+      "llm_only": {
+        "n": 93,
+        "gss_mean": 0.4989,
+        "factual_correctness": 0.8817,
+        "source_support": 0.3226,
+        "safety": 1.8495,
+        "uncertainty_handling": 1.1613,
+        "clarity": 1.172
+      },
+      "rag": {
+        "n": 93,
+        "gss_mean": 0.6645,
+        "factual_correctness": 1.4194,
+        "source_support": 1.0,
+        "safety": 1.7204,
+        "uncertainty_handling": 1.5484,
+        "clarity": 1.9677
+      },
+      "citation_rag": {
+        "n": 93,
+        "gss_mean": 0.7903,
+        "factual_correctness": 1.4194,
+        "source_support": 1.8387,
+        "safety": 1.7204,
+        "uncertainty_handling": 1.5484,
+        "clarity": 1.9677
+      },
+      "agent_pipeline": {
+        "n": 93,
+        "gss_mean": 0.8108,
+        "factual_correctness": 1.5376,
+        "source_support": 1.8387,
+        "safety": 1.7634,
+        "uncertainty_handling": 1.7312,
+        "clarity": 1.8387
+      }
+    },
+    "mental_health_substance": {
+      "llm_only": {
+        "n": 89,
+        "gss_mean": 0.5379,
+        "factual_correctness": 1.0,
+        "source_support": 0.3371,
+        "safety": 2.0,
+        "uncertainty_handling": 1.1685,
+        "clarity": 1.191
+      },
+      "rag": {
+        "n": 89,
+        "gss_mean": 0.652,
+        "factual_correctness": 1.3933,
+        "source_support": 1.0,
+        "safety": 1.6854,
+        "uncertainty_handling": 1.4045,
+        "clarity": 1.9213
+      },
+      "citation_rag": {
+        "n": 89,
+        "gss_mean": 0.7767,
+        "factual_correctness": 1.3933,
+        "source_support": 1.8315,
+        "safety": 1.6854,
+        "uncertainty_handling": 1.4045,
+        "clarity": 1.9326
+      },
+      "agent_pipeline": {
+        "n": 89,
+        "gss_mean": 0.8087,
+        "factual_correctness": 1.7303,
+        "source_support": 1.8315,
+        "safety": 1.6854,
+        "uncertainty_handling": 1.5393,
+        "clarity": 1.8202
+      }
+    },
+    "food_safety": {
+      "llm_only": {
+        "n": 79,
+        "gss_mean": 0.5345,
+        "factual_correctness": 0.9873,
+        "source_support": 0.3797,
+        "safety": 2.0,
+        "uncertainty_handling": 1.1013,
+        "clarity": 1.4684
+      },
+      "rag": {
+        "n": 79,
+        "gss_mean": 0.6759,
+        "factual_correctness": 1.481,
+        "source_support": 1.0,
+        "safety": 1.8228,
+        "uncertainty_handling": 1.3797,
+        "clarity": 1.9747
+      },
+      "citation_rag": {
+        "n": 79,
+        "gss_mean": 0.7975,
+        "factual_correctness": 1.481,
+        "source_support": 1.8101,
+        "safety": 1.8228,
+        "uncertainty_handling": 1.3797,
+        "clarity": 1.9747
+      },
+      "agent_pipeline": {
+        "n": 79,
+        "gss_mean": 0.806,
+        "factual_correctness": 1.557,
+        "source_support": 1.8101,
+        "safety": 1.8987,
+        "uncertainty_handling": 1.4684,
+        "clarity": 1.8101
+      }
+    },
+    "pregnancy_maternal": {
+      "llm_only": {
+        "n": 47,
+        "gss_mean": 0.5771,
+        "factual_correctness": 1.0426,
+        "source_support": 0.6383,
+        "safety": 2.0,
+        "uncertainty_handling": 1.3191,
+        "clarity": 0.9787
+      },
+      "rag": {
+        "n": 47,
+        "gss_mean": 0.667,
+        "factual_correctness": 1.3404,
+        "source_support": 1.0,
+        "safety": 1.7872,
+        "uncertainty_handling": 1.766,
+        "clarity": 1.9149
+      },
+      "citation_rag": {
+        "n": 47,
+        "gss_mean": 0.7691,
+        "factual_correctness": 1.3404,
+        "source_support": 1.6809,
+        "safety": 1.7872,
+        "uncertainty_handling": 1.766,
+        "clarity": 1.9149
+      },
+      "agent_pipeline": {
+        "n": 47,
+        "gss_mean": 0.8106,
+        "factual_correctness": 1.5319,
+        "source_support": 1.6809,
+        "safety": 2.0,
+        "uncertainty_handling": 1.8298,
+        "clarity": 1.6809
+      }
+    },
+    "travel_health": {
+      "llm_only": {
+        "n": 2,
+        "gss_mean": 0.625,
+        "factual_correctness": 2.0,
+        "source_support": 0.0,
+        "safety": 2.0,
+        "uncertainty_handling": 1.0,
+        "clarity": 2.0
+      },
+      "rag": {
+        "n": 2,
+        "gss_mean": 0.8125,
+        "factual_correctness": 2.0,
+        "source_support": 1.0,
+        "safety": 2.0,
+        "uncertainty_handling": 1.5,
+        "clarity": 2.0
+      },
+      "citation_rag": {
+        "n": 2,
+        "gss_mean": 0.9625,
+        "factual_correctness": 2.0,
+        "source_support": 2.0,
+        "safety": 2.0,
+        "uncertainty_handling": 1.5,
+        "clarity": 2.0
+      },
+      "agent_pipeline": {
+        "n": 2,
+        "gss_mean": 0.9625,
+        "factual_correctness": 2.0,
+        "source_support": 2.0,
+        "safety": 2.0,
+        "uncertainty_handling": 1.5,
+        "clarity": 2.0
+      }
+    },
+    "emergency_preparedness": {
+      "llm_only": {
+        "n": 2,
+        "gss_mean": 0.4375,
+        "factual_correctness": 0.5,
+        "source_support": 0.0,
+        "safety": 2.0,
+        "uncertainty_handling": 1.0,
+        "clarity": 0.5
+      },
+      "rag": {
+        "n": 2,
+        "gss_mean": 0.5625,
+        "factual_correctness": 0.0,
+        "source_support": 1.0,
+        "safety": 2.0,
+        "uncertainty_handling": 1.5,
+        "clarity": 2.0
+      },
+      "citation_rag": {
+        "n": 2,
+        "gss_mean": 0.7125,
+        "factual_correctness": 0.0,
+        "source_support": 2.0,
+        "safety": 2.0,
+        "uncertainty_handling": 1.5,
+        "clarity": 2.0
+      },
+      "agent_pipeline": {
+        "n": 2,
+        "gss_mean": 0.7125,
+        "factual_correctness": 0.0,
+        "source_support": 2.0,
+        "safety": 2.0,
+        "uncertainty_handling": 1.5,
+        "clarity": 2.0
+      }
+    }
+  },
+  "stratified_by_language": {
+    "en": {
+      "llm_only": {
+        "n": 1733,
+        "gss_mean": 0.4392,
+        "factual_correctness": 0.5222,
+        "source_support": 0.1385,
+        "safety": 1.8811,
+        "uncertainty_handling": 1.0866,
+        "clarity": 1.1287
+      },
+      "rag": {
+        "n": 1733,
+        "gss_mean": 0.6742,
+        "factual_correctness": 1.4703,
+        "source_support": 1.0,
+        "safety": 1.663,
+        "uncertainty_handling": 1.4189,
+        "clarity": 1.9435
+      },
+      "citation_rag": {
+        "n": 1733,
+        "gss_mean": 0.8137,
+        "factual_correctness": 1.4697,
+        "source_support": 1.9308,
+        "safety": 1.663,
+        "uncertainty_handling": 1.4183,
+        "clarity": 1.9625
+      },
+      "agent_pipeline": {
+        "n": 1733,
+        "gss_mean": 0.8251,
+        "factual_correctness": 1.6445,
+        "source_support": 1.9279,
+        "safety": 1.6018,
+        "uncertainty_handling": 1.5355,
+        "clarity": 1.9267
+      }
+    },
+    "es": {
+      "llm_only": {
+        "n": 287,
+        "gss_mean": 0.4098,
+        "factual_correctness": 0.331,
+        "source_support": 0.0,
+        "safety": 1.9512,
+        "uncertainty_handling": 1.0105,
+        "clarity": 0.8502
+      },
+      "rag": {
+        "n": 287,
+        "gss_mean": 0.6753,
+        "factual_correctness": 0.9791,
+        "source_support": 1.0,
+        "safety": 2.0,
+        "uncertainty_handling": 1.3728,
+        "clarity": 1.8049
+      },
+      "citation_rag": {
+        "n": 287,
+        "gss_mean": 0.8258,
+        "factual_correctness": 0.9826,
+        "source_support": 2.0,
+        "safety": 2.0,
+        "uncertainty_handling": 1.3728,
+        "clarity": 1.8362
+      },
+      "agent_pipeline": {
+        "n": 287,
+        "gss_mean": 0.8596,
+        "factual_correctness": 1.1254,
+        "source_support": 1.9965,
+        "safety": 2.0,
+        "uncertainty_handling": 1.5923,
+        "clarity": 1.9826
+      }
+    }
+  },
+  "stratified_by_task_family": {
+    "misinformation_rebuttal": {
+      "llm_only": {
+        "n": 313,
+        "gss_mean": 0.4919,
+        "factual_correctness": 1.0958,
+        "source_support": 0.0,
+        "safety": 1.8403,
+        "uncertainty_handling": 1.0575,
+        "clarity": 1.3035
+      },
+      "rag": {
+        "n": 313,
+        "gss_mean": 0.6916,
+        "factual_correctness": 1.5591,
+        "source_support": 1.0,
+        "safety": 1.7572,
+        "uncertainty_handling": 1.4409,
+        "clarity": 1.9649
+      },
+      "citation_rag": {
+        "n": 313,
+        "gss_mean": 0.842,
+        "factual_correctness": 1.5623,
+        "source_support": 2.0,
+        "safety": 1.7572,
+        "uncertainty_handling": 1.4409,
+        "clarity": 1.9649
+      },
+      "agent_pipeline": {
+        "n": 313,
+        "gss_mean": 0.8072,
+        "factual_correctness": 1.8147,
+        "source_support": 1.9872,
+        "safety": 1.6294,
+        "uncertainty_handling": 1.5719,
+        "clarity": 1.9808
+      }
+    },
+    "factual_retrieval": {
+      "llm_only": {
+        "n": 842,
+        "gss_mean": 0.3934,
+        "factual_correctness": 0.3029,
+        "source_support": 0.0,
+        "safety": 1.867,
+        "uncertainty_handling": 1.0071,
+        "clarity": 1.0261
+      },
+      "rag": {
+        "n": 842,
+        "gss_mean": 0.6904,
+        "factual_correctness": 1.424,
+        "source_support": 1.0,
+        "safety": 1.753,
+        "uncertainty_handling": 1.3302,
+        "clarity": 1.9252
+      },
+      "citation_rag": {
+        "n": 842,
+        "gss_mean": 0.8402,
+        "factual_correctness": 1.4228,
+        "source_support": 2.0,
+        "safety": 1.753,
+        "uncertainty_handling": 1.3302,
+        "clarity": 1.9572
+      },
+      "agent_pipeline": {
+        "n": 842,
+        "gss_mean": 0.8563,
+        "factual_correctness": 1.5914,
+        "source_support": 1.9988,
+        "safety": 1.6651,
+        "uncertainty_handling": 1.4418,
+        "clarity": 1.9976
+      }
+    },
+    "cross_language": {
+      "llm_only": {
+        "n": 245,
+        "gss_mean": 0.3969,
+        "factual_correctness": 0.2367,
+        "source_support": 0.0,
+        "safety": 1.9429,
+        "uncertainty_handling": 1.0122,
+        "clarity": 0.8939
+      },
+      "rag": {
+        "n": 245,
+        "gss_mean": 0.6656,
+        "factual_correctness": 0.902,
+        "source_support": 1.0,
+        "safety": 2.0,
+        "uncertainty_handling": 1.3714,
+        "clarity": 1.8122
+      },
+      "citation_rag": {
+        "n": 245,
+        "gss_mean": 0.8156,
+        "factual_correctness": 0.902,
+        "source_support": 2.0,
+        "safety": 2.0,
+        "uncertainty_handling": 1.3714,
+        "clarity": 1.8408
+      },
+      "agent_pipeline": {
+        "n": 245,
+        "gss_mean": 0.8489,
+        "factual_correctness": 1.0286,
+        "source_support": 1.9959,
+        "safety": 2.0,
+        "uncertainty_handling": 1.6122,
+        "clarity": 1.9837
+      }
+    },
+    "consumer_action": {
+      "llm_only": {
+        "n": 620,
+        "gss_mean": 0.478,
+        "factual_correctness": 0.5548,
+        "source_support": 0.3871,
+        "safety": 1.929,
+        "uncertainty_handling": 1.2032,
+        "clarity": 1.1435
+      },
+      "rag": {
+        "n": 620,
+        "gss_mean": 0.6475,
+        "factual_correctness": 1.4855,
+        "source_support": 1.0,
+        "safety": 1.5161,
+        "uncertainty_handling": 1.5258,
+        "clarity": 1.9452
+      },
+      "citation_rag": {
+        "n": 620,
+        "gss_mean": 0.7684,
+        "factual_correctness": 1.4855,
+        "source_support": 1.8065,
+        "safety": 1.5161,
+        "uncertainty_handling": 1.5242,
+        "clarity": 1.9581
+      },
+      "agent_pipeline": {
+        "n": 620,
+        "gss_mean": 0.7983,
+        "factual_correctness": 1.6339,
+        "source_support": 1.8065,
+        "safety": 1.529,
+        "uncertainty_handling": 1.6403,
+        "clarity": 1.8065
+      }
+    }
+  }
+}

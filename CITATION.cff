@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+title: "US-HealthBench: A Citation-Grounded, Multilingual Benchmark for Evaluating LLM Systems on Official U.S. Public-Health Guidance"
+message: "If you use this benchmark, please cite it as below."
+type: dataset
+authors:
+  - name: "William Alston"
+repository-code: "https://github.com/walston-health/us-healthbench"
+url: "https://github.com/walston-health/us-healthbench"
+license: Apache-2.0
+version: "1.0.0"
+date-released: "2026-03-19"
+keywords:
+  - benchmark
+  - public-health
+  - LLM-evaluation
+  - multilingual
+  - health-informatics
+  - citation-grounding
+abstract: >-
+  US-HealthBench is an open benchmark for evaluating large language models
+  on consumer-facing public-health guidance from official U.S. sources
+  (CDC, NIH, FDA, CMS). It includes English and Spanish tasks spanning
+  factual retrieval, consumer action prompts, misinformation rebuttal,
+  and cross-language consistency, scored on factual accuracy, citation
+  support, safety, and multilingual reliability.

@@ -1,0 +1,75 @@
+{
+  "total_sampled": 50,
+  "strata_requested": {
+    "factual_retrieval": 15,
+    "consumer_action": 12,
+    "misinformation_rebuttal": 10,
+    "cross_language": 8,
+    "abstention": 5
+  },
+  "strata_actual": {
+    "factual_retrieval": 15,
+    "consumer_action": 12,
+    "misinformation_rebuttal": 10,
+    "cross_language": 8,
+    "abstention": 5
+  },
+  "difficulty_distribution": {
+    "medium": 28,
+    "easy": 5,
+    "hard": 17
+  },
+  "language_distribution": {
+    "en": 42,
+    "es": 8
+  },
+  "topic_distribution": {
+    "respiratory_illness": 11,
+    "insurance_access": 9,
+    "general": 13,
+    "vaccination": 5,
+    "infectious_disease": 3,
+    "pregnancy_maternal": 3,
+    "chronic_disease": 3,
+    "mental_health_substance": 2,
+    "food_safety": 1
+  },
+  "gss_summary_by_stratum": {
+    "factual_retrieval": {
+      "count": 15,
+      "min": 0.575,
+      "max": 1.0,
+      "mean": 0.8583,
+      "median": 0.925
+    },
+    "consumer_action": {
+      "count": 12,
+      "min": 0.5,
+      "max": 1.0,
+      "mean": 0.8104,
+      "median": 0.925
+    },
+    "misinformation_rebuttal": {
+      "count": 10,
+      "min": 0.55,
+      "max": 1.0,
+      "mean": 0.81,
+      "median": 0.85
+    },
+    "cross_language": {
+      "count": 8,
+      "min": 0.675,
+      "max": 1.0,
+      "mean": 0.8531,
+      "median": 0.925
+    },
+    "abstention": {
+      "count": 5,
+      "min": 0.7,
+      "max": 0.7,
+      "mean": 0.7,
+      "median": 0.7
+    }
+  },
+  "seed": 42
+}

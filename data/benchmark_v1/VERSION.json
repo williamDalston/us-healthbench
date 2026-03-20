@@ -1,0 +1,30 @@
+{
+  "benchmark_name": "US-HealthBench",
+  "version": "1.0",
+  "created": "2026-03-20T16:03:04.433325+00:00",
+  "content_hash_sha256": "f5b3832b697d260b7b7e4cf58680a4a26d74547c4e19a961c9dbf48a1cc2e41f",
+  "files": {
+    "items": "benchmark_items.jsonl",
+    "cross_language_pairs": "cross_language_pairs.json",
+    "stats": "benchmark_stats.json",
+    "validation_report": "validation_report.json"
+  },
+  "total_items": 2020,
+  "languages": [
+    "en",
+    "es"
+  ],
+  "task_families": [
+    "misinformation_rebuttal",
+    "factual_retrieval",
+    "cross_language",
+    "consumer_action"
+  ],
+  "agencies": [
+    "CMS",
+    "NIH",
+    "CDC",
+    "FDA"
+  ],
+  "frozen": true
+}
