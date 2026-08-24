@@ -77,6 +77,22 @@ def main() -> None:
     print(f"   pairs with en_item_id/es_item_id swapped: {swapped} ({100*swapped/len(pairs):.0f}%)")
     print(f"   pairs with semantic_equivalence_verified == false: {unverified}")
 
+    ADMIN = re.compile(r"/(privacy|sitemap|contact|accessibility|disclaimer|policies|"
+                       r"nondiscrimination|foia|vulnerability-disclosure|about-this-site)", re.I)
+    polluted = sorted({
+        src["url"] for it in items for src in (it.get("source_documents") or [])
+        if ADMIN.search(src.get("url", ""))
+    })
+    poll_items = sum(
+        1 for it in items
+        if any(ADMIN.search(s.get("url", "")) for s in (it.get("source_documents") or []))
+    )
+    print("\n5. SOURCE POLLUTION")
+    print(f"   source documents matching administrative-path patterns: {len(polluted)}")
+    print(f"   items derived from them: {poll_items}")
+    for u in polluted[:4]:
+        print(f"     {u[:88]}")
+
     def clean(it):
         if any(MOJIBAKE.search(t or "") for t in item_texts(it)):
             return False
@@ -91,7 +107,7 @@ def main() -> None:
         if k not in seen:
             seen.add(k)
             uniq.append(i)
-    print(f"\n5. RECOVERABLE SUBSET (defect classes 1-3 removed, exact duplicates collapsed)")
+    print(f"\n6. RECOVERABLE SUBSET (defect classes 1-3 removed, exact duplicates collapsed)")
     print(f"   items: {len(uniq)} of {n} ({100*len(uniq)/n:.1f}%)")
     print(f"   by language: {dict(collections.Counter(i['language'] for i in uniq))}")
     print(f"   by task family: {dict(collections.Counter(i['task_family'] for i in uniq))}")

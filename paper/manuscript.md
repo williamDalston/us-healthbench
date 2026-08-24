@@ -10,7 +10,7 @@
 
 ## Abstract
 
-Automated generation has made it inexpensive to build evaluation benchmarks at scale, but validation practice has not kept pace with generation practice. We report a post-freeze audit of US-HealthBench, a 2,020-item bilingual benchmark of consumer-facing U.S. public-health guidance that its authoring pipeline validated as 2,020/2,020 passing. That validation checked schema conformance and source existence. It never checked whether the items were semantically well-formed, and substantially they were not. We characterize four defect classes. Template collision: 212 question strings repeat across 664 items, and 174 of those repeats carry incompatible gold answers, leaving 566 items (28.0%) unscoreable by construction. Encoding corruption: 345 items (17.1%) overall, concentrated at 74.9% of the Spanish subset. Splice contamination: localized templates filled with fragments from another language or from page boilerplate. Source pollution: administrative pages entering a corpus filtered for health guidance. We argue these are not merely noise. A benchmark containing one question with seventeen incompatible gold answers penalizes the system under test for the generator's collisions, so the instrument records its own failure as a property of the object measured. We publish the frozen artifact, the generator, the passing validation report, and an audit script that reproduces every number reported here. The item set is released as provisional and unfit for scoring. The transferable contribution is the taxonomy and the audit procedure; the artifact is one worked case, and we bound our claims accordingly.
+Automated generation has made it inexpensive to build evaluation benchmarks at scale, but validation practice has not kept pace with generation practice. We report a post-freeze audit of US-HealthBench, a 2,020-item bilingual benchmark of consumer-facing U.S. public-health guidance that its authoring pipeline validated as 2,020/2,020 passing. That validation checked schema conformance and source existence. It never checked whether the items were semantically well-formed, and substantially they were not. We characterize four defect classes. Template collision: 212 question strings repeat across 664 items, and 174 of those repeats carry incompatible gold answers, leaving 566 items (28.0%) unscoreable by construction. Encoding corruption: 345 items (17.1%) overall, concentrated at 74.9% of the Spanish subset. Splice contamination: localized templates filled with fragments from another language or from page boilerplate. Source pollution: administrative pages entering a corpus filtered for health guidance. We argue these are not merely noise. Re-scoring under two matching rules shows that collision moves scores in a direction set by the scorer rather than by the defect: the shipped grader depresses scores across all 566 colliding items yet *raises* them for three of four systems on the most severely collided group, an inversion that disappears under strict matching. The instrument records its own failure as a property of the object measured, with a sign the artifact cannot reveal. We publish the frozen artifact, the generator, the passing validation report, and an audit script that reproduces every number reported here. The item set is released as provisional and unfit for scoring. The transferable contribution is the taxonomy and the audit procedure; the artifact is one worked case, and we bound our claims accordingly.
 
 ---
 
@@ -18,7 +18,7 @@ Automated generation has made it inexpensive to build evaluation benchmarks at s
 
 I built a benchmark to test whether AI systems answer public-health questions accurately and safely, in English and Spanish. My validation software reported that all 2,020 items passed. Months later, auditing the frozen file while preparing it for release, I found that much of it was broken in ways that check could not see. One question appeared seventeen times with seventeen unrelated correct answers. Three-quarters of the Spanish items had corrupted characters. Some items labelled Spanish carried their key claim in English. None of this violated the schema, so none of it was caught.
 
-The point is not that one benchmark had bugs. It is that the validation was of a common kind, and was structurally incapable of detecting these problems. When a benchmark asks one question seventeen times with incompatible answers, no system can score well on it, and the resulting low score is read as a fact about the system rather than about the benchmark. This paper names four such defect classes, gives a detection procedure for each, and publishes both the broken artifact and the audit code so others can run the same checks against their own.
+The point is not that one benchmark had bugs. It is that the validation was of a common kind and was structurally unable to detect these problems. Worse, the damage does not run in a predictable direction: whether collided questions push scores up or down depends on a technical detail of how the grader decides an answer is right. Change that detail and the same systems on the same benchmark move the other way. The scores still look like facts about the systems. This paper names four defect classes, gives a detection procedure for each, and publishes the broken artifact alongside the audit code.
 
 ---
 
@@ -36,8 +36,8 @@ Auditing the frozen file some months later, we found a large fraction of it unfi
 
 Our contributions:
 
-1. **A defect taxonomy** for template-generated benchmarks — template collision, encoding corruption, splice contamination, source pollution — with a detection procedure for each.
-2. **A measurement-validity argument**: defective items of the first class do not merely add noise, they transfer the generator's failures onto the system under test.
+1. **A defect taxonomy** for template-generated benchmarks — template collision, encoding corruption, splice contamination, source pollution — organized by the property that unites them operationally, that schema validation passes all four, with a detection procedure for each. The individual mechanisms are documented elsewhere; the assembly and the operational criterion are what we offer.
+2. **A measured account of directional instability**: template collision moves scores in a direction set by the scorer's matching rule rather than by the defect, demonstrated by re-scoring one artifact under two rules and observing the sign invert on the worst-affected group.
 3. **A worked case** with complete counts, in which the artifact, the generator that produced it, the validation that passed it, and the audit that found the defects are published together.
 4. **A reusable audit script** that reproduces every quantitative claim here from the frozen file.
 
@@ -49,27 +49,53 @@ We audit our own artifact. This is unusual — benchmark defect reports are typi
 
 ### Healthcare LLM evaluation
 
-Prior healthcare benchmarks have concentrated on clinical knowledge and reasoning. MedQA [5] evaluates medical licensing examination questions, PubMedQA [6] tests biomedical literature comprehension, and DRAGON [3] provides a broad clinical NLP benchmark. HealthBench [2] advances conversation-aware healthcare evaluation rubrics. PubHealthBench [1] is the closest structural relative to the artifact audited here, evaluating LLM knowledge of UK government public-health guidance.
+Prior healthcare benchmarks have concentrated on clinical knowledge and reasoning. MedQA [1] evaluates medical licensing examination questions, PubMedQA [2] tests biomedical literature comprehension, and DRAGON [3] provides a broad clinical NLP benchmark. HealthBench [4] advances conversation-aware healthcare evaluation rubrics. PubHealthBench [5] is the closest structural relative to the artifact audited here, evaluating LLM knowledge of UK government public-health guidance. Notably for the present paper, it does not stop at generating items: it applies automated filtering and a human-validated sample to its generated question set and reports the resulting error rate. Semantic validation of generated benchmarks is therefore already practised in this immediate neighbourhood, which sharpens rather than blunts the point of this paper — the checks exist and were not applied here, and the cost of omitting them is what we quantify.
 
-### Benchmark quality and contamination
+### Benchmark quality and dataset auditing
 
-Work on benchmark integrity has concentrated on train–test contamination, label noise, and saturation. The failure modes described here are upstream of all three: they concern whether items are well-formed as measurement instruments at all, independent of what any model has seen. To our knowledge the specific pathology of template collision — identical prompts carrying incompatible gold answers within one benchmark — has not been characterized quantitatively in a published artifact.
+Several strands of work address whether benchmark items are sound. Systematic
+label-error audits have shown that widely used test sets contain substantial
+proportions of incorrect gold labels, and that correcting them can reorder model
+rankings [6]. Work on annotation artifacts and spurious cues has shown that
+items can be answerable for reasons unrelated to the capability under test [7].
+Question-answering datasets in particular have been shown to contain ambiguous
+and underspecified questions admitting multiple defensible answers [8]. Web-crawled
+corpus audits document encoding damage, boilerplate contamination, and
+wrong-language text as recurring properties of automated collection at scale [9].
+
+Individually, then, the defect classes we describe are not new observations.
+Encoding corruption, wrong-language and boilerplate contamination, and the
+admission of non-content documents are all documented consequences of automated
+corpus construction; ambiguity and multiple-valid-answer problems are documented
+in QA datasets. What we add is not the discovery of these mechanisms but their
+assembly: a taxonomy organized by the property that unites them operationally —
+schema validation passes all of them — with a detection procedure per class, a
+measured account of how one of them destabilizes scores, and a published artifact
+on which every claim can be checked.
+
+Template collision as we define it — identical prompt strings carrying
+incompatible gold answers within a single benchmark, arising mechanically from
+template slot granularity — is adjacent to the ambiguity literature but distinct
+from it: the questions are not ambiguous to a reader, they are identical, and the
+incompatibility is between items rather than within one. We have not located a
+prior artifact in which this is quantified, though we make that observation as a
+limit on our search rather than a claim about the literature.
 
 ### Reporting standards
 
-MI-CLAIM [4] and related standards specify what must be disclosed about a clinical AI study. They do not specify how a generated evaluation set should be validated for semantic well-formedness, which is the gap addressed here.
+MI-CLAIM [10] and its generative-AI successor MI-CLAIM-GEN [11] specify what must be disclosed about a clinical AI study, and TRIPOD-LLM [12] does the same for LLM-based prediction studies. These are disclosure standards: they govern what an author must report, not how an evaluation set must be validated before it is reported on. That distinction is the space this paper occupies — an artifact can satisfy a reporting checklist completely while resting on an item set that no one has checked for semantic well-formedness, which is what happened here.
 
 ---
 
 ## The Artifact Under Audit
 
-The artifact was built against a policy backdrop in which health authorities were formalizing expectations for trustworthy AI [9,10] and language access in federally funded health communication remained an active equity concern [13]; bilingual evaluation of grounded health guidance sits at that intersection. We describe construction briefly here; the full protocol is published unamended with the artifact.
+The artifact was built against a policy backdrop in which health authorities were formalizing expectations for trustworthy AI [13,14] and language access in federally funded health communication remained an active equity concern [15]; bilingual evaluation of grounded health guidance sits at that intersection. We describe construction briefly here; the full protocol is published unamended with the artifact.
 
-**Corpus.** 319 documents (258 English, 61 Spanish) were collected from CDC, NIH, FDA, and CMS by breadth-first crawling from curated seed pages at depth 2, rate-limited to 1.5 seconds between requests. A fifth target agency (HHS) was unreachable during collection. Documents were extracted with trafilatura [11], deduplicated by Jaccard similarity on 5-character shingles at threshold 0.80, and segmented into 1,987 chunks of 50–500 tokens on heading boundaries.
+**Corpus.** 319 documents (258 English, 61 Spanish) were collected from CDC, NIH, FDA, and CMS by breadth-first crawling from curated seed pages at depth 2, rate-limited to 1.5 seconds between requests. A fifth target agency (HHS) was unreachable during collection. Documents were extracted with trafilatura [16], deduplicated by Jaccard similarity on 5-character shingles at threshold 0.80, and segmented into 1,987 chunks of 50–500 tokens on heading boundaries.
 
 **Items.** 2,020 items were produced by a template pipeline over corpus chunks in six phases: factual-retrieval items from key-sentence extraction; consumer-action items filtered for action-oriented content; misinformation-rebuttal items from 77 curated false-claim patterns across 9 topics; abstention items from 15 clinical scenarios requiring provider referral; cross-language EN/ES pair matching by topic; and a final shuffle with sequential ID reassignment.
 
-**Composition as recorded** (Fig 1)**.** 1,733 English and 287 Spanish items; four task families (factual retrieval 842, consumer action 620, misinformation rebuttal 313, cross-language 245); 11 topics; 520 items (25.7%) flagged adversarial and 120 (5.9%) requiring abstention. Pre-registered targets were approximately 20% and 10% respectively; departures from pre-registration are recorded in a separate deviations document accompanying the artifact rather than reconciled here.
+**Composition as recorded** (Fig 1)**.** 1,733 English and 287 Spanish items; four task families (factual retrieval 842, consumer action 620, misinformation rebuttal 313, cross-language 245); 11 topics; 520 items (25.7%) flagged adversarial and 120 (5.9%) requiring abstention. Pre-registered targets were approximately 20% and 10% respectively; departures from pre-registration are recorded in S2 Text rather than reconciled here.
 
 **Freeze.** The item set was frozen and content-hashed (SHA-256) before any system was evaluated against it. The freeze held: the file audited here is byte-identical to the file that was validated.
 
@@ -92,7 +118,7 @@ What neither check asks:
 - whether two items posing the same question agree about the answer;
 - whether the source a question derives from is the kind of document the corpus criteria admit.
 
-Each is a property of the item as a *measurement instrument* rather than as a *data record*. A schema validator has no vocabulary for them. This is not an implementation defect but a category difference: a validator built the same way against any template pipeline would pass the same items.
+Each is a property of the item as a *measurement instrument* rather than as a *data record*. Some are expressible as schema constraints in principle — a sufficiently determined `pattern` could reject some mojibake — but none were, and the last is not expressible at all within a per-record schema, since it depends on other items. What they share operationally is that the conformance checks actually applied here, and typically applied elsewhere, do not ask these questions.
 
 **Schema conformance is not semantic validity.** That is this paper's thesis, and what follows quantifies what fell into the gap.
 
@@ -108,7 +134,7 @@ Four classes. For each: mechanism, detection, and generalization beyond the pres
 
 **Detection.** Group items by normalized question string; report groups larger than one, and within those, groups whose gold answers are not identical.
 
-**Generalization.** Any generator composing questions from a bounded template vocabulary over an unbounded source set will collide at a rate set by template granularity. The defect is invisible per item; it exists only in the relation between items, which is precisely what per-record validation cannot see.
+**Generalization.** Any generator composing questions from a bounded template vocabulary over an unbounded source set will collide wherever a slot is filled with a descriptor coarser than the content it stands for, at a rate set by that granularity. The defect is invisible per item; it exists only in the relation between items, which is precisely what per-record validation cannot see.
 
 ### Class 2: Encoding corruption
 
@@ -116,7 +142,7 @@ Four classes. For each: mechanism, detection, and generalization beyond the pres
 
 **Detection.** Scan all human-readable fields for double-encoding signatures; report the rate stratified by language, since the defect concentrates wherever non-ASCII characters are dense.
 
-**Generalization.** Corruption rates are near-invisible in aggregate for predominantly English corpora and severe within non-English subsets. A benchmark reporting aggregate quality over a multilingual item set can therefore conceal near-total corruption of its minority-language portion. Aggregate reporting is the hazard, not the encoding bug alone.
+**Generalization.** Corruption concentrates wherever non-ASCII characters are dense, so an aggregate rate over a language-imbalanced corpus understates the minority-language rate — here by a factor of four (17.1% aggregate against 74.9% of Spanish items), enough to leave the Spanish subset unusable while the aggregate looks tolerable. A benchmark reporting aggregate quality over a multilingual item set can therefore conceal near-total corruption of its minority-language portion. Aggregate reporting is the hazard, not the encoding bug alone.
 
 ### Class 3: Splice contamination
 
@@ -158,7 +184,9 @@ The most-repeated question — *"According to FDA guidance, what should I know a
 
 ### Encoding corruption
 
-**345 items (17.1%)** contain double-encoded text in at least one of question, gold answer, required points, or source title.
+**345 items (17.1%)** contain double-encoded text in at least one of question, gold answer, required points, or source title (Table 1).
+
+**Table 1. Encoding corruption by language.**
 
 | Language | Corrupted | Total | Rate |
 |---|---|---|---|
@@ -176,7 +204,7 @@ Cross-language splices are identified by inspection and not counted exhaustively
 
 ### Source pollution
 
-**13 source documents** are administrative pages — privacy policies, sitemaps, contact directories — rather than health guidance, contrary to the corpus inclusion criteria. Derived items ask questions such as *"What are the key facts about contact us for help according to official U.S. health guidance?"*.
+Automated path-pattern detection identifies **7 source documents** as administrative — privacy policies, sitemaps, FOIA and accessibility notices — supplying **64 items**. Manual review of the full 296-URL source list finds further index and landing pages whose classification is a judgment call rather than a pattern match; we report only the machine-reproducible count. Derived items ask questions such as *"What are the key facts about contact us for help according to official U.S. health guidance?"*.
 
 ### A fifth defect: unordered pair labels
 
@@ -192,23 +220,84 @@ We do not publish this subset as a corrected benchmark. It is clean only against
 
 ## Consequences for Measurement
 
-### Defects transfer to the system under test
+### How the scorer actually matches
 
-The standard framing treats item defects as noise: they widen confidence intervals and attenuate effects but leave the ordering of systems intact. Template collision does not behave this way.
+Any claim about the direction in which a defect moves a score is a claim about
+the matching rule, so we state ours before making one. The shipped scorer
+(`src/evaluation/heuristic_scorer.py`) grades each output against **its own
+item's gold only**. There is no cross-item comparison anywhere in the pipeline:
+a system's answer to one item is never compared against another item's gold, and
+the scorer never attempts to identify which gold an answer is "really" matching.
+Credit is graded, not exact — a required point counts as covered at 35% token
+overlap, and factual correctness is a threshold over a weighted combination of
+point coverage and ROUGE-L.
 
-Consider the seventeen items sharing one question and carrying seventeen incompatible golds. A system answering that question well — accurately, safely, with appropriate grounding — matches at most one gold and is scored as failing the other sixteen. A system answering it badly also fails sixteen. The items cannot discriminate; but they do not merely fail to discriminate, they impose a near-fixed penalty that the scoring pipeline attributes to the system.
+That matters because the intuitive account of collision damage — a system
+answers one of seventeen incompatible golds and is marked wrong on the other
+sixteen — describes an exact-match scorer. It is not what this pipeline does,
+and as the next section shows, assuming it would have produced the wrong
+prediction.
 
-The instrument's own failure is recorded as a property of the object measured. That is a different problem from noise, and it is not remedied by larger samples or tighter intervals. In this artifact it affects 28.0% of items.
+### Collision destabilizes scores rather than biasing them
 
-The consequence generalizes: any benchmark with unmeasured template collision reports a compressed and downward-biased view of system quality, with the bias falling hardest on whichever systems would otherwise answer the colliding questions correctly.
+The standard framing treats item defects as noise: they inflate variance while
+leaving expected ordering intact. Template collision is not noise, but neither
+is it a bias in a fixed direction. **The sign of its effect is set by the
+matching rule, not by the collision.** Under exact matching, a system can
+satisfy at most one gold in a colliding group and collision depresses scores.
+Under graded matching, a sufficiently generic answer earns partial credit
+against many incompatible golds at once, and collision can *raise* them.
+
+The artifact exhibits both directions simultaneously. Re-scoring the released
+outputs under the shipped rule and under a strict rule — identical in every
+respect except that a required point counts as covered only when all of its
+content tokens appear in the answer — gives the result in Table 2
+(`scripts/collision_effect.py`).
+
+**Table 2. Change in mean Grounded Safety Score on colliding items, under two matching rules.** Values are relative to each system's own non-colliding items. Bold marks the sign inversion.
+
+| System | Shipped: 566 colliding | Shipped: showcase 17 | Strict: 566 colliding | Strict: showcase 17 |
+|---|---|---|---|---|
+| LLM-Only | −0.033 | −0.069 | −0.016 | −0.005 |
+| RAG | −0.065 | **+0.046** | −0.046 | −0.024 |
+| Citation-RAG | −0.052 | **+0.051** | −0.033 | −0.011 |
+| Multi-Stage Pipeline | −0.065 | **+0.070** | −0.067 | −0.019 |
+
+Two results follow. First, across all 566 colliding items the shipped scorer
+depresses scores modestly for every system, so the aggregate effect is a mild
+deflation. Second, on the seventeen items sharing a single question — the most
+severe collision in the benchmark, and the one whose golds are most obviously
+incompatible — three of four systems score *higher* than on non-colliding items.
+The worst-affected group produces the best-looking scores. Switching only the
+matching rule removes that inversion entirely: under strict matching all four
+systems are depressed on the showcase group, as the intuitive account predicts.
+
+Nothing about the benchmark or the systems changed between those two columns.
+Only the rule for deciding whether an answer matched a gold changed, and the
+sign of the effect changed with it for three of four systems.
+
+The consequence is not that collision makes systems look worse. It is that a
+benchmark with unmeasured collision **yields scores whose relationship to system
+quality is unknown in both magnitude and direction**, and the artifact cannot
+tell you which you are getting. Effect size is not the issue; directional
+instability is. A defect that reliably depressed scores by five points could be
+corrected for. One whose sign depends on a scoring parameter cannot be, because
+the correction depends on a property of the instrument that is not usually
+reported and, in this artifact, was never chosen deliberately.
+
+We note that the generic phrasing that makes a question collide — a template
+slot filled with a coarse descriptor such as "health and wellness" — is the same
+property that makes a vague answer score well against unrelated golds. The
+mechanism producing the defect and the mechanism concealing it in aggregate
+scores are the same mechanism.
 
 ### Consequences for the baseline results
 
-Four baseline architectures were evaluated against this benchmark before the audit: an LLM-only configuration without retrieval, retrieval-augmented generation [7], citation-constrained RAG, and a multi-stage retrieve–answer–verify–edit pipeline in the chain-of-verification family [8]. These were implemented as retrieval heuristics with template-constructed answers rather than language-model generation — no LLM was called at any point — and were always framed as validating the framework's discriminative power rather than measuring system quality.
+Four baseline architectures were evaluated against this benchmark before the audit: an LLM-only configuration without retrieval, retrieval-augmented generation [17], citation-constrained RAG, and a multi-stage retrieve–answer–verify–edit pipeline in the chain-of-verification family [18]. These were implemented as retrieval heuristics with template-constructed answers rather than language-model generation — no LLM was called at any point — and were always framed as validating the framework's discriminative power rather than measuring system quality.
 
-Their composite Grounded Safety Scores (0.435, 0.674, 0.816, 0.830, ascending with architectural complexity) do separate the architectures. In light of the audit we withdraw any interpretation of the absolute values. They characterize an interaction between a keyword-based scorer and a defective item set, over items 28.0% of which cannot be answered correctly by construction. The language-stratified comparison is least interpretable of all, the Spanish side being 74.9% corrupted; we report it only to record that it should not be read.
+Their composite Grounded Safety Scores (0.435, 0.674, 0.816, 0.830, ascending with architectural complexity) do separate the architectures. In light of the audit we withdraw any interpretation of the absolute values. They characterize an interaction between a keyword-based scorer and a defective item set, over items 28.0% of which sit in conflicting-gold groups. The language-stratified comparison is least interpretable of all, the Spanish side being 74.9% corrupted; we report it only to record that it should not be read.
 
-The full pre-audit analysis — per-system, per-topic, per-language, and per-task-family results with bootstrap confidence intervals — is retained in the release (`paper/tables/`) as a record of what was computed, each table headed with a notice that its absolute values are withdrawn.
+The full pre-audit analysis — per-system, per-topic, per-language, and per-task-family results with bootstrap confidence intervals — is retained as S1 Table, each table headed with a notice that its absolute values are withdrawn.
 
 A second composite, a multilingual reliability score, is defined in the rubric but was never computed: the field is null in all 8,080 evaluation records, and no value for it appears in this paper.
 
@@ -248,7 +337,7 @@ We note only that the checks are inexpensive enough that their absence is rarely
 
 ### Release posture
 
-The item set is published as **provisional and unfit for scoring**, together with the audit, the generator, the frozen file, and the original passing validation report. A corrected version requires re-collection from source, the underlying corpus not having been retained; that work is not scheduled and is not promised here.
+The item set is published as **provisional and unfit for scoring** (S1 Text), together with the audit, the generator, the frozen file, and the original passing validation report. A corrected version requires re-collection from source, the underlying corpus not having been retained; that work is not scheduled and is not promised here.
 
 ---
 
@@ -270,11 +359,34 @@ The item set is published as **provisional and unfit for scoring**, together wit
 
 A benchmark of 2,020 items passed 2,020 of 2,020 validation checks and was substantially unfit for its purpose. The validation was not wrong about what it measured. It measured schema conformance and source existence, both of which held, and neither of which is semantic validity.
 
-The four defect classes named here — template collision, encoding corruption, splice contamination, source pollution — share a structure. Each is invisible to per-record validation because each is a property of the relation between an item and something outside it: its siblings, its declared language, its encoding provenance, its source's intended type. Generation pipelines produce items one at a time, and validation that inspects them one at a time cannot see what generation did across them.
+The four defect classes named here — template collision, encoding corruption, splice contamination, source pollution — are not unified by a common mechanism. Three are decidable from a single record: corrupted text, a wrong-language span, and a boilerplate source can each be detected by inspecting one item. Only template collision is irreducibly relational, invisible in any single record because it exists in the relation between items. What the four share is narrower and more practical: **schema validation passes all of them.** Conformance checks ask whether a record is well-formed as a record, and every one of these defects produces records that are.
 
-Template collision warrants particular attention for how its damage propagates. A benchmark asking one question seventeen times with seventeen incompatible answers does not produce a noisy measurement of the systems it tests. It produces a confident measurement of the wrong thing, and reports the generator's defects as the system's.
+Template collision warrants particular attention for how its damage propagates. A benchmark asking one question seventeen times with incompatible answers does not produce a noisy measurement of the systems it tests. It produces a confident measurement whose relationship to system quality depends on a scoring parameter — in this artifact, one that inverts the effect's sign on the worst-affected group. The defect is not that scores are wrong by a knowable amount. It is that they are wrong by an unknowable one.
 
 We publish the artifact, the generator, the audit, and the validation report that passed, so that the case can be examined rather than taken on description.
+
+---
+
+## Supporting Information
+
+**S1 Text. Data quality audit.** Full defect audit of the frozen item set, with
+per-class counts and the recoverable-subset calculation (`docs/DATA_QUALITY.md`).
+
+**S2 Text. Protocol deviations.** Every point at which the delivered study
+departs from the pre-registered protocol, which is published unamended
+(`docs/DEVIATIONS.md`).
+
+**S3 Text. Pre-registered protocol.** The protocol as frozen before data
+collection (`docs/protocol.md`).
+
+**S1 Table. Pre-audit baseline analysis.** Per-system, per-topic, per-language,
+and per-task-family results with bootstrap confidence intervals, retained as a
+record of what was computed; absolute values withdrawn (`paper/tables/`).
+
+**S1 Code. Audit and figure generation.** `scripts/audit_data_quality.py`
+(defect counts), `scripts/collision_effect.py` (two-scorer collision analysis),
+`scripts/make_audit_figures.py` (all four figures), `scripts/verify_freeze.py`
+(content-hash verification).
 
 ---
 
@@ -295,7 +407,7 @@ The author declares no competing interests.
 The artifact, evaluation framework, audit code, and documentation are available at:
 
 - **GitHub:** [https://github.com/williamDalston/us-healthbench](https://github.com/williamDalston/us-healthbench)
-- **Zenodo:** [DOI to be assigned upon archival]
+- **Zenodo:** archived release, DOI registered at publication and listed in the repository README
 
 The release includes the frozen item file with its SHA-256 hash, the original validation report, the generator, the audit script reproducing every number in this paper, the scoring rubric and its implementation, the pre-registered protocol published unamended, and a record of deviations from it.
 
@@ -321,17 +433,17 @@ Items and system outputs are intended for evaluation research, not consumer use.
 
 ## Compute Resources
 
-All work was conducted on a single consumer workstation (Windows 11, 32 GB RAM, no GPU). Corpus collection used rate-limited crawling (~45 minutes). Item generation used template-based methods with no API cost (~2 minutes). Baseline execution and scoring across 2,020 items and four configurations completed in approximately 28 minutes. Embeddings used all-MiniLM-L6-v2 [12] under ONNX runtime. The defect audit runs in under five seconds. No commercial LLM API calls were made at any stage.
+All work was conducted on a single consumer workstation (Windows 11, 32 GB RAM, no GPU). Corpus collection used rate-limited crawling (~45 minutes). Item generation used template-based methods with no API cost (~2 minutes). Baseline execution and scoring across 2,020 items and four configurations completed in approximately 28 minutes. Embeddings used all-MiniLM-L6-v2 [19] under ONNX runtime. The defect audit runs in under five seconds. No commercial LLM API calls were made at any stage.
 
 ---
 
 ## Figure Captions
 
-Figures 2–4 are generated by `scripts/make_audit_figures.py`, which shares its
-computation path with the audit script, so figure values and reported values
-cannot diverge. Figure 1 is retained unchanged from the original pipeline.
+All four figures are generated by `scripts/make_audit_figures.py`, which imports the
+audit script's detection helpers so that figure values and reported values are
+computed from the same predicates.
 
-**Fig 1. Benchmark composition as recorded** (`fig1_composition_as_recorded.png`)**.** Distribution of the 2,020 items by health topic, language, and task family, as reported by the passing validation — the artifact as it described itself prior to audit.
+**Fig 1. Benchmark composition as recorded** (`fig1_composition_as_recorded.png`)**.** Distribution of the 2,020 items by health topic (six most common of eleven), language, and task family, as recorded by the passing validation — the artifact as it described itself prior to audit.
 
 **Fig 2. Defect rates by class** (`fig2_defect_rates.png`)**.** Proportion of the 2,020-item benchmark affected by each machine-detectable defect class: template collision with conflicting gold answers (28.0%), encoding corruption (17.1%), malformed-join questions (6.8%). All bars are lower bounds; detection is conservative for every class.
 
@@ -342,28 +454,40 @@ cannot diverge. Figure 1 is retained unchanged from the original pipeline.
 ---
 ## References
 
-[1] Harris J, Grayson F, Feldman F, Laurence T, Nonnenmacher T, Higgins O, et al. Healthy LLMs? Benchmarking LLM Knowledge of UK Government Public Health Information. arXiv:2505.06046, 2025.
+[1] Jin D, Pan E, Oufattole N, Weng W-H, Fang H, Szolovits P. What Disease Does This Patient Have? A Large-Scale Open Domain Question Answering Dataset from Medical Exams. Applied Sciences. 2021;11(14):6421.
 
-[2] Arora RK, Wei J, Soskin Hicks R, Bowman P, et al. HealthBench: Evaluating Large Language Models Towards Improved Human Health. arXiv:2505.08775, 2025.
+[2] Jin Q, Dhingra B, Liu Z, Cohen WW, Lu X. PubMedQA: A Dataset for Biomedical Research Question Answering. In: Proceedings of EMNLP-IJCNLP; 2019:2567–2577.
 
 [3] Bosma JS, Dercksen K, Builtjes L, et al. The DRAGON benchmark for clinical NLP. npj Digital Medicine. 2025;8:289.
 
-[4] Norgeot B, Quer G, Beaulieu-Jones BK, et al. Minimum Information about Clinical Artificial Intelligence Modeling: The MI-CLAIM Checklist. Nature Medicine. 2020;26:1320–1324.
+[4] Arora RK, Wei J, Soskin Hicks R, Bowman P, et al. HealthBench: Evaluating Large Language Models Towards Improved Human Health. arXiv:2505.08775, 2025.
 
-[5] Jin D, Pan E, Oufattole N, Weng W-H, Fang H, Szolovits P. What Disease Does This Patient Have? A Large-Scale Open Domain Question Answering Dataset from Medical Exams. Applied Sciences. 2021;11(14):6421.
+[5] Harris J, Grayson F, Feldman F, Laurence T, Nonnenmacher T, Higgins O, et al. Healthy LLMs? Benchmarking LLM Knowledge of UK Government Public Health Information. arXiv:2505.06046, 2025.
 
-[6] Jin Q, Dhingra B, Liu Z, Cohen WW, Lu X. PubMedQA: A Dataset for Biomedical Research Question Answering. In: Proceedings of EMNLP-IJCNLP; 2019:2567–2577.
+[6] Northcutt CG, Athalye A, Mueller J. Pervasive Label Errors in Test Sets Destabilize Machine Learning Benchmarks. In: Proceedings of the NeurIPS Track on Datasets and Benchmarks; 2021. arXiv:2103.14749.
 
-[7] Lewis P, Perez E, Piktus A, et al. Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks. In: Advances in Neural Information Processing Systems (NeurIPS); 2020:9459–9474.
+[7] Gururangan S, Swayamdipta S, Levy O, Schwartz R, Bowman SR, Smith NA. Annotation Artifacts in Natural Language Inference Data. In: Proceedings of NAACL-HLT; 2018:107–112. arXiv:1803.02324.
 
-[8] Dhuliawala S, Komeili M, Xu J, et al. Chain-of-Verification Reduces Hallucination in Large Language Models. arXiv:2309.11495, 2023.
+[8] Min S, Michael J, Hajishirzi H, Zettlemoyer L. AmbigQA: Answering Ambiguous Open-domain Questions. In: Proceedings of EMNLP; 2020:5783–5797. arXiv:2004.10645.
 
-[9] U.S. Department of Health and Human Services, Office of the Chief AI Officer. Trustworthy AI (TAI) Playbook. September 2021. Available: https://www.hhs.gov/ai
+[9] Kreutzer J, Caswell I, Wang L, et al. Quality at a Glance: An Audit of Web-Crawled Multilingual Datasets. Transactions of the Association for Computational Linguistics. 2022;10:50–72. arXiv:2103.12028.
 
-[10] World Health Organization. Ethics and Governance of Artificial Intelligence for Health. Geneva: WHO; 2021.
+[10] Norgeot B, Quer G, Beaulieu-Jones BK, et al. Minimum Information about Clinical Artificial Intelligence Modeling: The MI-CLAIM Checklist. Nature Medicine. 2020;26:1320–1324.
 
-[11] Barbaresi A. Trafilatura: A Web Scraping Library and Command-Line Tool for Text Discovery and Extraction. In: Proceedings of ACL 2021 System Demonstrations; 2021:122–131.
+[11] Miao BY, Chen IY, Williams CYK, et al. The MI-CLAIM-GEN checklist for generative artificial intelligence in health. Nature Medicine. 2025;31(5):1394–1398.
 
-[12] Reimers N, Gurevych I. Sentence-BERT: Sentence Embeddings Using Siamese BERT-Networks. In: Proceedings of EMNLP-IJCNLP; 2019:3982–3992.
+[12] Gallifant J, Afshar M, Ameen S, et al. The TRIPOD-LLM reporting guideline for studies using large language models. Nature Medicine. 2025;31:60–69.
 
-[13] U.S. HHS Office for Civil Rights. Guidance to Federal Financial Assistance Recipients Regarding Title VI Prohibition Against National Origin Discrimination Affecting Limited English Proficient Persons. 2003. Available: https://www.hhs.gov/civil-rights/for-individuals/special-topics/limited-english-proficiency
+[13] U.S. Department of Health and Human Services, Office of the Chief AI Officer. Trustworthy AI (TAI) Playbook. September 2021. Available: https://www.hhs.gov/ai
+
+[14] World Health Organization. Ethics and Governance of Artificial Intelligence for Health. Geneva: WHO; 2021.
+
+[15] U.S. HHS Office for Civil Rights. Guidance to Federal Financial Assistance Recipients Regarding Title VI Prohibition Against National Origin Discrimination Affecting Limited English Proficient Persons. 2003. Available: https://www.hhs.gov/civil-rights/for-individuals/special-topics/limited-english-proficiency
+
+[16] Barbaresi A. Trafilatura: A Web Scraping Library and Command-Line Tool for Text Discovery and Extraction. In: Proceedings of ACL 2021 System Demonstrations; 2021:122–131.
+
+[17] Lewis P, Perez E, Piktus A, et al. Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks. In: Advances in Neural Information Processing Systems (NeurIPS); 2020:9459–9474.
+
+[18] Dhuliawala S, Komeili M, Xu J, et al. Chain-of-Verification Reduces Hallucination in Large Language Models. arXiv:2309.11495, 2023.
+
+[19] Reimers N, Gurevych I. Sentence-BERT: Sentence Embeddings Using Siamese BERT-Networks. In: Proceedings of EMNLP-IJCNLP; 2019:3982–3992.

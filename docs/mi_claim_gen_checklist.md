@@ -1,6 +1,6 @@
 # MI-CLAIM-GEN Checklist for US-HealthBench
 
-Based on: Gallifant et al., "The MI-CLAIM-GEN checklist for generative artificial intelligence in health," Nature Medicine, 2024.
+Based on: Miao BY, Chen IY, Williams CYK, et al. "The MI-CLAIM-GEN checklist for generative artificial intelligence in health." Nature Medicine. 2025;31(5):1394–1398. (Note: TRIPOD-LLM, Gallifant et al., Nature Medicine 2025;31:60–69, is a distinct guideline for LLM-based prediction studies.)
 
 This checklist ensures our manuscript meets the reporting standard for generative AI research in health.
 
@@ -115,7 +115,7 @@ This checklist ensures our manuscript meets the reporting standard for generativ
 | 1. Study Design | 4 | 4 | All complete |
 | 2. Data | 6 | 6 | All complete |
 | 3. Model/System | 5 | 5 | All complete |
-| 4. Evaluation | 6 | 5 | 4.4 pending (human agreement metrics — sample ready, scoring TBD) |
+| 4. Evaluation | 6 | 5 | 4.4 not met (human agreement metrics: 50-item sample drawn, no adjudication performed — see DEVIATIONS.md §1) |
 | 5. Results | 4 | 4 | All complete |
 | 6. Transparency | 4 | 4 | All complete (repo URLs to be finalized before submission) |
 | 7. Discussion | 6 | 6 | All complete |
