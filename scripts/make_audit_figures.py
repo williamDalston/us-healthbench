@@ -17,7 +17,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 
-from scripts.audit_data_quality import MOJIBAKE, item_texts, load  # noqa: E402
+from scripts.audit_data_quality import MOJIBAKE, item_texts, load, polluted  # noqa: E402
 
 OUT = Path("paper/figures")
 INK = "#1f2937"
@@ -55,6 +55,7 @@ def main() -> None:
     # --- shared computations (identical to the audit script) ---
     mojibake = [i for i in items if any(MOJIBAKE.search(t or "") for t in item_texts(i))]
     garbled = [i for i in items if i["question"].rstrip().endswith(":?") or "??" in i["question"]]
+    _, poll_items = polluted(items)
     byq = collections.defaultdict(list)
     for i in items:
         byq[i["question"].strip()].append(i)
@@ -84,10 +85,11 @@ def main() -> None:
     plt.close(fig)
 
     # --- Fig 2: defect rates by class ---
-    labels = ["Template collision\n(conflicting golds)", "Encoding\ncorruption", "Malformed-join\nquestions"]
-    vals = [100 * n_conf / n, 100 * len(mojibake) / n, 100 * len(garbled) / n]
+    labels = ["Template collision\n(conflicting golds)", "Encoding\ncorruption",
+              "Malformed-join\nquestions", "Source\npollution"]
+    vals = [100 * n_conf / n, 100 * len(mojibake) / n, 100 * len(garbled) / n, 100 * poll_items / n]
     fig, ax = plt.subplots(figsize=(7.0, 4.2))
-    bars = ax.bar(labels, vals, color=[ACCENT, ACCENT, MUTED], width=0.55)
+    bars = ax.bar(labels, vals, color=[ACCENT, ACCENT, MUTED, MUTED], width=0.55)
     for b, v in zip(bars, vals):
         ax.text(b.get_x() + b.get_width() / 2, v + 0.6, f"{v:.1f}%", ha="center", fontsize=10, color=INK)
     ax.set_ylim(0, max(vals) * 1.25)

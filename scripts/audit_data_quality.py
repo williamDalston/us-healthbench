@@ -19,6 +19,27 @@ PAIRS = Path("data/benchmark_v1/cross_language_pairs.json")
 # Signatures of UTF-8 text decoded as Latin-1 and re-encoded (double encoding).
 MOJIBAKE = re.compile(r"Ã|Â|â€|ã©|ã³|ã±|Ã¡|Ã©|Ã­|Ã³|Ãº|Ã±|â¿|ã¿", re.I)
 
+# Administrative path patterns for source-pollution detection. Deliberately
+# strict: a looser pattern also matches legitimate health content whose title
+# happens to contain "contact", "help", or "terms".
+ADMIN = re.compile(
+    r"/(privacy|sitemap|contact|accessibility|disclaimer|policies|"
+    r"nondiscrimination|foia|vulnerability-disclosure|about-this-site)", re.I
+)
+
+
+def polluted(items):
+    """(administrative source URLs, number of items derived from them)."""
+    urls = sorted({
+        src["url"] for it in items for src in (it.get("source_documents") or [])
+        if ADMIN.search(src.get("url", ""))
+    })
+    n = sum(
+        1 for it in items
+        if any(ADMIN.search(s.get("url", "")) for s in (it.get("source_documents") or []))
+    )
+    return urls, n
+
 
 def load():
     return [json.loads(line) for line in open(ITEMS, encoding="utf-8")]
@@ -77,20 +98,12 @@ def main() -> None:
     print(f"   pairs with en_item_id/es_item_id swapped: {swapped} ({100*swapped/len(pairs):.0f}%)")
     print(f"   pairs with semantic_equivalence_verified == false: {unverified}")
 
-    ADMIN = re.compile(r"/(privacy|sitemap|contact|accessibility|disclaimer|policies|"
-                       r"nondiscrimination|foia|vulnerability-disclosure|about-this-site)", re.I)
-    polluted = sorted({
-        src["url"] for it in items for src in (it.get("source_documents") or [])
-        if ADMIN.search(src.get("url", ""))
-    })
-    poll_items = sum(
-        1 for it in items
-        if any(ADMIN.search(s.get("url", "")) for s in (it.get("source_documents") or []))
-    )
+    polluted_urls, poll_items = polluted(items)
+
     print("\n5. SOURCE POLLUTION")
-    print(f"   source documents matching administrative-path patterns: {len(polluted)}")
+    print(f"   source documents matching administrative-path patterns: {len(polluted_urls)}")
     print(f"   items derived from them: {poll_items}")
-    for u in polluted[:4]:
+    for u in polluted_urls[:4]:
         print(f"     {u[:88]}")
 
     def clean(it):

@@ -81,12 +81,28 @@ frozen sidecar is unchanged.
 All 245 pairs additionally carry `semantic_equivalence_verified: false` — the
 equivalence check the pairs depend on was never performed.
 
-### 5. Source eligibility — 13 documents
+### 5. Source pollution — 7 documents machine-detected, more by inspection
 
-Thirteen source documents are administrative boilerplate rather than health
-guidance (privacy policies, sitemaps, contact pages), contrary to the corpus
-inclusion criteria in `docs/protocol.md`. Items derived from them ask questions
-like *"What are the key facts about contact us for help...?"*
+Path-pattern matching over the 296 referenced source URLs identifies **7
+administrative documents** — privacy policies, sitemaps, FOIA and accessibility
+notices — supplying **64 items**, contrary to the corpus inclusion criteria in
+`docs/protocol.md`. Derived items ask questions such as *"What are the key facts
+about contact us for help according to official U.S. health guidance?"*
+
+**Why the residue is a judgment call, and why that matters.** A broader pattern
+(adding `contact`, `help`, `terms`, `index`) returns 17 URLs, but most of the
+additional hits are legitimate health content whose titles merely contain those
+words — *"Halloween safety tips"*, *"what to know if your child wants contact
+lenses"*, *"hormone replacement therapies"*. Between the strict 7 and the loose
+17 sit genuine borderline cases: agency index and landing pages that carry some
+content but were never intended as guidance documents. Whether those count as
+pollution depends on a definition the corpus criteria never fixed.
+
+We report only the 7 because that is the figure this script reproduces. The gap
+is itself the finding: automated auditing terminates where the inclusion
+criterion stops being mechanically decidable, and a criterion phrased as
+"consumer-facing health guidance" is not mechanically decidable. This is the
+boundary of what any detection script in this family can do.
 
 ## What can be salvaged
 

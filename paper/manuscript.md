@@ -10,7 +10,7 @@
 
 ## Abstract
 
-Automated generation has made it inexpensive to build evaluation benchmarks at scale, but validation practice has not kept pace with generation practice. We report a post-freeze audit of US-HealthBench, a 2,020-item bilingual benchmark of consumer-facing U.S. public-health guidance that its authoring pipeline validated as 2,020/2,020 passing. That validation checked schema conformance and source existence. It never checked whether the items were semantically well-formed, and substantially they were not. We characterize four defect classes. Template collision: 212 question strings repeat across 664 items, and 174 of those repeats carry incompatible gold answers, leaving 566 items (28.0%) unscoreable by construction. Encoding corruption: 345 items (17.1%) overall, concentrated at 74.9% of the Spanish subset. Splice contamination: localized templates filled with fragments from another language or from page boilerplate. Source pollution: administrative pages entering a corpus filtered for health guidance. We argue these are not merely noise. Re-scoring under two matching rules shows that collision moves scores in a direction set by the scorer rather than by the defect: the shipped grader depresses scores across all 566 colliding items yet *raises* them for three of four systems on the most severely collided group, an inversion that disappears under strict matching. The instrument records its own failure as a property of the object measured, with a sign the artifact cannot reveal. We publish the frozen artifact, the generator, the passing validation report, and an audit script that reproduces every number reported here. The item set is released as provisional and unfit for scoring. The transferable contribution is the taxonomy and the audit procedure; the artifact is one worked case, and we bound our claims accordingly.
+Automated generation has made it inexpensive to build evaluation benchmarks at scale, but validation practice has not kept pace with generation practice. We report a post-freeze audit of US-HealthBench, a 2,020-item bilingual benchmark of consumer-facing U.S. public-health guidance that its authoring pipeline validated as 2,020/2,020 passing. That validation checked schema conformance and source existence. It never checked whether the items were semantically well-formed, and substantially they were not. We characterize four defect classes. Template collision: 212 question strings repeat across 664 items, and 174 of those repeats carry incompatible gold answers, placing 566 items (28.0%) in groups whose golds contradict one another. Encoding corruption: 345 items (17.1%) overall, concentrated at 74.9% of the Spanish subset. Splice contamination: localized templates filled with fragments from another language or from page boilerplate. Source pollution: administrative pages entering a corpus filtered for health guidance. We argue these are not merely noise. Re-scoring under two matching rules shows that collision moves scores in a direction set by the scorer rather than by the defect: the shipped grader depresses scores across all 566 colliding items yet *raises* them for three of four systems on the most severely collided group, an inversion that disappears under strict matching. The instrument records its own failure as a property of the object measured, with a sign the artifact cannot reveal. We publish the frozen artifact, the generator, the passing validation report, and an audit script that reproduces every number reported here. The item set is released as provisional and unfit for scoring. The transferable contribution is the taxonomy and the audit procedure; the artifact is one worked case, and we bound our claims accordingly.
 
 ---
 
@@ -39,7 +39,7 @@ Our contributions:
 1. **A defect taxonomy** for template-generated benchmarks — template collision, encoding corruption, splice contamination, source pollution — organized by the property that unites them operationally, that schema validation passes all four, with a detection procedure for each. The individual mechanisms are documented elsewhere; the assembly and the operational criterion are what we offer.
 2. **A measured account of directional instability**: template collision moves scores in a direction set by the scorer's matching rule rather than by the defect, demonstrated by re-scoring one artifact under two rules and observing the sign invert on the worst-affected group.
 3. **A worked case** with complete counts, in which the artifact, the generator that produced it, the validation that passed it, and the audit that found the defects are published together.
-4. **A reusable audit script** that reproduces every quantitative claim here from the frozen file.
+4. **Reusable audit code** — a defect-detection script and a two-scorer collision analysis — reproducing every number reported here from the frozen file.
 
 We audit our own artifact. This is unusual — benchmark defect reports are typically written by third parties — and it is what makes it possible to publish the generator and the frozen file alongside the audit, which a third-party report generally cannot do.
 
@@ -142,7 +142,7 @@ Four classes. For each: mechanism, detection, and generalization beyond the pres
 
 **Detection.** Scan all human-readable fields for double-encoding signatures; report the rate stratified by language, since the defect concentrates wherever non-ASCII characters are dense.
 
-**Generalization.** Corruption concentrates wherever non-ASCII characters are dense, so an aggregate rate over a language-imbalanced corpus understates the minority-language rate — here by a factor of four (17.1% aggregate against 74.9% of Spanish items), enough to leave the Spanish subset unusable while the aggregate looks tolerable. A benchmark reporting aggregate quality over a multilingual item set can therefore conceal near-total corruption of its minority-language portion. Aggregate reporting is the hazard, not the encoding bug alone.
+**Generalization.** Because corruption tracks non-ASCII density, an aggregate rate over a language-imbalanced corpus understates the minority-language rate — here by a factor of four (17.1% aggregate against 74.9% of Spanish items), enough to leave the Spanish subset unusable while the aggregate looks tolerable. A benchmark reporting aggregate quality over a multilingual item set can therefore conceal near-total corruption of its minority-language portion. Aggregate reporting is the hazard, not the encoding bug alone.
 
 ### Class 3: Splice contamination
 
@@ -164,9 +164,9 @@ Four classes. For each: mechanism, detection, and generalization beyond the pres
 
 ## Audit Method
 
-The audit is a single read-only script published with the artifact, which recomputes every count below directly from the frozen item file. We report the procedure so the numbers can be re-derived rather than trusted.
+The audit is two read-only scripts published with the artifact: `audit_data_quality.py`, which recomputes every defect count below directly from the frozen item file, and `collision_effect.py`, which re-scores the released outputs under two matching rules. We report the procedure so the numbers can be re-derived rather than trusted.
 
-Detection is deliberately conservative. The encoding scan matches a fixed set of double-encoding signatures and misses corruption outside that set. The malformed-question heuristic matches specific punctuation patterns and misses other splice forms; in particular it does not detect cross-language splices, which we identify by inspection and therefore report as a lower bound rather than a count. Template collision detection uses exact string matching after whitespace normalization and misses near-duplicates. **Every count below is a lower bound.**
+Detection is deliberately conservative. The encoding scan matches a fixed set of double-encoding signatures and misses corruption outside that set. The malformed-question heuristic matches specific punctuation patterns and misses other splice forms; in particular it does not detect cross-language splices, which we identify by inspection and therefore report as a lower bound rather than a count. Template collision detection uses exact string matching after whitespace normalization and misses near-duplicates. **Every defect count reported below is a lower bound.** The re-scoring results reported later are measurements rather than counts, and are not conservative in this sense.
 
 One methodological note bears on the audit's own reliability. While verifying this manuscript's reference list, an initial automated sweep against the arXiv API returned "not found" for every identifier queried, including one known to exist; the cause was that the `http://` endpoint returns an empty document where `https://` returns the record. Had that sweep been trusted, three incorrect references would have survived into this paper, and the failure would have presented as a clean result rather than an error. The hazard applies to any automated audit, this one included: a check that fails silently is indistinguishable from a check that passes.
 
@@ -174,7 +174,7 @@ One methodological note bears on the audit's own reliability. While verifying th
 
 ## Findings
 
-All counts are computed over the frozen 2,020-item file. Fig 2 summarizes the three machine-detectable classes as a proportion of the benchmark.
+All counts are computed over the frozen 2,020-item file. Fig 2 summarizes the four classes as a proportion of the benchmark, using each class's machine-detectable count.
 
 ### Template collision
 
@@ -204,7 +204,7 @@ Cross-language splices are identified by inspection and not counted exhaustively
 
 ### Source pollution
 
-Automated path-pattern detection identifies **7 source documents** as administrative — privacy policies, sitemaps, FOIA and accessibility notices — supplying **64 items**. Manual review of the full 296-URL source list finds further index and landing pages whose classification is a judgment call rather than a pattern match; we report only the machine-reproducible count. Derived items ask questions such as *"What are the key facts about contact us for help according to official U.S. health guidance?"*.
+Automated path-pattern detection identifies **7 source documents** as administrative — privacy policies, sitemaps, FOIA and accessibility notices — supplying **64 items**. A broader pattern returns 17 URLs, but most of the additional hits are legitimate health content whose titles merely contain a matched word (*"Halloween safety tips"*, *"what to know if your child wants contact lenses"*). Between the strict 7 and the loose 17 sit genuine borderline cases — agency index and landing pages carrying some content but never intended as guidance. We report only the 7 that the published script reproduces. The gap is itself informative: automated auditing terminates where the inclusion criterion stops being mechanically decidable, and a criterion phrased as "consumer-facing health guidance" is not mechanically decidable (S1 Text). Derived items ask questions such as *"What are the key facts about contact us for help according to official U.S. health guidance?"*.
 
 ### A fifth defect: unordered pair labels
 
@@ -320,14 +320,14 @@ The detection procedures above are cheap — the full audit runs in seconds over
 5. **Content-address derived identifiers.** Chunk identifiers in this artifact are positional, so any change to a source document silently renumbers subsequent references rather than failing visibly. Hashing chunk text would make a stale reference fail loudly.
 6. **Perform the human spot-check before freezing.** The protocol pre-registered a review of approximately 10% of items prior to freeze. It was not performed, and a 10% sample would very likely have surfaced classes 1–3.
 
-One instance of the same mechanism arose in preparing this manuscript. The rewrite that introduced
-the figures above wrote their captions before the figures existed, leaving a draft that described three
-files not present in the repository — a caption pointing at a nonexistent artifact is the relational
-defect of class 4 occurring in a document rather than a dataset. It was caught by comparing caption
-filenames against the filesystem, which is the document-level analogue of the checks recommended above.
-We record it because a defect class recurring inside a paper about that defect class is evidence the
-mechanism follows from how artifacts are assembled, not from inattention on the part of any particular
-generator.
+The same gap opened in preparing this manuscript. A rewrite introduced the figures above and wrote
+their captions before the figures existed, leaving a draft in which three captions referred to files
+absent from the repository. The parallel is exact and unflattering: source validation — confirming that
+every cited artifact resolves — is precisely the check the benchmark's own pipeline *did* run and pass,
+and precisely the check nobody had run over the manuscript. It was caught by comparing caption filenames
+against the filesystem, a two-line analogue of a check the artifact had all along. We record it because
+the recurrence supports the paper's argument: these gaps follow from how artifacts are assembled and
+revised, not from inattention peculiar to any one generator.
 
 ### Scope of these claims
 
@@ -345,7 +345,7 @@ The item set is published as **provisional and unfit for scoring** (S1 Text), to
 
 **Single artifact.** All rates come from one benchmark, as discussed above.
 
-**Lower-bound detection.** Every count is conservative by construction. Cross-language splices are reported by inspection rather than enumerated; near-duplicate questions are not detected, so template collision is undercounted.
+**Lower-bound detection.** Every defect count is conservative by construction. Cross-language splices are reported by inspection rather than enumerated; near-duplicate questions are not detected, so template collision is undercounted.
 
 **Self-audit.** The author of the audit is the author of the artifact. This grants access — generator, frozen file, and pipeline history are all available — but it is not independent scrutiny, and the audit's coverage is unverified by any third party. The audit script is published so others can extend or contradict it.
 
@@ -445,7 +445,7 @@ computed from the same predicates.
 
 **Fig 1. Benchmark composition as recorded** (`fig1_composition_as_recorded.png`)**.** Distribution of the 2,020 items by health topic (six most common of eleven), language, and task family, as recorded by the passing validation — the artifact as it described itself prior to audit.
 
-**Fig 2. Defect rates by class** (`fig2_defect_rates.png`)**.** Proportion of the 2,020-item benchmark affected by each machine-detectable defect class: template collision with conflicting gold answers (28.0%), encoding corruption (17.1%), malformed-join questions (6.8%). All bars are lower bounds; detection is conservative for every class.
+**Fig 2. Defect rates by class** (`fig2_defect_rates.png`)**.** Proportion of the 2,020-item benchmark affected by each defect class, using its machine-detectable count: template collision with conflicting gold answers (28.0%), encoding corruption (17.1%), malformed-join questions (6.8%), source pollution (3.2%). All bars are lower bounds; detection is conservative for every class, and source pollution is the most conservative of the four (see Findings).
 
 **Fig 3. Template collision distribution** (`fig3_template_collision.png`)**.** Counts of question strings by the number of items sharing them: 1,568 distinct strings across 2,020 items, 212 strings repeating, maximum 17 items on a single question. Shaded portion marks repeats carrying differing gold answers. Log vertical scale.
 
