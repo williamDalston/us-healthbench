@@ -15,7 +15,8 @@ import json
 from datetime import datetime
 from pathlib import Path
 
-ARCHIVE = Path("data/benchmark_v1/source_archive.json")
+import os
+ARCHIVE = Path(os.environ.get("DRIFT_ARCHIVE", "data/benchmark_v1/source_archive.json"))
 VERSION = Path("data/benchmark_v1/VERSION.json")
 ITEMS = Path("data/benchmark_v1_1_candidate/clean_items.jsonl")
 OUT = Path("data/benchmark_v1_1_candidate/archive_drift.json")
@@ -34,6 +35,9 @@ def main() -> None:
 
     status = {}
     for s in sources:
+        if s.get("archived") is None:
+            status[s["url"]] = "lookup_failed"   # unknown, never counted as absent
+            continue
         if not s.get("archived"):
             status[s["url"]] = "no_snapshot"
             continue
@@ -55,6 +59,8 @@ def main() -> None:
         st = {status.get(s.get("url"), "no_snapshot") for s in (it.get("source_documents") or [])}
         if not st:
             item_status["no_sources"] += 1
+        elif "lookup_failed" in st:
+            item_status["lookup_unresolved"] += 1
         elif "no_snapshot" in st:
             item_status["cites_unarchived"] += 1
         elif "drifted" in st:

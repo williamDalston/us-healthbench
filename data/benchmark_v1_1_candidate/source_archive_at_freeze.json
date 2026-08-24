@@ -1,0 +1,2640 @@
+{
+  "description": "Closest Wayback Machine snapshot for each source URL referenced by US-HealthBench v1.0. Generated post-freeze; does not alter benchmark items.",
+  "total_urls": 296,
+  "archived": 280,
+  "not_archived": 16,
+  "sources": [
+    {
+      "url": "https://www.cdc.gov/diabetes/index.html",
+      "doc_id": "cdc_chronic_2026_001",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260320185633",
+      "archive_url": "http://web.archive.org/web/20260320185633/https://www.cdc.gov/diabetes/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/heart-disease/index.html",
+      "doc_id": "cdc_chronic_2026_002",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260321153304",
+      "archive_url": "http://web.archive.org/web/20260321153304/https://www.cdc.gov/heart-disease/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/cancer/index.html",
+      "doc_id": "cdc_chronic_2026_003",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260319065716",
+      "archive_url": "http://web.archive.org/web/20260319065716/https://www.cdc.gov/cancer/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/spanish/cancer/index.html",
+      "doc_id": "cdc_chronic_2026_004",
+      "agency": "CDC",
+      "language": "es",
+      "archived": null
+    },
+    {
+      "url": "https://www.cdc.gov/food-safety/index.html",
+      "doc_id": "cdc_food_2026_001",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260321160829",
+      "archive_url": "http://web.archive.org/web/20260321160829/https://www.cdc.gov/food-safety/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/food-safety/prevention/index.html",
+      "doc_id": "cdc_food_2026_002",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260320183228",
+      "archive_url": "http://web.archive.org/web/20260320183228/https://www.cdc.gov/food-safety/prevention/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/spanish/signosvitales/index.html",
+      "doc_id": "cdc_general_2026_001",
+      "agency": "CDC",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20220907023439",
+      "archive_url": "http://web.archive.org/web/20220907023439/https://www.cdc.gov/spanish/signosvitales/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/spanish/az/temas-salud.html",
+      "doc_id": "cdc_general_2026_003",
+      "agency": "CDC",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260320193456",
+      "archive_url": "http://web.archive.org/web/20260320193456/https://www.cdc.gov/spanish/az/temas-salud.html"
+    },
+    {
+      "url": "https://www.cdc.gov/spanish/acercaCDC/index.html",
+      "doc_id": "cdc_general_2026_004",
+      "agency": "CDC",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260320184110",
+      "archive_url": "http://web.archive.org/web/20260320184110/https://www.cdc.gov/spanish/acercacdc/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/spanish/videos/index.html",
+      "doc_id": "cdc_general_2026_005",
+      "agency": "CDC",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260320181443",
+      "archive_url": "http://web.archive.org/web/20260320181443/https://www.cdc.gov/spanish/videos/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/spanish/acercacdc/director.html",
+      "doc_id": "cdc_general_2026_007",
+      "agency": "CDC",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260320181514",
+      "archive_url": "http://web.archive.org/web/20260320181514/https://www.cdc.gov/spanish/acercacdc/director.html"
+    },
+    {
+      "url": "https://www.cdc.gov/spanish/acercaCDC/mision.html",
+      "doc_id": "cdc_general_2026_008",
+      "agency": "CDC",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260320181522",
+      "archive_url": "http://web.archive.org/web/20260320181522/https://www.cdc.gov/spanish/acercaCDC/mision.html"
+    },
+    {
+      "url": "https://www.cdc.gov/spanish/acercacdc/organizacion.html",
+      "doc_id": "cdc_general_2026_011",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260320182353",
+      "archive_url": "http://web.archive.org/web/20260320182353/https://www.cdc.gov/spanish/acercacdc/organizacion.html"
+    },
+    {
+      "url": "https://www.cdc.gov/spanish/cdc/acceso.html",
+      "doc_id": "cdc_general_2026_012",
+      "agency": "CDC",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260320181343",
+      "archive_url": "http://web.archive.org/web/20260320181343/https://www.cdc.gov/spanish/cdc/acceso.html"
+    },
+    {
+      "url": "https://www.cdc.gov/spanish/CDC/privacidad.html",
+      "doc_id": "cdc_general_2026_013",
+      "agency": "CDC",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260320182715",
+      "archive_url": "http://web.archive.org/web/20260320182715/https://www.cdc.gov/spanish/CDC/privacidad.html"
+    },
+    {
+      "url": "https://www.cdc.gov/hiv/index.html",
+      "doc_id": "cdc_infectio_2026_001",
+      "agency": "CDC",
+      "language": "en",
+      "archived": null
+    },
+    {
+      "url": "https://www.cdc.gov/hepatitis/index.html",
+      "doc_id": "cdc_infectio_2026_002",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260317233337",
+      "archive_url": "http://web.archive.org/web/20260317233337/https://www.cdc.gov/hepatitis/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/mental-health/index.html",
+      "doc_id": "cdc_mental_2026_001",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260323231618",
+      "archive_url": "http://web.archive.org/web/20260323231618/https://www.cdc.gov/mental-health/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/suicide/index.html",
+      "doc_id": "cdc_mental_2026_002",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260318024554",
+      "archive_url": "http://web.archive.org/web/20260318024554/https://www.cdc.gov/suicide/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/flu/index.html",
+      "doc_id": "cdc_respirat_2026_001",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260320185235",
+      "archive_url": "http://web.archive.org/web/20260320185235/https://www.cdc.gov/flu/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/flu/treatment/index.html",
+      "doc_id": "cdc_respirat_2026_002",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260320185341",
+      "archive_url": "http://web.archive.org/web/20260320185341/https://www.cdc.gov/flu/treatment/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/covid/index.html",
+      "doc_id": "cdc_respirat_2026_003",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260320232739",
+      "archive_url": "http://web.archive.org/web/20260320232739/https://www.cdc.gov/covid/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/covid/prevention/index.html",
+      "doc_id": "cdc_respirat_2026_004",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260321001157",
+      "archive_url": "http://web.archive.org/web/20260321001157/https://www.cdc.gov/covid/prevention/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/covid/treatment/index.html",
+      "doc_id": "cdc_respirat_2026_005",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260320185336",
+      "archive_url": "http://web.archive.org/web/20260320185336/https://www.cdc.gov/covid/treatment/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/rsv/index.html",
+      "doc_id": "cdc_respirat_2026_006",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260320184817",
+      "archive_url": "http://web.archive.org/web/20260320184817/https://www.cdc.gov/rsv/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/flu/signs-symptoms/index.html",
+      "doc_id": "cdc_respirat_2026_007",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260323232924",
+      "archive_url": "http://web.archive.org/web/20260323232924/https://www.cdc.gov/flu/signs-symptoms/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/flu/spread/index.html",
+      "doc_id": "cdc_respirat_2026_008",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260317224204",
+      "archive_url": "http://web.archive.org/web/20260317224204/https://www.cdc.gov/flu/spread/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/flu/highrisk/index.htm",
+      "doc_id": "cdc_respirat_2026_009",
+      "agency": "CDC",
+      "language": "en",
+      "archived": null
+    },
+    {
+      "url": "https://www.cdc.gov/flu/prevention/index.html",
+      "doc_id": "cdc_respirat_2026_010",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260317224557",
+      "archive_url": "http://web.archive.org/web/20260317224557/https://www.cdc.gov/flu/prevention/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/flu/testing/index.html",
+      "doc_id": "cdc_respirat_2026_011",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260321001250",
+      "archive_url": "http://web.archive.org/web/20260321001250/https://www.cdc.gov/flu/testing/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/flu/hcp/clinical-guidance/index.html",
+      "doc_id": "cdc_respirat_2026_013",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260320185411",
+      "archive_url": "http://web.archive.org/web/20260320185411/https://www.cdc.gov/flu/hcp/clinical-guidance/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/flu/hcp/clinical-signs/index.html",
+      "doc_id": "cdc_respirat_2026_014",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260323192331",
+      "archive_url": "http://web.archive.org/web/20260323192331/https://www.cdc.gov/flu/hcp/clinical-signs/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/flu/hcp/testing-methods/index.html",
+      "doc_id": "cdc_respirat_2026_015",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260323192357",
+      "archive_url": "http://web.archive.org/web/20260323192357/https://www.cdc.gov/flu/hcp/testing-methods/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/flu/hcp/antivirals/index.html",
+      "doc_id": "cdc_respirat_2026_016",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260320185450",
+      "archive_url": "http://web.archive.org/web/20260320185450/https://www.cdc.gov/flu/hcp/antivirals/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/flu/hcp/infection-control/index.html",
+      "doc_id": "cdc_respirat_2026_017",
+      "agency": "CDC",
+      "language": "en",
+      "archived": null
+    },
+    {
+      "url": "https://www.cdc.gov/flu/hcp/info-collection/index.html",
+      "doc_id": "cdc_respirat_2026_018",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260317224732",
+      "archive_url": "http://web.archive.org/web/20260317224732/https://www.cdc.gov/flu/hcp/info-collection/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/flu/professionals/index.htm",
+      "doc_id": "cdc_respirat_2026_019",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260320185358",
+      "archive_url": "http://web.archive.org/web/20260320185358/https://www.cdc.gov/flu/professionals/index.htm"
+    },
+    {
+      "url": "https://www.cdc.gov/flu/php/laboratories/index.html",
+      "doc_id": "cdc_respirat_2026_020",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260317224735",
+      "archive_url": "http://web.archive.org/web/20260317224735/https://www.cdc.gov/flu/php/laboratories/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/flu/php/viruses/index.html",
+      "doc_id": "cdc_respirat_2026_021",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260317224732",
+      "archive_url": "http://web.archive.org/web/20260317224732/https://www.cdc.gov/flu/php/viruses/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/flu/php/who-collaboration/index.html",
+      "doc_id": "cdc_respirat_2026_022",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260317224733",
+      "archive_url": "http://web.archive.org/web/20260317224733/https://www.cdc.gov/flu/php/who-collaboration/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/flu/php/genomic-sequencing-infrastructure/index.html",
+      "doc_id": "cdc_respirat_2026_023",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260317224733",
+      "archive_url": "http://web.archive.org/web/20260317224733/https://www.cdc.gov/flu/php/genomic-sequencing-infrastructure/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/flu/season/index.html",
+      "doc_id": "cdc_respirat_2026_024",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260322234035",
+      "archive_url": "http://web.archive.org/web/20260322234035/https://www.cdc.gov/flu/season/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/flu/whats-new/index.html",
+      "doc_id": "cdc_respirat_2026_025",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260317234354",
+      "archive_url": "http://web.archive.org/web/20260317234354/https://www.cdc.gov/flu/whats-new/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/flu/es/treatment/tratamiento-influenza.html",
+      "doc_id": "cdc_respirat_2026_026",
+      "agency": "CDC",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260317232456",
+      "archive_url": "http://web.archive.org/web/20260317232456/https://www.cdc.gov/flu/es/treatment/tratamiento-influenza.html"
+    },
+    {
+      "url": "https://www.cdc.gov/flu/prevention/actions-prevent-flu.html",
+      "doc_id": "cdc_respirat_2026_027",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260317232502",
+      "archive_url": "http://web.archive.org/web/20260317232502/https://www.cdc.gov/flu/prevention/actions-prevent-flu.html"
+    },
+    {
+      "url": "https://www.cdc.gov/flu/takingcare/index.html",
+      "doc_id": "cdc_respirat_2026_028",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260323002138",
+      "archive_url": "http://web.archive.org/web/20260323002138/https://www.cdc.gov/flu/takingcare/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/flu/treatment/children-antiviral.html?CDC_AAref_Val=https://www.cdc.gov/flu/highrisk/children-antiviral.htm",
+      "doc_id": "cdc_respirat_2026_029",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260317234509",
+      "archive_url": "http://web.archive.org/web/20260317234509/https://www.cdc.gov/flu/treatment/children-antiviral.html?CDC_AAref_Val=https://www.cdc.gov/flu/highrisk/children-antiviral.htm"
+    },
+    {
+      "url": "https://www.cdc.gov/flu/treatment/mixing-oseltamivir-qa.html?CDC_AAref_Val=https://www.cdc.gov/flu/highrisk/mixing-oseltamivir-qa.htm",
+      "doc_id": "cdc_respirat_2026_030",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260317234508",
+      "archive_url": "http://web.archive.org/web/20260317234508/https://www.cdc.gov/flu/treatment/mixing-oseltamivir-qa.html?CDC_AAref_Val=https://www.cdc.gov/flu/highrisk/mixing-oseltamivir-qa.htm"
+    },
+    {
+      "url": "https://www.cdc.gov/covid/signs-symptoms/index.html",
+      "doc_id": "cdc_respirat_2026_031",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260323231749",
+      "archive_url": "http://web.archive.org/web/20260323231749/https://www.cdc.gov/covid/signs-symptoms/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/covid/risk-factors/index.html",
+      "doc_id": "cdc_respirat_2026_032",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260323194204",
+      "archive_url": "http://web.archive.org/web/20260323194204/https://www.cdc.gov/covid/risk-factors/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/covid/testing/index.html",
+      "doc_id": "cdc_respirat_2026_033",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260323194152",
+      "archive_url": "http://web.archive.org/web/20260323194152/https://www.cdc.gov/covid/testing/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/covid/communication/index.html",
+      "doc_id": "cdc_respirat_2026_034",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260324000633",
+      "archive_url": "http://web.archive.org/web/20260324000633/https://www.cdc.gov/covid/communication/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/covid/site.html",
+      "doc_id": "cdc_respirat_2026_035",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260324000637",
+      "archive_url": "http://web.archive.org/web/20260324000637/https://www.cdc.gov/covid/site.html"
+    },
+    {
+      "url": "https://www.cdc.gov/covid/hcp/clinical-care/index.html",
+      "doc_id": "cdc_respirat_2026_036",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260324000657",
+      "archive_url": "http://web.archive.org/web/20260324000657/https://www.cdc.gov/covid/hcp/clinical-care/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/covid/hcp/infection-control/index.html",
+      "doc_id": "cdc_respirat_2026_037",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260324000707",
+      "archive_url": "http://web.archive.org/web/20260324000707/https://www.cdc.gov/covid/hcp/infection-control/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/covid/hcp/non-us-settings/index.html",
+      "doc_id": "cdc_respirat_2026_038",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260324000714",
+      "archive_url": "http://web.archive.org/web/20260324000714/https://www.cdc.gov/covid/hcp/non-us-settings/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/covid/hcp/index.html",
+      "doc_id": "cdc_respirat_2026_039",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260324000642",
+      "archive_url": "http://web.archive.org/web/20260324000642/https://www.cdc.gov/covid/hcp/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/covid/php/lab/index.html",
+      "doc_id": "cdc_respirat_2026_040",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260324000735",
+      "archive_url": "http://web.archive.org/web/20260324000735/https://www.cdc.gov/covid/php/lab/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/covid/php/antibody-seroprevalence/index.html",
+      "doc_id": "cdc_respirat_2026_041",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260324000739",
+      "archive_url": "http://web.archive.org/web/20260324000739/https://www.cdc.gov/covid/php/antibody-seroprevalence/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/covid/php/variants/index.html",
+      "doc_id": "cdc_respirat_2026_042",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260317224605",
+      "archive_url": "http://web.archive.org/web/20260317224605/https://www.cdc.gov/covid/php/variants/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/covid/php/interagency-group/index.html",
+      "doc_id": "cdc_respirat_2026_043",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260317224606",
+      "archive_url": "http://web.archive.org/web/20260317224606/https://www.cdc.gov/covid/php/interagency-group/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/covid/php/index.html",
+      "doc_id": "cdc_respirat_2026_044",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260324000721",
+      "archive_url": "http://web.archive.org/web/20260324000721/https://www.cdc.gov/covid/php/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/rsv/causes/index.html",
+      "doc_id": "cdc_respirat_2026_045",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260320184843",
+      "archive_url": "http://web.archive.org/web/20260320184843/https://www.cdc.gov/rsv/causes/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/rsv/symptoms/index.html",
+      "doc_id": "cdc_respirat_2026_046",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260320184906",
+      "archive_url": "http://web.archive.org/web/20260320184906/https://www.cdc.gov/rsv/symptoms/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/rsv/infants-young-children/index.html",
+      "doc_id": "cdc_respirat_2026_047",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260320213335",
+      "archive_url": "http://web.archive.org/web/20260320213335/https://www.cdc.gov/rsv/infants-young-children/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/rsv/site.html",
+      "doc_id": "cdc_respirat_2026_048",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260320184930",
+      "archive_url": "http://web.archive.org/web/20260320184930/https://www.cdc.gov/rsv/site.html"
+    },
+    {
+      "url": "https://www.cdc.gov/rsv/hcp/clinical-overview/index.html",
+      "doc_id": "cdc_respirat_2026_049",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260320184946",
+      "archive_url": "http://web.archive.org/web/20260320184946/https://www.cdc.gov/rsv/hcp/clinical-overview/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/rsv/php/arctic-investigation-program/index.html",
+      "doc_id": "cdc_respirat_2026_050",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260320185021",
+      "archive_url": "http://web.archive.org/web/20260320185021/https://www.cdc.gov/rsv/php/arctic-investigation-program/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/rsv/php/communication-resources/index.html",
+      "doc_id": "cdc_respirat_2026_051",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260320185028",
+      "archive_url": "http://web.archive.org/web/20260320185028/https://www.cdc.gov/rsv/php/communication-resources/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/travel/index.html",
+      "doc_id": "cdc_travel_2026_001",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20080514233157",
+      "archive_url": "http://web.archive.org/web/20080514233157/http://www.cdc.gov/travel/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/vaccines/index.html",
+      "doc_id": "cdc_vaccinat_2026_001",
+      "agency": "CDC",
+      "language": "en",
+      "archived": null
+    },
+    {
+      "url": "https://www.cdc.gov/flu/vaccines/index.html",
+      "doc_id": "cdc_vaccinat_2026_002",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260317224732",
+      "archive_url": "http://web.archive.org/web/20260317224732/https://www.cdc.gov/flu/vaccines/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/flu/hcp/vax-summary/index.html",
+      "doc_id": "cdc_vaccinat_2026_003",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260320185433",
+      "archive_url": "http://web.archive.org/web/20260320185433/https://www.cdc.gov/flu/hcp/vax-summary/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/flu/hcp/vaccine-supply/index.html",
+      "doc_id": "cdc_vaccinat_2026_004",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260323192349",
+      "archive_url": "http://web.archive.org/web/20260323192349/https://www.cdc.gov/flu/hcp/vaccine-supply/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/covid/vaccines/index.html",
+      "doc_id": "cdc_vaccinat_2026_005",
+      "agency": "CDC",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260323231523",
+      "archive_url": "http://web.archive.org/web/20260323231523/https://www.cdc.gov/covid/vaccines/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/covid/hcp/vaccine-considerations/index.html",
+      "doc_id": "cdc_vaccinat_2026_006",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260318021737",
+      "archive_url": "http://web.archive.org/web/20260318021737/https://www.cdc.gov/covid/hcp/vaccine-considerations/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/covid/vaccines/stay-up-to-date.html",
+      "doc_id": "cdc_vaccinat_2026_007",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260320185649",
+      "archive_url": "http://web.archive.org/web/20260320185649/https://www.cdc.gov/covid/vaccines/stay-up-to-date.html"
+    },
+    {
+      "url": "https://www.cdc.gov/vaccines/hcp/imz-schedules/index.html",
+      "doc_id": "cdc_vaccinat_2026_008",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260321230923",
+      "archive_url": "http://web.archive.org/web/20260321230923/https://www.cdc.gov/vaccines/hcp/imz-schedules/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/covid/vaccines/getting-your-covid-19-vaccine.html",
+      "doc_id": "cdc_vaccinat_2026_009",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260319055335",
+      "archive_url": "http://web.archive.org/web/20260319055335/https://www.cdc.gov/covid/vaccines/getting-your-covid-19-vaccine.html"
+    },
+    {
+      "url": "https://www.cdc.gov/covid/vaccines/immunocompromised-people.html",
+      "doc_id": "cdc_vaccinat_2026_010",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260319055349",
+      "archive_url": "http://web.archive.org/web/20260319055349/https://www.cdc.gov/covid/vaccines/immunocompromised-people.html"
+    },
+    {
+      "url": "https://www.cdc.gov/rsv/vaccines/index.html",
+      "doc_id": "cdc_vaccinat_2026_011",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260320184854",
+      "archive_url": "http://web.archive.org/web/20260320184854/https://www.cdc.gov/rsv/vaccines/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/rsv/hcp/vaccine-clinical-guidance/index.html",
+      "doc_id": "cdc_vaccinat_2026_012",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260320184951",
+      "archive_url": "http://web.archive.org/web/20260320184951/https://www.cdc.gov/rsv/hcp/vaccine-clinical-guidance/index.html"
+    },
+    {
+      "url": "https://www.cdc.gov/rsv/vaccines/adults.html",
+      "doc_id": "cdc_vaccinat_2026_013",
+      "agency": "CDC",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260318001904",
+      "archive_url": "http://web.archive.org/web/20260318001904/https://www.cdc.gov/rsv/vaccines/adults.html"
+    },
+    {
+      "url": "https://www.cms.gov/about-cms/web-policies-important-links/foia",
+      "doc_id": "cms_general_2026_001",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260309123147",
+      "archive_url": "http://web.archive.org/web/20260309123147/https://www.cms.gov/about-cms/web-policies-important-links/foia"
+    },
+    {
+      "url": "https://www.cms.gov/about-cms/web-policies-important-links/no-fear-act",
+      "doc_id": "cms_general_2026_002",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260325214837",
+      "archive_url": "http://web.archive.org/web/20260325214837/https://www.cms.gov/about-cms/web-policies-important-links/no-fear-act"
+    },
+    {
+      "url": "https://www.cms.gov/about-cms/information-systems/privacy/linking-outside-websites",
+      "doc_id": "cms_general_2026_003",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260316235010",
+      "archive_url": "http://web.archive.org/web/20260316235010/https://www.cms.gov/about-cms/information-systems/privacy/linking-outside-websites"
+    },
+    {
+      "url": "https://www.medicare.gov/what-medicare-covers",
+      "doc_id": "cms_insuranc_2026_001",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20240716063657",
+      "archive_url": "http://web.archive.org/web/20240716063657/https://www.medicare.gov/what-medicare-covers"
+    },
+    {
+      "url": "https://www.medicare.gov/basics/get-started-with-medicare",
+      "doc_id": "cms_insuranc_2026_002",
+      "agency": "CMS",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260313221342",
+      "archive_url": "http://web.archive.org/web/20260313221342/https://www.medicare.gov/basics/get-started-with-medicare"
+    },
+    {
+      "url": "https://www.medicare.gov/drug-coverage-part-d",
+      "doc_id": "cms_insuranc_2026_003",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20241231203819",
+      "archive_url": "http://web.archive.org/web/20241231203819/https://www.medicare.gov/drug-coverage-part-d"
+    },
+    {
+      "url": "https://www.medicare.gov/health-drug-plans",
+      "doc_id": "cms_insuranc_2026_004",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260313234557",
+      "archive_url": "http://web.archive.org/web/20260313234557/https://www.medicare.gov/health-drug-plans"
+    },
+    {
+      "url": "https://www.medicaid.gov/about-us/beneficiary-resources/index.html",
+      "doc_id": "cms_insuranc_2026_005",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20240310190527",
+      "archive_url": "http://web.archive.org/web/20240310190527/https://www.medicaid.gov/about-us/beneficiary-resources/index.html"
+    },
+    {
+      "url": "https://www.medicare.gov/",
+      "doc_id": "cms_insuranc_2026_006",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260321034504",
+      "archive_url": "http://web.archive.org/web/20260321034504/https://www.medicare.gov/"
+    },
+    {
+      "url": "https://www.medicare.gov/providers-services",
+      "doc_id": "cms_insuranc_2026_007",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260314180654",
+      "archive_url": "http://web.archive.org/web/20260314180654/https://www.medicare.gov/providers-services"
+    },
+    {
+      "url": "https://www.medicare.gov/coverage",
+      "doc_id": "cms_insuranc_2026_008",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260314165711",
+      "archive_url": "http://web.archive.org/web/20260314165711/https://www.medicare.gov/coverage"
+    },
+    {
+      "url": "https://www.medicare.gov/providers-services/original-medicare/part-a",
+      "doc_id": "cms_insuranc_2026_009",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260321081028",
+      "archive_url": "http://web.archive.org/web/20260321081028/https://www.medicare.gov/providers-services/original-medicare/part-a"
+    },
+    {
+      "url": "https://www.medicare.gov/providers-services/original-medicare/part-b",
+      "doc_id": "cms_insuranc_2026_010",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260321081027",
+      "archive_url": "http://web.archive.org/web/20260321081027/https://www.medicare.gov/providers-services/original-medicare/part-b"
+    },
+    {
+      "url": "https://www.medicare.gov/providers-services/original-medicare/not-covered",
+      "doc_id": "cms_insuranc_2026_011",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260407025103",
+      "archive_url": "http://web.archive.org/web/20260407025103/https://www.medicare.gov/providers-services/original-medicare/not-covered"
+    },
+    {
+      "url": "https://www.medicare.gov/providers-services/coordinating-care",
+      "doc_id": "cms_insuranc_2026_012",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260302114231",
+      "archive_url": "http://web.archive.org/web/20260302114231/https://www.medicare.gov/providers-services/coordinating-care"
+    },
+    {
+      "url": "https://www.medicare.gov/providers-services/disaster-emergency",
+      "doc_id": "cms_insuranc_2026_013",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260208110224",
+      "archive_url": "http://web.archive.org/web/20260208110224/https://www.medicare.gov/providers-services/disaster-emergency"
+    },
+    {
+      "url": "https://www.medicare.gov/basics",
+      "doc_id": "cms_insuranc_2026_014",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260416110948",
+      "archive_url": "http://web.archive.org/web/20260416110948/https://www.medicare.gov/basics"
+    },
+    {
+      "url": "https://www.medicare.gov/sitemap",
+      "doc_id": "cms_insuranc_2026_015",
+      "agency": "CMS",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260314172340",
+      "archive_url": "http://web.archive.org/web/20260314172340/https://www.medicare.gov/sitemap"
+    },
+    {
+      "url": "https://www.medicare.gov/publications",
+      "doc_id": "cms_insuranc_2026_016",
+      "agency": "CMS",
+      "language": "en",
+      "archived": null
+    },
+    {
+      "url": "https://www.medicare.gov/about-us/other-languages",
+      "doc_id": "cms_insuranc_2026_017",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260314175410",
+      "archive_url": "http://web.archive.org/web/20260314175410/https://www.medicare.gov/about-us/other-languages"
+    },
+    {
+      "url": "https://www.medicare.gov/talk-to-someone",
+      "doc_id": "cms_insuranc_2026_018",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260318093421",
+      "archive_url": "http://web.archive.org/web/20260318093421/https://www.medicare.gov/talk-to-someone"
+    },
+    {
+      "url": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-advantagepart-d-contract-and-enrollment-data",
+      "doc_id": "cms_insuranc_2026_020",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260316120302",
+      "archive_url": "http://web.archive.org/web/20260316120302/https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-advantagepart-d-contract-and-enrollment-data"
+    },
+    {
+      "url": "https://www.medicare.gov/privacy-policy",
+      "doc_id": "cms_insuranc_2026_021",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260314162450",
+      "archive_url": "http://web.archive.org/web/20260314162450/https://www.medicare.gov/privacy-policy"
+    },
+    {
+      "url": "https://www.medicare.gov/about-us",
+      "doc_id": "cms_insuranc_2026_022",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260314171328",
+      "archive_url": "http://web.archive.org/web/20260314171328/https://www.medicare.gov/about-us"
+    },
+    {
+      "url": "https://www.medicare.gov/about-us/accessibility-nondiscrimination-notice",
+      "doc_id": "cms_insuranc_2026_023",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260314180733",
+      "archive_url": "http://web.archive.org/web/20260314180733/https://www.medicare.gov/about-us/accessibility-nondiscrimination-notice"
+    },
+    {
+      "url": "https://www.medicare.gov/about-us/using-this-site",
+      "doc_id": "cms_insuranc_2026_024",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260314173749",
+      "archive_url": "http://web.archive.org/web/20260314173749/https://www.medicare.gov/about-us/using-this-site"
+    },
+    {
+      "url": "https://www.medicare.gov/about-us/plain-writing",
+      "doc_id": "cms_insuranc_2026_025",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260325221000",
+      "archive_url": "http://web.archive.org/web/20260325221000/https://www.medicare.gov/about-us/plain-writing"
+    },
+    {
+      "url": "https://www.medicare.gov/basics/get-started-with-medicare/before-65",
+      "doc_id": "cms_insuranc_2026_026",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260326145433",
+      "archive_url": "http://web.archive.org/web/20260326145433/https://www.medicare.gov/basics/get-started-with-medicare/before-65"
+    },
+    {
+      "url": "https://www.medicare.gov/basics/get-started-with-medicare/after-65",
+      "doc_id": "cms_insuranc_2026_027",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260416112924",
+      "archive_url": "http://web.archive.org/web/20260416112924/https://www.medicare.gov/basics/get-started-with-medicare/after-65"
+    },
+    {
+      "url": "https://www.medicare.gov/basics/get-started-with-medicare/other-paths",
+      "doc_id": "cms_insuranc_2026_028",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260126022745",
+      "archive_url": "http://web.archive.org/web/20260126022745/https://www.medicare.gov/basics/get-started-with-medicare/other-paths"
+    },
+    {
+      "url": "https://www.medicare.gov/basics/end-stage-renal-disease",
+      "doc_id": "cms_insuranc_2026_029",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260302142444",
+      "archive_url": "http://web.archive.org/web/20260302142444/https://www.medicare.gov/basics/end-stage-renal-disease"
+    },
+    {
+      "url": "https://www.medicare.gov/basics/costs/medicare-costs/avoid-penalties",
+      "doc_id": "cms_insuranc_2026_030",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260320173346",
+      "archive_url": "http://web.archive.org/web/20260320173346/https://www.medicare.gov/basics/costs/medicare-costs/avoid-penalties"
+    },
+    {
+      "url": "https://www.medicare.gov/health-drug-plans/part-d/basics",
+      "doc_id": "cms_insuranc_2026_031",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260314164731",
+      "archive_url": "http://web.archive.org/web/20260314164731/https://www.medicare.gov/health-drug-plans/part-d/basics"
+    },
+    {
+      "url": "https://www.medicare.gov/health-drug-plans/part-d/what-drug-plans-cover",
+      "doc_id": "cms_insuranc_2026_032",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260302023444",
+      "archive_url": "http://web.archive.org/web/20260302023444/https://www.medicare.gov/health-drug-plans/part-d/what-drug-plans-cover"
+    },
+    {
+      "url": "https://www.medicare.gov/health-drug-plans/part-d/using-drug-coverage",
+      "doc_id": "cms_insuranc_2026_033",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260314173632",
+      "archive_url": "http://web.archive.org/web/20260314173632/https://www.medicare.gov/health-drug-plans/part-d/using-drug-coverage"
+    },
+    {
+      "url": "https://www.medicare.gov/basics/get-started-with-medicare/get-more-coverage/joining-a-plan",
+      "doc_id": "cms_insuranc_2026_034",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260314164601",
+      "archive_url": "http://web.archive.org/web/20260314164601/https://www.medicare.gov/basics/get-started-with-medicare/get-more-coverage/joining-a-plan"
+    },
+    {
+      "url": "https://www.medicare.gov/health-drug-plans/health-plans",
+      "doc_id": "cms_insuranc_2026_035",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260325155452",
+      "archive_url": "http://web.archive.org/web/20260325155452/https://www.medicare.gov/health-drug-plans/health-plans"
+    },
+    {
+      "url": "https://www.medicare.gov/health-drug-plans/medigap",
+      "doc_id": "cms_insuranc_2026_036",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260326145342",
+      "archive_url": "http://web.archive.org/web/20260326145342/https://www.medicare.gov/health-drug-plans/medigap"
+    },
+    {
+      "url": "https://www.medicare.gov/health-drug-plans/coordination",
+      "doc_id": "cms_insuranc_2026_037",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260321081031",
+      "archive_url": "http://web.archive.org/web/20260321081031/https://www.medicare.gov/health-drug-plans/coordination"
+    },
+    {
+      "url": "https://www.medicaid.gov/",
+      "doc_id": "cms_insuranc_2026_039",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260320165759",
+      "archive_url": "http://web.archive.org/web/20260320165759/https://www.medicaid.gov/"
+    },
+    {
+      "url": "https://www.medicaid.gov/faq",
+      "doc_id": "cms_insuranc_2026_040",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260419210433",
+      "archive_url": "http://web.archive.org/web/20260419210433/https://www.medicaid.gov/faq"
+    },
+    {
+      "url": "https://www.medicaid.gov/federal-policy-guidance",
+      "doc_id": "cms_insuranc_2026_041",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260308161654",
+      "archive_url": "http://web.archive.org/web/20260308161654/https://www.medicaid.gov/federal-policy-guidance"
+    },
+    {
+      "url": "https://www.medicaid.gov/resources-for-states",
+      "doc_id": "cms_insuranc_2026_042",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260307001932",
+      "archive_url": "http://web.archive.org/web/20260307001932/https://www.medicaid.gov/resources-for-states"
+    },
+    {
+      "url": "https://www.medicaid.gov/resources-for-states/working-families-tax-cut-legislation",
+      "doc_id": "cms_insuranc_2026_043",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260424074445",
+      "archive_url": "http://web.archive.org/web/20260424074445/https://www.medicaid.gov/resources-for-states/working-families-tax-cut-legislation"
+    },
+    {
+      "url": "https://www.medicaid.gov/resources-for-states/innovation-accelerator-program",
+      "doc_id": "cms_insuranc_2026_045",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260416175102",
+      "archive_url": "http://web.archive.org/web/20260416175102/https://www.medicaid.gov/resources-for-states/innovation-accelerator-program"
+    },
+    {
+      "url": "https://www.medicaid.gov/resources-for-states/innovation-accelerator-program/functional-areas",
+      "doc_id": "cms_insuranc_2026_047",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260312044942",
+      "archive_url": "http://web.archive.org/web/20260312044942/https://www.medicaid.gov/resources-for-states/innovation-accelerator-program/functional-areas"
+    },
+    {
+      "url": "https://www.medicaid.gov/resources-for-states/medicaid-state-technical-assistance",
+      "doc_id": "cms_insuranc_2026_048",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260307211335",
+      "archive_url": "http://web.archive.org/web/20260307211335/https://www.medicaid.gov/resources-for-states/medicaid-state-technical-assistance"
+    },
+    {
+      "url": "https://www.medicaid.gov/resources-for-states/medicaid-state-technical-assistance/health-home-information-resource-center",
+      "doc_id": "cms_insuranc_2026_049",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260215135001",
+      "archive_url": "http://web.archive.org/web/20260215135001/https://www.medicaid.gov/resources-for-states/medicaid-state-technical-assistance/health-home-information-resource-center"
+    },
+    {
+      "url": "https://www.medicaid.gov/resources-for-states/medicaid-state-technical-assistance/medicaid-and-school-based-services",
+      "doc_id": "cms_insuranc_2026_050",
+      "agency": "CMS",
+      "language": "en",
+      "archived": null
+    },
+    {
+      "url": "https://www.medicaid.gov/resources-for-states/medicaid-state-technical-assistance/technical-assistance-develop-evidence-based-continuum-of-crisis-care",
+      "doc_id": "cms_insuranc_2026_051",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260424074446",
+      "archive_url": "http://web.archive.org/web/20260424074446/https://www.medicaid.gov/resources-for-states/medicaid-state-technical-assistance/technical-assistance-develop-evidence-based-continuum-of-crisis-care"
+    },
+    {
+      "url": "https://www.medicaid.gov/resources-for-states/mac-learning-collaboratives",
+      "doc_id": "cms_insuranc_2026_052",
+      "agency": "CMS",
+      "language": "en",
+      "archived": null
+    },
+    {
+      "url": "https://www.medicaid.gov/resources-for-states/mac-learning-collaboratives/data-analytics-support-program-operations",
+      "doc_id": "cms_insuranc_2026_053",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260312015135",
+      "archive_url": "http://web.archive.org/web/20260312015135/https://www.medicaid.gov/resources-for-states/mac-learning-collaboratives/data-analytics-support-program-operations"
+    },
+    {
+      "url": "https://www.medicaid.gov/resources-for-states/mac-learning-collaboratives/expanding-coverage-under-medicaid-and-chip",
+      "doc_id": "cms_insuranc_2026_054",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260317094435",
+      "archive_url": "http://web.archive.org/web/20260317094435/https://www.medicaid.gov/resources-for-states/mac-learning-collaboratives/expanding-coverage-under-medicaid-and-chip"
+    },
+    {
+      "url": "https://www.medicaid.gov/resources-for-states/mac-learning-collaboratives/exchange-innovators-state-based-and-partnership-marketplaces",
+      "doc_id": "cms_insuranc_2026_055",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260307092659",
+      "archive_url": "http://web.archive.org/web/20260307092659/https://www.medicaid.gov/resources-for-states/mac-learning-collaboratives/exchange-innovators-state-based-and-partnership-marketplaces"
+    },
+    {
+      "url": "https://www.medicaid.gov/resources-for-states/mac-learning-collaboratives/federally-facilitated-marketplace",
+      "doc_id": "cms_insuranc_2026_056",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260314171646",
+      "archive_url": "http://web.archive.org/web/20260314171646/https://www.medicaid.gov/resources-for-states/mac-learning-collaboratives/federally-facilitated-marketplace"
+    },
+    {
+      "url": "https://www.medicaid.gov/resources-for-states/mac-learning-collaboratives/value-based-purchasing",
+      "doc_id": "cms_insuranc_2026_057",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260317162431",
+      "archive_url": "http://web.archive.org/web/20260317162431/https://www.medicaid.gov/resources-for-states/mac-learning-collaboratives/value-based-purchasing"
+    },
+    {
+      "url": "https://www.medicaid.gov/resources-for-states/medicaid-and-chip-program-portal/medicaid-data-collection-tool-mdct-portal",
+      "doc_id": "cms_insuranc_2026_058",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260424074448",
+      "archive_url": "http://web.archive.org/web/20260424074448/https://www.medicaid.gov/resources-for-states/medicaid-and-chip-program-portal/medicaid-data-collection-tool-mdct-portal"
+    },
+    {
+      "url": "https://www.medicaid.gov/resources-for-states/managed-care-review-mc-review",
+      "doc_id": "cms_insuranc_2026_059",
+      "agency": "CMS",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260218021432",
+      "archive_url": "http://web.archive.org/web/20260218021432/https://www.medicaid.gov/resources-for-states/managed-care-review-mc-review"
+    },
+    {
+      "url": "https://www.medicaid.gov/resources-for-states/managed-care-review-mc-review/managed-care-review-faqs",
+      "doc_id": "cms_insuranc_2026_060",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260412064416",
+      "archive_url": "http://web.archive.org/web/20260412064416/https://www.medicaid.gov/resources-for-states/managed-care-review-mc-review/managed-care-review-faqs"
+    },
+    {
+      "url": "https://www.medicaid.gov/resources-for-states/disaster-response-toolkit",
+      "doc_id": "cms_insuranc_2026_061",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260311131733",
+      "archive_url": "http://web.archive.org/web/20260311131733/https://www.medicaid.gov/resources-for-states/disaster-response-toolkit"
+    },
+    {
+      "url": "https://www.medicaid.gov/resources-for-states/disaster-response-toolkit/state-plan-flexibilities",
+      "doc_id": "cms_insuranc_2026_062",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260302080359",
+      "archive_url": "http://web.archive.org/web/20260302080359/https://www.medicaid.gov/resources-for-states/disaster-response-toolkit/state-plan-flexibilities"
+    },
+    {
+      "url": "https://www.medicaid.gov/resources-for-states/disaster-response-toolkit/using-section-1115-demonstrations-for-disaster-response",
+      "doc_id": "cms_insuranc_2026_063",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260316122939",
+      "archive_url": "http://web.archive.org/web/20260316122939/https://www.medicaid.gov/resources-for-states/disaster-response-toolkit/using-section-1115-demonstrations-for-disaster-response"
+    },
+    {
+      "url": "https://www.medicaid.gov/resources-for-states/disaster-response-toolkit/home-community-based-services-during-public-health-emergencies",
+      "doc_id": "cms_insuranc_2026_064",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260302055406",
+      "archive_url": "http://web.archive.org/web/20260302055406/https://www.medicaid.gov/resources-for-states/disaster-response-toolkit/home-community-based-services-during-public-health-emergencies"
+    },
+    {
+      "url": "https://www.medicaid.gov/resources-for-states/disaster-response-toolkit/federal-disaster-resources",
+      "doc_id": "cms_insuranc_2026_065",
+      "agency": "CMS",
+      "language": "en",
+      "archived": null
+    },
+    {
+      "url": "https://www.medicaid.gov/resources-for-states/disaster-response-toolkit/section-1135-waiver-flexibilities",
+      "doc_id": "cms_insuranc_2026_066",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260420032735",
+      "archive_url": "http://web.archive.org/web/20260420032735/https://www.medicaid.gov/resources-for-states/disaster-response-toolkit/section-1135-waiver-flexibilities"
+    },
+    {
+      "url": "https://www.medicaid.gov/resources-for-states/eligibility-enrollment-and-renewal-tools-and-resources",
+      "doc_id": "cms_insuranc_2026_067",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260215135450",
+      "archive_url": "http://web.archive.org/web/20260215135450/https://www.medicaid.gov/resources-for-states/eligibility-enrollment-and-renewal-tools-and-resources"
+    },
+    {
+      "url": "https://www.medicaid.gov/resources-for-states/eligibility-enrollment-and-renewal-tools-and-resources/application-and-fair-hearings-resources",
+      "doc_id": "cms_insuranc_2026_068",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260311043211",
+      "archive_url": "http://web.archive.org/web/20260311043211/https://www.medicaid.gov/resources-for-states/eligibility-enrollment-and-renewal-tools-and-resources/application-and-fair-hearings-resources"
+    },
+    {
+      "url": "https://www.medicaid.gov/resources-for-states/eligibility-enrollment-and-renewal-tools-and-resources/renewal-strategies-and-tools",
+      "doc_id": "cms_insuranc_2026_069",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260424074525",
+      "archive_url": "http://web.archive.org/web/20260424074525/https://www.medicaid.gov/resources-for-states/eligibility-enrollment-and-renewal-tools-and-resources/renewal-strategies-and-tools"
+    },
+    {
+      "url": "https://www.medicaid.gov/resources-for-states/eligibility-enrollment-and-renewal-tools-and-resources/medicaid-and-chip-renewal-compliance",
+      "doc_id": "cms_insuranc_2026_070",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260424074525",
+      "archive_url": "http://web.archive.org/web/20260424074525/https://www.medicaid.gov/resources-for-states/eligibility-enrollment-and-renewal-tools-and-resources/medicaid-and-chip-renewal-compliance"
+    },
+    {
+      "url": "https://www.medicaid.gov/resources-for-states/eligibility-enrollment-and-renewal-tools-and-resources/medicaid-and-chip-seamless-transitions",
+      "doc_id": "cms_insuranc_2026_071",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260424074525",
+      "archive_url": "http://web.archive.org/web/20260424074525/https://www.medicaid.gov/resources-for-states/eligibility-enrollment-and-renewal-tools-and-resources/medicaid-and-chip-seamless-transitions"
+    },
+    {
+      "url": "https://www.medicaid.gov/resources-for-states/eligibility-enrollment-and-renewal-tools-and-resources/medicaid/marketplace-coordination",
+      "doc_id": "cms_insuranc_2026_072",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260412170647",
+      "archive_url": "http://web.archive.org/web/20260412170647/https://www.medicaid.gov/resources-for-states/eligibility-enrollment-and-renewal-tools-and-resources/medicaid/marketplace-coordination"
+    },
+    {
+      "url": "https://www.medicaid.gov/resources-for-states/coronavirus-disease-2019-covid-19",
+      "doc_id": "cms_respirat_2026_001",
+      "agency": "CMS",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260307154505",
+      "archive_url": "http://web.archive.org/web/20260307154505/https://www.medicaid.gov/resources-for-states/coronavirus-disease-2019-covid-19"
+    },
+    {
+      "url": "https://www.medicaid.gov/resources-for-states/coronavirus-disease-2019-covid-19/archived-unwinding-and-returning-regular-operations-after-covid-19",
+      "doc_id": "cms_respirat_2026_002",
+      "agency": "CMS",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260319052526",
+      "archive_url": "http://web.archive.org/web/20260319052526/https://www.medicaid.gov/resources-for-states/coronavirus-disease-2019-covid-19/archived-unwinding-and-returning-regular-operations-after-covid-19"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/my-dog-has-cancer-what-do-i-need-know",
+      "doc_id": "fda_chronic_2026_001",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260420071835",
+      "archive_url": "http://web.archive.org/web/20260420071835/https://www.fda.gov/consumers/consumer-updates/my-dog-has-cancer-what-do-i-need-know"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates",
+      "doc_id": "fda_general_2026_001",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260330024920",
+      "archive_url": "http://web.archive.org/web/20260330024920/https://www.fda.gov/consumers/consumer-updates"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/animal-veterinary",
+      "doc_id": "fda_general_2026_002",
+      "agency": "FDA",
+      "language": "en",
+      "archived": null
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/childrens-health",
+      "doc_id": "fda_general_2026_003",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260419061523",
+      "archive_url": "http://web.archive.org/web/20260419061523/https://www.fda.gov/consumers/consumer-updates/childrens-health"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/cosmetics",
+      "doc_id": "fda_general_2026_004",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260216173854",
+      "archive_url": "http://web.archive.org/web/20260216173854/https://www.fda.gov/consumers/consumer-updates/cosmetics"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/dietary-supplements",
+      "doc_id": "fda_general_2026_005",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260306064042",
+      "archive_url": "http://web.archive.org/web/20260306064042/https://www.fda.gov/consumers/consumer-updates/dietary-supplements"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/drugs",
+      "doc_id": "fda_general_2026_006",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260216030855",
+      "archive_url": "http://web.archive.org/web/20260216030855/https://www.fda.gov/consumers/consumer-updates/drugs"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/food",
+      "doc_id": "fda_general_2026_007",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260519104706",
+      "archive_url": "http://web.archive.org/web/20260519104706/https://www.fda.gov/consumers/consumer-updates/food"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/medical-devices",
+      "doc_id": "fda_general_2026_008",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260210174332",
+      "archive_url": "http://web.archive.org/web/20260210174332/https://www.fda.gov/consumers/consumer-updates/medical-devices"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/nutrition",
+      "doc_id": "fda_general_2026_009",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260410162547",
+      "archive_url": "http://web.archive.org/web/20260410162547/https://www.fda.gov/consumers/consumer-updates/nutrition"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/radiation-emitting-products",
+      "doc_id": "fda_general_2026_010",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260509171520",
+      "archive_url": "http://web.archive.org/web/20260509171520/https://www.fda.gov/consumers/consumer-updates/radiation-emitting-products"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/tobacco-products",
+      "doc_id": "fda_general_2026_011",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260410165438",
+      "archive_url": "http://web.archive.org/web/20260410165438/https://www.fda.gov/consumers/consumer-updates/tobacco-products"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/articulos-para-el-consumidor-en-espanol",
+      "doc_id": "fda_general_2026_012",
+      "agency": "FDA",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20240420165955",
+      "archive_url": "http://web.archive.org/web/20240420165955/https://www.fda.gov/consumers/consumer-updates/articulos-para-el-consumidor-en-espanol"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/hormone-replacement-therapies-can-help-women-bothersome-menopausal-symptoms",
+      "doc_id": "fda_general_2026_013",
+      "agency": "FDA",
+      "language": "en",
+      "archived": null
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/understanding-fda-terms-possible-new-therapies-prevent-and-treat-diseases",
+      "doc_id": "fda_general_2026_014",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260411152906",
+      "archive_url": "http://web.archive.org/web/20260411152906/https://www.fda.gov/consumers/consumer-updates/understanding-fda-terms-possible-new-therapies-prevent-and-treat-diseases"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/fda-101-product-recalls",
+      "doc_id": "fda_general_2026_015",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260317134637",
+      "archive_url": "http://web.archive.org/web/20260317134637/https://www.fda.gov/consumers/consumer-updates/fda-101-product-recalls"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/create-and-keep-medication-list-your-health",
+      "doc_id": "fda_general_2026_016",
+      "agency": "FDA",
+      "language": "en",
+      "archived": null
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/fresh-take-what-healthy-means-food-packages",
+      "doc_id": "fda_general_2026_017",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260125041342",
+      "archive_url": "http://web.archive.org/web/20260125041342/https://www.fda.gov/consumers/consumer-updates/fresh-take-what-healthy-means-food-packages"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/know-when-and-how-use-antibiotics-and-when-skip-them",
+      "doc_id": "fda_general_2026_018",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260411055554",
+      "archive_url": "http://web.archive.org/web/20260411055554/https://www.fda.gov/consumers/consumer-updates/know-when-and-how-use-antibiotics-and-when-skip-them"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/help-fda-prevent-sale-tobacco-products-young-people",
+      "doc_id": "fda_general_2026_019",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260416050239",
+      "archive_url": "http://web.archive.org/web/20260416050239/https://www.fda.gov/consumers/consumer-updates/help-fda-prevent-sale-tobacco-products-young-people"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/eating-too-much-salt-ways-cut-backgradually",
+      "doc_id": "fda_general_2026_020",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260211131008",
+      "archive_url": "http://web.archive.org/web/20260211131008/https://www.fda.gov/consumers/consumer-updates/eating-too-much-salt-ways-cut-backgradually"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/skip-antibacterial-soap-use-plain-soap-and-water",
+      "doc_id": "fda_general_2026_021",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260319141414",
+      "archive_url": "http://web.archive.org/web/20260319141414/https://www.fda.gov/consumers/consumer-updates/skip-antibacterial-soap-use-plain-soap-and-water"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/hurricane-season-be-prepared",
+      "doc_id": "fda_general_2026_022",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260201034020",
+      "archive_url": "http://web.archive.org/web/20260201034020/https://www.fda.gov/consumers/consumer-updates/hurricane-season-be-prepared"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/food-safe-if-it-has-chemicals",
+      "doc_id": "fda_general_2026_023",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260418135523",
+      "archive_url": "http://web.archive.org/web/20260418135523/https://www.fda.gov/consumers/consumer-updates/food-safe-if-it-has-chemicals"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/treating-cushings-disease-dogs",
+      "doc_id": "fda_general_2026_024",
+      "agency": "FDA",
+      "language": "en",
+      "archived": null
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/ounce-prevention-worth-pound-cure",
+      "doc_id": "fda_general_2026_025",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20230203075223",
+      "archive_url": "http://web.archive.org/web/20230203075223/https://www.fda.gov/consumers/consumer-updates/ounce-prevention-worth-pound-cure"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/medicines-your-pet-whats-difference-between-fda-approved-pharmacy-compounded-drugs",
+      "doc_id": "fda_general_2026_026",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260421081301",
+      "archive_url": "http://web.archive.org/web/20260421081301/https://www.fda.gov/consumers/consumer-updates/medicines-your-pet-whats-difference-between-fda-approved-pharmacy-compounded-drugs"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/medication-errors-happen-pets-too",
+      "doc_id": "fda_general_2026_027",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260421234817",
+      "archive_url": "http://web.archive.org/web/20260421234817/https://www.fda.gov/consumers/consumer-updates/medication-errors-happen-pets-too"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/keep-your-dogs-and-cats-safe-holiday-hazards",
+      "doc_id": "fda_general_2026_028",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260207165531",
+      "archive_url": "http://web.archive.org/web/20260207165531/https://www.fda.gov/consumers/consumer-updates/keep-your-dogs-and-cats-safe-holiday-hazards"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/your-animal-sick-was-it-something-they-ate-vet-lirn-may-be-able-help",
+      "doc_id": "fda_general_2026_029",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260315000707",
+      "archive_url": "http://web.archive.org/web/20260315000707/https://www.fda.gov/consumers/consumer-updates/your-animal-sick-was-it-something-they-ate-vet-lirn-may-be-able-help"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/secondhand-and-third-hand-smoke-may-be-making-your-pet-sick",
+      "doc_id": "fda_general_2026_030",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260519193226",
+      "archive_url": "http://web.archive.org/web/20260519193226/https://www.fda.gov/consumers/consumer-updates/secondhand-and-third-hand-smoke-may-be-making-your-pet-sick"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/what-you-need-know-and-what-were-working-find-out-about-products-containing-cannabis-or-cannabis",
+      "doc_id": "fda_general_2026_031",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260319134404",
+      "archive_url": "http://web.archive.org/web/20260319134404/https://www.fda.gov/consumers/consumer-updates/what-you-need-know-and-what-were-working-find-out-about-products-containing-cannabis-or-cannabis"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/paws-xylitol-its-dangerous-dogs",
+      "doc_id": "fda_general_2026_032",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260317160241",
+      "archive_url": "http://web.archive.org/web/20260317160241/https://www.fda.gov/consumers/consumer-updates/paws-xylitol-its-dangerous-dogs"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/ticks-and-lyme-disease-symptoms-treatment-and-prevention",
+      "doc_id": "fda_general_2026_033",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260410162817",
+      "archive_url": "http://web.archive.org/web/20260410162817/https://www.fda.gov/consumers/consumer-updates/ticks-and-lyme-disease-symptoms-treatment-and-prevention"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/it-really-fda-approved",
+      "doc_id": "fda_general_2026_034",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260318132655",
+      "archive_url": "http://web.archive.org/web/20260318132655/https://www.fda.gov/consumers/consumer-updates/it-really-fda-approved"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/safe-use-flea-and-tick-products-pets",
+      "doc_id": "fda_general_2026_035",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260511234856",
+      "archive_url": "http://web.archive.org/web/20260511234856/https://www.fda.gov/consumers/consumer-updates/safe-use-flea-and-tick-products-pets"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/fda-101-how-use-consumer-complaint-system-and-medwatch",
+      "doc_id": "fda_general_2026_036",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260315212749",
+      "archive_url": "http://web.archive.org/web/20260315212749/https://www.fda.gov/consumers/consumer-updates/fda-101-how-use-consumer-complaint-system-and-medwatch"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/properly-store-nicotine-pouches-prevent-accidental-exposure-children-and-pets",
+      "doc_id": "fda_general_2026_037",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260313111658",
+      "archive_url": "http://web.archive.org/web/20260313111658/https://www.fda.gov/consumers/consumer-updates/properly-store-nicotine-pouches-prevent-accidental-exposure-children-and-pets"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/tips-stay-safe-sun-sunscreen-sunglasses",
+      "doc_id": "fda_general_2026_038",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260307001637",
+      "archive_url": "http://web.archive.org/web/20260307001637/https://www.fda.gov/consumers/consumer-updates/tips-stay-safe-sun-sunscreen-sunglasses"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/know-which-medication-right-your-seasonal-allergies",
+      "doc_id": "fda_general_2026_039",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260411153136",
+      "archive_url": "http://web.archive.org/web/20260411153136/https://www.fda.gov/consumers/consumer-updates/know-which-medication-right-your-seasonal-allergies"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/allergy-relief-your-child",
+      "doc_id": "fda_general_2026_040",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260415141441",
+      "archive_url": "http://web.archive.org/web/20260415141441/https://www.fda.gov/consumers/consumer-updates/allergy-relief-your-child"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/dont-overuse-acetaminophen",
+      "doc_id": "fda_general_2026_041",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260328042024",
+      "archive_url": "http://web.archive.org/web/20260328042024/https://www.fda.gov/consumers/consumer-updates/dont-overuse-acetaminophen"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/treating-and-dealing-adhd",
+      "doc_id": "fda_general_2026_042",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260321223609",
+      "archive_url": "http://web.archive.org/web/20260321223609/https://www.fda.gov/consumers/consumer-updates/treating-and-dealing-adhd"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/how-properly-store-e-liquids-and-prevent-accidental-exposure-e-liquids-children",
+      "doc_id": "fda_general_2026_043",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260410171308",
+      "archive_url": "http://web.archive.org/web/20260410171308/https://www.fda.gov/consumers/consumer-updates/how-properly-store-e-liquids-and-prevent-accidental-exposure-e-liquids-children"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/accidental-exposures-fentanyl-patches-continue-be-deadly-children",
+      "doc_id": "fda_general_2026_044",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260306204642",
+      "archive_url": "http://web.archive.org/web/20260306204642/https://www.fda.gov/consumers/consumer-updates/accidental-exposures-fentanyl-patches-continue-be-deadly-children"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/safely-using-hand-sanitizer",
+      "doc_id": "fda_general_2026_045",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260322064416",
+      "archive_url": "http://web.archive.org/web/20260322064416/https://www.fda.gov/consumers/consumer-updates/safely-using-hand-sanitizer"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/should-your-child-participate-clinical-trial",
+      "doc_id": "fda_general_2026_046",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260513063621",
+      "archive_url": "http://web.archive.org/web/20260513063621/https://www.fda.gov/consumers/consumer-updates/should-your-child-participate-clinical-trial"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/healthy-breakfasts-kids-its-all-about-balance",
+      "doc_id": "fda_general_2026_047",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260318072337",
+      "archive_url": "http://web.archive.org/web/20260318072337/https://www.fda.gov/consumers/consumer-updates/healthy-breakfasts-kids-its-all-about-balance"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/infant-formula-safety-dos-and-donts",
+      "doc_id": "fda_general_2026_048",
+      "agency": "FDA",
+      "language": "en",
+      "archived": null
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/what-know-if-your-child-wants-contact-lenses",
+      "doc_id": "fda_general_2026_049",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260413204618",
+      "archive_url": "http://web.archive.org/web/20260413204618/https://www.fda.gov/consumers/consumer-updates/what-know-if-your-child-wants-contact-lenses"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/safely-soothing-teething-pain-infants-and-children",
+      "doc_id": "fda_general_2026_050",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260421082812",
+      "archive_url": "http://web.archive.org/web/20260421082812/https://www.fda.gov/consumers/consumer-updates/safely-soothing-teething-pain-infants-and-children"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/spilling-beans-how-much-caffeine-too-much",
+      "doc_id": "fda_general_2026_051",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260317233221",
+      "archive_url": "http://web.archive.org/web/20260317233221/https://www.fda.gov/consumers/consumer-updates/spilling-beans-how-much-caffeine-too-much"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/what-know-when-buying-or-using-breast-pump",
+      "doc_id": "fda_general_2026_052",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260421095217",
+      "archive_url": "http://web.archive.org/web/20260421095217/https://www.fda.gov/consumers/consumer-updates/what-know-when-buying-or-using-breast-pump"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/laser-toys-how-keep-kids-safe",
+      "doc_id": "fda_general_2026_053",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260227123949",
+      "archive_url": "http://web.archive.org/web/20260227123949/https://www.fda.gov/consumers/consumer-updates/laser-toys-how-keep-kids-safe"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/halloween-safety-tips-costumes-candy-and-colored-contact-lenses",
+      "doc_id": "fda_general_2026_054",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260321033130",
+      "archive_url": "http://web.archive.org/web/20260321033130/https://www.fda.gov/consumers/consumer-updates/halloween-safety-tips-costumes-candy-and-colored-contact-lenses"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/should-you-put-sunscreen-infants-not-usually",
+      "doc_id": "fda_general_2026_055",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260318131319",
+      "archive_url": "http://web.archive.org/web/20260318131319/https://www.fda.gov/consumers/consumer-updates/should-you-put-sunscreen-infants-not-usually"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/outsmarting-poison-ivy-and-other-poisonous-plants",
+      "doc_id": "fda_general_2026_056",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260318140429",
+      "archive_url": "http://web.archive.org/web/20260318140429/https://www.fda.gov/consumers/consumer-updates/outsmarting-poison-ivy-and-other-poisonous-plants"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/think-you-ink-tattoo-safety",
+      "doc_id": "fda_general_2026_057",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260320221632",
+      "archive_url": "http://web.archive.org/web/20260320221632/https://www.fda.gov/consumers/consumer-updates/think-you-ink-tattoo-safety"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/formaldehyde-hair-smoothing-products-what-you-should-know",
+      "doc_id": "fda_general_2026_058",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260217051803",
+      "archive_url": "http://web.archive.org/web/20260217051803/https://www.fda.gov/consumers/consumer-updates/formaldehyde-hair-smoothing-products-what-you-should-know"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/dermal-filler-dos-and-donts-wrinkles-lips-and-more",
+      "doc_id": "fda_general_2026_059",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260324035204",
+      "archive_url": "http://web.archive.org/web/20260324035204/https://www.fda.gov/consumers/consumer-updates/dermal-filler-dos-and-donts-wrinkles-lips-and-more"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/tattoo-removal-options-and-results",
+      "doc_id": "fda_general_2026_060",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260325100111",
+      "archive_url": "http://web.archive.org/web/20260325100111/https://www.fda.gov/consumers/consumer-updates/tattoo-removal-options-and-results"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/animal-welfare-testing-and-research-fda-regulated-products",
+      "doc_id": "fda_infectio_2026_001",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260307210432",
+      "archive_url": "http://web.archive.org/web/20260307210432/https://www.fda.gov/consumers/consumer-updates/animal-welfare-testing-and-research-fda-regulated-products"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/my-dog-or-cat-healthy-weight-important-questions-ask-vet",
+      "doc_id": "fda_infectio_2026_002",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260210120727",
+      "archive_url": "http://web.archive.org/web/20260210120727/https://www.fda.gov/consumers/consumer-updates/my-dog-or-cat-healthy-weight-important-questions-ask-vet"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/got-question-about-your-pets-health",
+      "doc_id": "fda_infectio_2026_003",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260308024130",
+      "archive_url": "http://web.archive.org/web/20260308024130/https://www.fda.gov/consumers/consumer-updates/got-question-about-your-pets-health"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/what-you-should-know-about-using-cannabis-including-cbd-when-pregnant-or-breastfeeding",
+      "doc_id": "fda_pregnanc_2026_001",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260318134736",
+      "archive_url": "http://web.archive.org/web/20260318134736/https://www.fda.gov/consumers/consumer-updates/what-you-should-know-about-using-cannabis-including-cbd-when-pregnant-or-breastfeeding"
+    },
+    {
+      "url": "https://www.fda.gov/vaccines-blood-biologics/vaccines",
+      "doc_id": "fda_vaccinat_2026_001",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260319130157",
+      "archive_url": "http://web.archive.org/web/20260319130157/https://www.fda.gov/vaccines-blood-biologics/vaccines"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/fdas-critical-role-ensuring-safe-and-effective-flu-vaccines",
+      "doc_id": "fda_vaccinat_2026_004",
+      "agency": "FDA",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260318095751",
+      "archive_url": "http://web.archive.org/web/20260318095751/https://www.fda.gov/consumers/consumer-updates/fdas-critical-role-ensuring-safe-and-effective-flu-vaccines"
+    },
+    {
+      "url": "https://www.fda.gov/vaccines-blood-biologics/vaccines/emergency-use-authorization-vaccines-explained",
+      "doc_id": "fda_vaccinat_2026_005",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260318015143",
+      "archive_url": "http://web.archive.org/web/20260318015143/https://www.fda.gov/vaccines-blood-biologics/vaccines/emergency-use-authorization-vaccines-explained"
+    },
+    {
+      "url": "https://www.fda.gov/vaccines-blood-biologics/vaccines/key-facts-about-vaccines-prevent-mpox-disease",
+      "doc_id": "fda_vaccinat_2026_011",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260319162553",
+      "archive_url": "http://web.archive.org/web/20260319162553/https://www.fda.gov/vaccines-blood-biologics/vaccines/key-facts-about-vaccines-prevent-mpox-disease"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/vaccination-best-protection-against-measles",
+      "doc_id": "fda_vaccinat_2026_012",
+      "agency": "FDA",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260318055220",
+      "archive_url": "http://web.archive.org/web/20260318055220/https://www.fda.gov/consumers/consumer-updates/vaccination-best-protection-against-measles"
+    },
+    {
+      "url": "https://www.fda.gov/consumers/consumer-updates/vaccines-protect-children-harmful-infectious-diseases",
+      "doc_id": "fda_vaccinat_2026_013",
+      "agency": "FDA",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260318124612",
+      "archive_url": "http://web.archive.org/web/20260318124612/https://www.fda.gov/consumers/consumer-updates/vaccines-protect-children-harmful-infectious-diseases"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/asthma.html",
+      "doc_id": "nih_chronic_2026_001",
+      "agency": "NIH",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260315205408",
+      "archive_url": "http://web.archive.org/web/20260315205408/https://medlineplus.gov/spanish/asthma.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/obesity.html",
+      "doc_id": "nih_chronic_2026_002",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260309063524",
+      "archive_url": "http://web.archive.org/web/20260309063524/https://medlineplus.gov/spanish/obesity.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/diabetesmedicines.html",
+      "doc_id": "nih_chronic_2026_003",
+      "agency": "NIH",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260218054138",
+      "archive_url": "http://web.archive.org/web/20260218054138/https://medlineplus.gov/spanish/diabetesmedicines.html"
+    },
+    {
+      "url": "https://medlineplus.gov/highbloodpressure.html",
+      "doc_id": "nih_chronic_2026_004",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260329034844",
+      "archive_url": "http://web.archive.org/web/20260329034844/https://medlineplus.gov/highbloodpressure.html"
+    },
+    {
+      "url": "https://medlineplus.gov/asthma.html",
+      "doc_id": "nih_chronic_2026_005",
+      "agency": "NIH",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260318160822",
+      "archive_url": "http://web.archive.org/web/20260318160822/https://medlineplus.gov/asthma.html"
+    },
+    {
+      "url": "https://medlineplus.gov/obesity.html",
+      "doc_id": "nih_chronic_2026_006",
+      "agency": "NIH",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260316042332",
+      "archive_url": "http://web.archive.org/web/20260316042332/https://medlineplus.gov/obesity.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/diabetes.html",
+      "doc_id": "nih_chronic_2026_007",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260307201337",
+      "archive_url": "http://web.archive.org/web/20260307201337/https://medlineplus.gov/spanish/diabetes.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/cancer.html",
+      "doc_id": "nih_chronic_2026_008",
+      "agency": "NIH",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260411081756",
+      "archive_url": "http://web.archive.org/web/20260411081756/https://medlineplus.gov/spanish/cancer.html"
+    },
+    {
+      "url": "https://medlineplus.gov/cough.html",
+      "doc_id": "nih_chronic_2026_009",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260404232534",
+      "archive_url": "http://web.archive.org/web/20260404232534/https://medlineplus.gov/cough.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/copingwithdisasters.html",
+      "doc_id": "nih_emergenc_2026_001",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260314054110",
+      "archive_url": "http://web.archive.org/web/20260314054110/https://medlineplus.gov/spanish/copingwithdisasters.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/emergencymedicalservices.html",
+      "doc_id": "nih_emergenc_2026_002",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260121132407",
+      "archive_url": "http://web.archive.org/web/20260121132407/https://medlineplus.gov/spanish/emergencymedicalservices.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/foodborneillness.html",
+      "doc_id": "nih_food_2026_001",
+      "agency": "NIH",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20251212012505",
+      "archive_url": "http://web.archive.org/web/20251212012505/https://medlineplus.gov/spanish/foodborneillness.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/foodsafety.html",
+      "doc_id": "nih_general_2026_001",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260211222122",
+      "archive_url": "http://web.archive.org/web/20260211222122/https://medlineplus.gov/spanish/foodsafety.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/heartdiseases.html",
+      "doc_id": "nih_general_2026_002",
+      "agency": "NIH",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260308215126",
+      "archive_url": "http://web.archive.org/web/20260308215126/https://medlineplus.gov/spanish/heartdiseases.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/exerciseandphysicalfitness.html",
+      "doc_id": "nih_general_2026_003",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260412131228",
+      "archive_url": "http://web.archive.org/web/20260412131228/https://medlineplus.gov/spanish/exerciseandphysicalfitness.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/eatingdisorders.html",
+      "doc_id": "nih_general_2026_004",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260310175541",
+      "archive_url": "http://web.archive.org/web/20260310175541/https://medlineplus.gov/spanish/eatingdisorders.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/",
+      "doc_id": "nih_general_2026_005",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260401164521",
+      "archive_url": "http://web.archive.org/web/20260401164521/https://medlineplus.gov/spanish/"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/healthtopics.html",
+      "doc_id": "nih_general_2026_006",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260319162826",
+      "archive_url": "http://web.archive.org/web/20260319162826/https://medlineplus.gov/spanish/healthtopics.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/druginformation.html",
+      "doc_id": "nih_general_2026_007",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260305100431",
+      "archive_url": "http://web.archive.org/web/20260305100431/https://medlineplus.gov/spanish/druginformation.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/genetica/",
+      "doc_id": "nih_general_2026_008",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260325124252",
+      "archive_url": "http://web.archive.org/web/20260325124252/https://medlineplus.gov/spanish/genetica/"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/pruebas-de-laboratorio/",
+      "doc_id": "nih_general_2026_009",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260331032741",
+      "archive_url": "http://web.archive.org/web/20260331032741/https://medlineplus.gov/spanish/pruebas-de-laboratorio/"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/encyclopedia.html",
+      "doc_id": "nih_general_2026_010",
+      "agency": "NIH",
+      "language": "es",
+      "archived": null
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/acercade/",
+      "doc_id": "nih_general_2026_011",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260331032741",
+      "archive_url": "http://web.archive.org/web/20260331032741/https://medlineplus.gov/spanish/acercade/"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/que-hay-de-nuevo/",
+      "doc_id": "nih_general_2026_012",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260312073121",
+      "archive_url": "http://web.archive.org/web/20260312073121/https://medlineplus.gov/spanish/que-hay-de-nuevo/"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/creutzfeldtjakobdisease.html",
+      "doc_id": "nih_general_2026_014",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260125123713",
+      "archive_url": "http://web.archive.org/web/20260125123713/https://medlineplus.gov/spanish/creutzfeldtjakobdisease.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/disclaimers.html",
+      "doc_id": "nih_general_2026_015",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260308142202",
+      "archive_url": "http://web.archive.org/web/20260308142202/https://medlineplus.gov/spanish/disclaimers.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/criteria.html",
+      "doc_id": "nih_general_2026_016",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20191008215353",
+      "archive_url": "http://web.archive.org/web/20191008215353/https://medlineplus.gov/spanish/criteria.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/rss.html",
+      "doc_id": "nih_general_2026_017",
+      "agency": "NIH",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260312074943",
+      "archive_url": "http://web.archive.org/web/20260312074943/https://medlineplus.gov/spanish/rss.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/acercade/uso/usodecontenido/",
+      "doc_id": "nih_general_2026_018",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260314052216",
+      "archive_url": "http://web.archive.org/web/20260314052216/https://medlineplus.gov/spanish/acercade/uso/usodecontenido/"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/accessibility.html",
+      "doc_id": "nih_general_2026_019",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260401164534",
+      "archive_url": "http://web.archive.org/web/20260401164534/https://medlineplus.gov/spanish/accessibility.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/plugins.html",
+      "doc_id": "nih_general_2026_021",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260305051202",
+      "archive_url": "http://web.archive.org/web/20260305051202/https://medlineplus.gov/spanish/plugins.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/congenitalheartdefects.html",
+      "doc_id": "nih_general_2026_022",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260414221907",
+      "archive_url": "http://web.archive.org/web/20260414221907/https://medlineplus.gov/spanish/congenitalheartdefects.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/coronaryarterydisease.html",
+      "doc_id": "nih_general_2026_023",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260510152211",
+      "archive_url": "http://web.archive.org/web/20260510152211/https://medlineplus.gov/spanish/coronaryarterydisease.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/angina.html",
+      "doc_id": "nih_general_2026_024",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260312141511",
+      "archive_url": "http://web.archive.org/web/20260312141511/https://medlineplus.gov/spanish/angina.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/heartattack.html",
+      "doc_id": "nih_general_2026_025",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260419012702",
+      "archive_url": "http://web.archive.org/web/20260419012702/https://medlineplus.gov/spanish/heartattack.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/heartfailure.html",
+      "doc_id": "nih_general_2026_026",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260123080558",
+      "archive_url": "http://web.archive.org/web/20260123080558/https://medlineplus.gov/spanish/heartfailure.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/arrhythmia.html",
+      "doc_id": "nih_general_2026_027",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260314052117",
+      "archive_url": "http://web.archive.org/web/20260314052117/https://medlineplus.gov/spanish/arrhythmia.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/heartvalvediseases.html",
+      "doc_id": "nih_general_2026_028",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260213220458",
+      "archive_url": "http://web.archive.org/web/20260213220458/https://medlineplus.gov/spanish/heartvalvediseases.html"
+    },
+    {
+      "url": "https://medlineplus.gov/antibiotics.html",
+      "doc_id": "nih_general_2026_031",
+      "agency": "NIH",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260320002225",
+      "archive_url": "http://web.archive.org/web/20260320002225/https://medlineplus.gov/antibiotics.html"
+    },
+    {
+      "url": "https://medlineplus.gov/immunesystemanddisorders.html",
+      "doc_id": "nih_general_2026_033",
+      "agency": "NIH",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260312190930",
+      "archive_url": "http://web.archive.org/web/20260312190930/https://medlineplus.gov/immunesystemanddisorders.html"
+    },
+    {
+      "url": "https://medlineplus.gov/bacterialinfections.html",
+      "doc_id": "nih_general_2026_034",
+      "agency": "NIH",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260327152244",
+      "archive_url": "http://web.archive.org/web/20260327152244/https://medlineplus.gov/bacterialinfections.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/hivaids.html",
+      "doc_id": "nih_infectio_2026_001",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20230207105219",
+      "archive_url": "http://web.archive.org/web/20230207105219/https://medlineplus.gov/spanish/hivaids.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/hepatitis.html",
+      "doc_id": "nih_infectio_2026_002",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260306171124",
+      "archive_url": "http://web.archive.org/web/20260306171124/https://medlineplus.gov/spanish/hepatitis.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/anxiety.html",
+      "doc_id": "nih_mental_2026_001",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260311012916",
+      "archive_url": "http://web.archive.org/web/20260311012916/https://medlineplus.gov/spanish/anxiety.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/alcoholusedisorderaud.html",
+      "doc_id": "nih_mental_2026_002",
+      "agency": "NIH",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260317125342",
+      "archive_url": "http://web.archive.org/web/20260317125342/https://medlineplus.gov/spanish/alcoholusedisorderaud.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/suicide.html",
+      "doc_id": "nih_mental_2026_003",
+      "agency": "NIH",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260514190129",
+      "archive_url": "http://web.archive.org/web/20260514190129/https://medlineplus.gov/spanish/suicide.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/mentalhealth.html",
+      "doc_id": "nih_mental_2026_004",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260314025911",
+      "archive_url": "http://web.archive.org/web/20260314025911/https://medlineplus.gov/spanish/mentalhealth.html"
+    },
+    {
+      "url": "https://medlineplus.gov/prenatalcare.html",
+      "doc_id": "nih_pregnanc_2026_001",
+      "agency": "NIH",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260316045745",
+      "archive_url": "http://web.archive.org/web/20260316045745/https://medlineplus.gov/prenatalcare.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/prenatalcare.html",
+      "doc_id": "nih_pregnanc_2026_002",
+      "agency": "NIH",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260302123340",
+      "archive_url": "http://web.archive.org/web/20260302123340/https://medlineplus.gov/spanish/prenatalcare.html"
+    },
+    {
+      "url": "https://medlineplus.gov/infectionsandpregnancy.html",
+      "doc_id": "nih_pregnanc_2026_003",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260306023126",
+      "archive_url": "http://web.archive.org/web/20260306023126/https://medlineplus.gov/infectionsandpregnancy.html"
+    },
+    {
+      "url": "https://medlineplus.gov/flu.html",
+      "doc_id": "nih_respirat_2026_001",
+      "agency": "NIH",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260312061740",
+      "archive_url": "http://web.archive.org/web/20260312061740/https://medlineplus.gov/flu.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/flu.html",
+      "doc_id": "nih_respirat_2026_003",
+      "agency": "NIH",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260204122736",
+      "archive_url": "http://web.archive.org/web/20260204122736/https://medlineplus.gov/spanish/flu.html"
+    },
+    {
+      "url": "https://medlineplus.gov/gastroenteritis.html",
+      "doc_id": "nih_respirat_2026_004",
+      "agency": "NIH",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260327030500",
+      "archive_url": "http://web.archive.org/web/20260327030500/https://medlineplus.gov/gastroenteritis.html"
+    },
+    {
+      "url": "https://medlineplus.gov/acutebronchitis.html",
+      "doc_id": "nih_respirat_2026_005",
+      "agency": "NIH",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260324075744",
+      "archive_url": "http://web.archive.org/web/20260324075744/https://medlineplus.gov/acutebronchitis.html"
+    },
+    {
+      "url": "https://medlineplus.gov/pneumonia.html",
+      "doc_id": "nih_respirat_2026_006",
+      "agency": "NIH",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260328140548",
+      "archive_url": "http://web.archive.org/web/20260328140548/https://medlineplus.gov/pneumonia.html"
+    },
+    {
+      "url": "https://medlineplus.gov/lab-tests/flu-influenza-test/",
+      "doc_id": "nih_respirat_2026_007",
+      "agency": "NIH",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260411083550",
+      "archive_url": "http://web.archive.org/web/20260411083550/https://medlineplus.gov/lab-tests/flu-influenza-test/"
+    },
+    {
+      "url": "https://medlineplus.gov/flushot.html",
+      "doc_id": "nih_respirat_2026_008",
+      "agency": "NIH",
+      "language": "en",
+      "archived": null
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/pruebas-de-laboratorio/prueba-de-la-gripe-influenza/",
+      "doc_id": "nih_respirat_2026_009",
+      "agency": "NIH",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260412034615",
+      "archive_url": "http://web.archive.org/web/20260412034615/https://medlineplus.gov/spanish/pruebas-de-laboratorio/prueba-de-la-gripe-influenza/"
+    },
+    {
+      "url": "https://medlineplus.gov/birdflu.html",
+      "doc_id": "nih_respirat_2026_010",
+      "agency": "NIH",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260307220151",
+      "archive_url": "http://web.archive.org/web/20260307220151/https://medlineplus.gov/birdflu.html"
+    },
+    {
+      "url": "https://medlineplus.gov/h1n1fluswineflu.html",
+      "doc_id": "nih_respirat_2026_011",
+      "agency": "NIH",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260306092524",
+      "archive_url": "http://web.archive.org/web/20260306092524/https://www.medlineplus.gov/h1n1fluswineflu.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/commoncold.html",
+      "doc_id": "nih_respirat_2026_013",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260419014737",
+      "archive_url": "http://web.archive.org/web/20260419014737/https://medlineplus.gov/spanish/commoncold.html"
+    },
+    {
+      "url": "https://medlineplus.gov/covid19coronavirusdisease2019.html",
+      "doc_id": "nih_respirat_2026_015",
+      "agency": "NIH",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260317151107",
+      "archive_url": "http://web.archive.org/web/20260317151107/https://medlineplus.gov/covid19coronavirusdisease2019.html"
+    },
+    {
+      "url": "https://medlineplus.gov/immunization.html",
+      "doc_id": "nih_vaccinat_2026_001",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20201114000938",
+      "archive_url": "http://web.archive.org/web/20201114000938/https://medlineplus.gov/immunization.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/immunization.html",
+      "doc_id": "nih_vaccinat_2026_002",
+      "agency": "NIH",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20201019110815",
+      "archive_url": "http://web.archive.org/web/20201019110815/https://medlineplus.gov/spanish/immunization.html"
+    },
+    {
+      "url": "https://medlineplus.gov/tetanusdiphtheriaandpertussisvaccines.html",
+      "doc_id": "nih_vaccinat_2026_004",
+      "agency": "NIH",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260304093540",
+      "archive_url": "http://web.archive.org/web/20260304093540/https://medlineplus.gov/tetanusdiphtheriaandpertussisvaccines.html"
+    },
+    {
+      "url": "https://medlineplus.gov/vaccinesafety.html",
+      "doc_id": "nih_vaccinat_2026_005",
+      "agency": "NIH",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260311195953",
+      "archive_url": "http://web.archive.org/web/20260311195953/https://medlineplus.gov/vaccinesafety.html"
+    },
+    {
+      "url": "https://medlineplus.gov/childhoodvaccines.html",
+      "doc_id": "nih_vaccinat_2026_006",
+      "agency": "NIH",
+      "language": "es",
+      "archived": true,
+      "archive_timestamp": "20260222094726",
+      "archive_url": "http://web.archive.org/web/20260222094726/https://medlineplus.gov/childhoodvaccines.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/vaccinesafety.html",
+      "doc_id": "nih_vaccinat_2026_007",
+      "agency": "NIH",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20260310055201",
+      "archive_url": "http://web.archive.org/web/20260310055201/https://medlineplus.gov/spanish/vaccinesafety.html"
+    },
+    {
+      "url": "https://medlineplus.gov/spanish/childhoodimmunization.html",
+      "doc_id": "nih_vaccinat_2026_009",
+      "agency": "NIH",
+      "language": "en",
+      "archived": true,
+      "archive_timestamp": "20201019164344",
+      "archive_url": "http://web.archive.org/web/20201019164344/https://medlineplus.gov/spanish/childhoodimmunization.html"
+    }
+  ]
+}
