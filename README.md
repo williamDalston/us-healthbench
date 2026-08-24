@@ -1,6 +1,14 @@
 # US-HealthBench
 
-**A Citation-Grounded, Multilingual Benchmark for Evaluating LLM Systems on Official U.S. Public-Health Guidance**
+**An evaluation framework for LLM systems on official U.S. public-health guidance —
+and a worked audit of the benchmark it produced.**
+
+The accompanying paper is *Schema Validity Is Not Semantic Validity: A Defect
+Taxonomy for Template-Generated Evaluation Benchmarks* ([paper/manuscript.md](paper/manuscript.md)).
+It reports four defect classes found in this artifact **after** its own validation
+passed 2,020/2,020, and publishes the frozen file, the generator, the passing
+validation report, and the audit together so the case can be checked rather than
+taken on description.
 
 US-HealthBench is an evaluation **framework** for whether LLM-based systems can safely retrieve, summarize, and ground public-facing health guidance from official U.S. sources (CDC, NIH, FDA, CMS) — in both English and Spanish.
 
@@ -81,6 +89,9 @@ python -m scripts.verify_freeze
 
 # Reproduce the data-quality audit before using the item set
 python -m scripts.audit_data_quality
+
+# Regenerate the paper's defect figures from the same code path
+python -m scripts.make_audit_figures
 ```
 
 Then load the 2,020 items, run your own system against them, and score its outputs:

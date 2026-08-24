@@ -8,8 +8,10 @@
 > See **[Data Quality Audit](../docs/DATA_QUALITY.md)**, reproducible via
 > `python -m scripts.audit_data_quality`.
 >
-> It is released for transparency alongside the methodology, and to let others
-> inspect the failure modes. **Do not publish scores against it.**
+> It is released for transparency alongside the methodology, and so others can
+> inspect the failure modes directly. The defect taxonomy and audit procedure are
+> written up in [paper/manuscript.md](../paper/manuscript.md).
+> **Do not publish scores against it.**
 
 ## Dataset Summary
 

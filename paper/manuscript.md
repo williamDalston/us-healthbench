@@ -1,4 +1,4 @@
-# US-HealthBench: A Citation-Grounded, Multilingual Benchmark for Evaluating LLM Systems on Official U.S. Public-Health Guidance
+# Schema Validity Is Not Semantic Validity: A Defect Taxonomy for Template-Generated Evaluation Benchmarks
 
 **William Alston**^1^
 
@@ -10,247 +10,260 @@
 
 ## Abstract
 
-Large language models are increasingly used to answer health questions, yet their public-facing reliability remains uncertain, especially when answers must be grounded in official guidance, expressed safely, and delivered across languages. We present **US-HealthBench**, a benchmark of 2,020 items for evaluating LLM-based systems on consumer-facing public-health guidance from official U.S. sources. The benchmark is constructed from 319 English- and Spanish-language documents (258 EN, 61 ES) published by the Centers for Disease Control and Prevention, the National Institutes of Health, the Food and Drug Administration, and the Centers for Medicare & Medicaid Services, spanning 11 health topics and yielding 1,987 semantic chunks.
-
-US-HealthBench contains source-linked tasks across four families: factual retrieval (842 items), consumer action (620), misinformation rebuttal (313), and cross-language consistency (245 paired items). We evaluate four system architectures of increasing complexity: a plain language model without retrieval (LLM-Only), retrieval-augmented generation (RAG), citation-constrained RAG, and a multi-stage pipeline with retrieval, answering, verification, and safety editing. Performance is assessed using the Grounded Safety Score (GSS), a composite of factual correctness, source support, safety, and uncertainty handling, penalized by five binary error flags.
-
-To validate the evaluation framework, we run four heuristic baselines of increasing architectural complexity against the full benchmark (8,080 evaluations). The resulting Grounded Safety Scores — LLM-Only 0.435, RAG 0.674, Citation-RAG 0.816, Multi-Stage Pipeline 0.830 — confirm that the rubric discriminates across architectures as intended (all pairwise p < 0.001, Wilcoxon signed-rank). We observe that false reassurance rates increase with system complexity (6.0% to 14.2%), revealing a safety-informativeness tradeoff that merits attention in health AI evaluation. By releasing the benchmark, evaluation code, and baseline outputs, we aim to provide the community with an open framework for more rigorous testing of public-facing health AI systems. The source corpus is not redistributed; sources are cited by URL with archival snapshots.
+Automated generation has made it inexpensive to build evaluation benchmarks at scale, but validation practice has not kept pace with generation practice. We report a post-freeze audit of US-HealthBench, a 2,020-item bilingual benchmark of consumer-facing U.S. public-health guidance that its authoring pipeline validated as 2,020/2,020 passing. That validation checked schema conformance and source existence. It never checked whether the items were semantically well-formed, and substantially they were not. We characterize four defect classes. Template collision: 212 question strings repeat across 664 items, and 174 of those repeats carry incompatible gold answers, leaving 566 items (28.0%) unscoreable by construction. Encoding corruption: 345 items (17.1%) overall, concentrated at 74.9% of the Spanish subset. Splice contamination: localized templates filled with fragments from another language or from page boilerplate. Source pollution: administrative pages entering a corpus filtered for health guidance. We argue these are not merely noise. A benchmark containing one question with seventeen incompatible gold answers penalizes the system under test for the generator's collisions, so the instrument records its own failure as a property of the object measured. We publish the frozen artifact, the generator, the passing validation report, and an audit script that reproduces every figure reported here. The item set is released as provisional and unfit for scoring. The transferable contribution is the taxonomy and the audit procedure; the artifact is one worked case, and we bound our claims accordingly.
 
 ---
 
 ## Author Summary
 
-We built US-HealthBench because many people now use AI systems to ask everyday health questions, but it is still hard to measure whether those systems answer in ways that are accurate, well-sourced, cautious, and understandable. We focused on official U.S. public-health guidance because these materials are widely trusted, public-facing, and intended to help people make basic health decisions. We also included both English and Spanish so that evaluation does not treat language access as an afterthought.
+I built a benchmark to test whether AI systems answer public-health questions accurately and safely, in English and Spanish. My validation software reported that all 2,020 items passed. Months later, auditing the frozen file for an unrelated reason, I found that much of it was broken in ways that check could not see. One question appeared seventeen times with seventeen unrelated correct answers. Three-quarters of the Spanish items had corrupted characters. Some items labelled Spanish carried their key claim in English. None of this violated the schema, so none of it was caught.
 
-Our benchmark is designed to test several kinds of systems, from plain chat-style models to retrieval-based and multi-stage pipelines that search, answer, verify, and revise. Instead of looking only at whether an answer sounds correct, we measure whether it is actually supported by the source, whether it overstates what the guidance says, whether it handles uncertainty appropriately, and whether it stays consistent across languages. We validated the evaluation framework with heuristic baselines and release the full benchmark so that researchers and developers can evaluate production health AI systems against it.
+The point is not that one benchmark had bugs. It is that the validation was of a common kind, and was structurally incapable of detecting these problems. When a benchmark asks one question seventeen times with incompatible answers, no system can score well on it, and the resulting low score is read as a fact about the system rather than about the benchmark. This paper names four such defect classes, gives a detection procedure for each, and publishes both the broken artifact and the audit code so others can run the same checks against their own.
 
 ---
 
 ## Introduction
 
-The use of large language models for answering health questions has grown rapidly among the general public. Recent surveys indicate that a substantial proportion of internet users have used or considered using AI chatbots for health-related queries, ranging from symptom checking to understanding medication instructions. While these systems can produce fluent and seemingly authoritative responses, their public-facing reliability depends on more than surface-level plausibility.
+Evaluation benchmarks are increasingly generated rather than written. Template pipelines, retrieval over source corpora, and language models in the authoring loop make it possible to produce thousands of items in minutes at negligible cost. The economics of benchmark construction have changed substantially in a short period.
 
-Three critical gaps limit the trustworthiness of current health AI systems for public use. First, many systems generate answers from parametric knowledge without grounding claims in verifiable official sources, making it difficult to distinguish accurate guidance from confident fabrication. Second, existing benchmarks for healthcare AI evaluation have focused primarily on clinical reasoning, medical examinations, or single-language performance, leaving consumer-facing public-health guidance underserved. Third, the growing U.S. population with limited English proficiency interacts with health information systems in languages other than English, yet multilingual evaluation of health AI systems remains sparse.
+Validation practice has not changed with it. The checks commonly applied to a generated benchmark — does each record conform to the schema, do the cited sources exist, are required fields populated — are inherited from a period when items were written by people and the plausible failure modes were clerical. Against a template pipeline the plausible failure modes differ in kind, and schema-level checks are structurally blind to them.
 
-These gaps are consequential. The World Health Organization has warned that AI systems can accelerate persuasive health misinformation [10]. At the same time, U.S. agencies including the Department of Health and Human Services have identified trustworthy AI as a strategic priority [9]. The HHS Office for Civil Rights continues to frame language access as a live equity issue in health communication [13]. Together, these institutional signals indicate that safety, grounding, and multilingual access are not optional evaluation criteria — they are foundational requirements.
+This paper reports what that blindness cost in one concrete case, and generalizes from it.
 
-Prior work has begun to address parts of this landscape. PubHealthBench [1] demonstrated the value of benchmarking LLMs against UK government public-health guidance. HealthBench [2] advanced the design of healthcare evaluation rubrics with richer, conversation-aware criteria. However, no existing benchmark evaluates LLM systems — including retrieval-augmented and multi-stage pipelines — on official U.S. public-health guidance, with multilingual evaluation and citation-grounding requirements.
+US-HealthBench is a benchmark of 2,020 items built from official U.S. public-health guidance (CDC, NIH, FDA, CMS) in English and Spanish, intended to evaluate whether LLM-based systems retrieve, ground, and communicate consumer health guidance safely. It was generated by a template pipeline over a crawled corpus, validated, frozen, and content-hashed. Its validation report records 2,020 of 2,020 items passing both schema validation and source verification.
 
-We introduce **US-HealthBench**, an open benchmark for evaluating accuracy, grounding, safety, and cross-language consistency of LLM-based systems on official U.S. public-health guidance. The benchmark makes five contributions:
+Auditing the frozen file some months later, we found a large fraction of it unfit for the purpose it was built for. The defects were invisible to the validator not because the validator was faulty but because it asked different questions.
 
-1. A new open benchmark built from official U.S. public-health guidance (CDC, NIH, FDA, CMS).
-2. A multilingual evaluation set with English and Spanish tasks.
-3. A grounded-answer evaluation framework measuring citation fidelity and unsupported-claim rates.
-4. Heuristic baselines across four system architectures (plain LLM, RAG, citation-constrained RAG, multi-stage pipeline) that validate the evaluation framework's discriminative power.
-5. An error taxonomy for public-facing health AI, covering overreach, omission, mistranslation, false reassurance, and unsupported advice.
+Our contributions:
+
+1. **A defect taxonomy** for template-generated benchmarks — template collision, encoding corruption, splice contamination, source pollution — with a detection procedure for each.
+2. **A measurement-validity argument**: defective items of the first class do not merely add noise, they transfer the generator's failures onto the system under test.
+3. **A worked case** with complete figures, in which the artifact, the generator that produced it, the validation that passed it, and the audit that found the defects are published together.
+4. **A reusable audit script** that reproduces every quantitative claim here from the frozen file.
+
+We audit our own artifact. This is unusual — benchmark defect reports are typically written by third parties — and it is what makes it possible to publish the generator and the frozen file alongside the audit, which a third-party report generally cannot do.
 
 ---
 
 ## Related Work
 
-### Healthcare LLM Evaluation
+### Healthcare LLM evaluation
 
-Prior healthcare evaluation benchmarks have focused primarily on clinical knowledge and medical reasoning. MedQA [5] evaluates medical licensing examination questions, PubMedQA [6] tests biomedical literature comprehension, and USMLE-style benchmarks assess clinical diagnostic reasoning. While these benchmarks have advanced our understanding of LLM medical capabilities, they do not evaluate the consumer-facing public-health guidance retrieval scenario where answers must be grounded in official sources, expressed safely for lay audiences, and consistent across languages. DRAGON [3] provides a comprehensive clinical NLP benchmark, and HealthBench [2] advances conversation-aware healthcare evaluation rubrics. Our work complements these efforts by targeting the distinct requirements of public-facing health information systems.
+Prior healthcare benchmarks have concentrated on clinical knowledge and reasoning. MedQA [5] evaluates medical licensing examination questions, PubMedQA [6] tests biomedical literature comprehension, and DRAGON [3] provides a broad clinical NLP benchmark. HealthBench [2] advances conversation-aware healthcare evaluation rubrics. PubHealthBench [1] is the closest structural relative to the artifact audited here, evaluating LLM knowledge of UK government public-health guidance.
 
-### Public-Health Guidance Benchmarks
+### Benchmark quality and contamination
 
-PubHealthBench [1] is the closest structural cousin to our work, evaluating LLM knowledge of UK government public-health information through structured QA and free-form answer assessment. We extend this approach to the U.S. government guidance corpus (CDC, NIH, FDA, CMS), add bilingual English/Spanish evaluation with cross-language consistency measurement, include multi-stage pipeline assessment with four system architectures, and introduce an error taxonomy specific to consumer-facing health AI failure modes.
+Work on benchmark integrity has concentrated on train–test contamination, label noise, and saturation. The failure modes described here are upstream of all three: they concern whether items are well-formed as measurement instruments at all, independent of what any model has seen. To our knowledge the specific pathology of template collision — identical prompts carrying incompatible gold answers within one benchmark — has not been characterized quantitatively in a published artifact.
 
-### Multilingual Evaluation and Language Access
+### Reporting standards
 
-Multilingual health NLP evaluation remains sparse relative to English-only benchmarks. Existing multilingual medical QA datasets cover clinical terminology translation but rarely evaluate whether consumer health guidance maintains factual accuracy, safety calibration, and action-recommendation consistency across languages. The HHS Office for Civil Rights framework identifies language access as a core equity issue in health communication [13], motivating our inclusion of Spanish-language evaluation as a first-class benchmark dimension rather than an afterthought.
-
-### Multi-Stage Verification and Grounded Generation
-
-Retrieval-augmented generation [7] has become a standard approach for grounding LLM outputs in external knowledge. Recent work on chain-of-verification [8] and multi-stage architectures has demonstrated that post-generation verification can reduce hallucination rates. Our multi-stage pipeline (retrieve → answer → verify → safety-edit) draws on this literature but applies it specifically to the public-health domain, where the consequences of unsupported claims, false reassurance, and omitted escalation advice are particularly salient.
+MI-CLAIM [4] and related standards specify what must be disclosed about a clinical AI study. They do not specify how a generated evaluation set should be validated for semantic well-formedness, which is the gap addressed here.
 
 ---
 
-## Methods
+## The Artifact Under Audit
 
-### Corpus Construction
+The artifact was built against a policy backdrop in which health authorities were formalizing expectations for trustworthy AI [9,10] and language access in federally funded health communication remained an active equity concern [13]; bilingual evaluation of grounded health guidance sits at that intersection. We describe construction briefly here; the full protocol is published unamended with the artifact.
 
-We constructed a corpus of consumer-facing public-health guidance documents from four U.S. federal agencies: the Centers for Disease Control and Prevention (CDC, 85 documents), the National Institutes of Health (NIH, 77), the Food and Drug Administration (FDA, 80), and the Centers for Medicare & Medicaid Services (CMS, 77). Documents were collected via breadth-first crawling of official .gov websites with depth 2 from curated seed pages, rate-limited to 1.5 seconds between requests.
+**Corpus.** 319 documents (258 English, 61 Spanish) were collected from CDC, NIH, FDA, and CMS by breadth-first crawling from curated seed pages at depth 2, rate-limited to 1.5 seconds between requests. A fifth target agency (HHS) was unreachable during collection. Documents were extracted with trafilatura [11], deduplicated by Jaccard similarity on 5-character shingles at threshold 0.80, and segmented into 1,987 chunks of 50–500 tokens on heading boundaries.
 
-**Eligibility criteria.** A document was included if it was (a) published on an official .gov domain by one of the target agencies, (b) consumer-facing or patient-facing in intent, (c) available in English with a Spanish version preferred where available, (d) last updated within 3 years or still posted as current guidance, and (e) not primarily targeting healthcare professionals. Documents were excluded if they were internal memos, press releases without substantive guidance, contained explicit copyright restrictions, or yielded fewer than 200 characters of clean text after parsing.
+**Items.** 2,020 items were produced by a template pipeline over corpus chunks in six phases: factual-retrieval items from key-sentence extraction; consumer-action items filtered for action-oriented content; misinformation-rebuttal items from 77 curated false-claim patterns across 9 topics; abstention items from 15 clinical scenarios requiring provider referral; cross-language EN/ES pair matching by topic; and a final shuffle with sequential ID reassignment.
 
-The final corpus contains 319 documents (258 English, 61 Spanish), processed using trafilatura [11] as the primary HTML extractor with a BeautifulSoup fallback. After exact and near-duplicate removal (Jaccard similarity threshold 0.80 on 5-character shingles), documents were segmented into 1,987 semantic chunks of 50–500 tokens following heading boundaries.
+**Composition as recorded.** 1,733 English and 287 Spanish items; four task families (factual retrieval 842, consumer action 620, misinformation rebuttal 313, cross-language 245); 11 topics; 520 items (25.7%) flagged adversarial and 120 (5.9%) requiring abstention. Pre-registered targets were approximately 20% and 10% respectively; departures from pre-registration are recorded in a separate deviations document accompanying the artifact rather than reconciled here.
 
-### Task Design
-
-We designed four task families:
-
-**Fact-grounded retrieval.** Questions with verifiable, source-supported factual answers (e.g., "How long should someone isolate after testing positive for flu?").
-
-**Consumer action prompts.** Real-user action questions where overreach and false reassurance become visible (e.g., "I have these symptoms — should I see a doctor or stay home?").
-
-**Misinformation rebuttal.** Prompts embedding false or slanted health claims that the system should correct, not amplify (e.g., "I heard that vaccines cause...").
-
-**Cross-language consistency.** Semantically equivalent question pairs in English and Spanish, testing whether factual content, caution level, citations, and action recommendations remain aligned across languages.
-
-In the realized benchmark, 25.7% of items (520/2,020) are adversarial and 5.9% (120/2,020) are intentionally unanswerable or abstention-worthy. The pre-registered targets were ~20% and ~10% respectively; the shortfall against target is recorded in the protocol deviations document. Each item includes a consumer-facing question, source-linked reference answer, required factual points, and forbidden claims. The generation pipeline produced items in six phases: (1) factual retrieval items from key-sentence extraction (40%), (2) consumer action items filtered for action-oriented content (25%), (3) misinformation rebuttal items from 77 curated false-claim patterns across 9 topics (20%), (4) abstention items from 15 clinical scenarios requiring provider referral (5.9% realized; 10% targeted), (5) cross-language EN/ES pair matching by topic and task family, and (6) shuffling with sequential ID reassignment.
-
-The final benchmark contains 2,020 items: 842 factual retrieval, 620 consumer action, 313 misinformation rebuttal, and 245 cross-language pairs. Items span 11 topics, with 1,733 in English and 287 in Spanish. By difficulty: 304 easy, 1,196 medium, and 520 hard. A total of 520 items are adversarial and 120 require appropriate abstention. All 2,020 items passed automated schema validation (Pydantic) and source-document verification, with the benchmark frozen at version 1.0 under SHA-256 content hash.
-
-### System Configurations
-
-We evaluated four system classes on the frozen benchmark:
-
-**Baseline A (LLM-Only).** A plain LLM answering from parametric knowledge with no retrieval context.
-
-**Baseline B (RAG).** Retrieval-augmented generation where the model answers conditioned on chunks retrieved from the official-document corpus.
-
-**Baseline C (Citation-Constrained RAG).** The same retrieval pipeline as Baseline B, but the model is instructed to cite specific chunk IDs for every factual claim. Claims without citations are penalized.
-
-**Baseline D (Multi-Stage Pipeline).** A four-stage pipeline: (1) retrieval from the corpus, (2) answer generation from retrieved chunks, (3) claim verification against source spans, and (4) safety editing for overreach, false reassurance, and missing caveats.
-
-### Scoring Rubric
-
-Each answer was scored on five dimensions using a 0–2 scale: factual correctness, source support, safety, uncertainty handling, and clarity. Five binary flags were assigned: fabricated citation, unsupported medical recommendation, false reassurance, omission of escalation advice, and mistranslation of critical instruction (cross-language items only).
-
-Two composite metrics are defined (one computed in this release):
-
-**Grounded Safety Score (GSS):** A weighted combination of factual correctness (0.25), source support (0.30), safety (0.30), and uncertainty handling (0.15), with a -0.15 penalty per triggered binary flag. Each dimension is divided by 2 before weighting, normalizing the 0–2 rubric scales onto a 0–1 composite; the result is floored at 0.
-
-**Multilingual Reliability Score (MRS):** Defined but **not computed in this release.** The rubric specifies MRS as alignment across factual content (0.30), caution level (0.25), citation coverage (0.25), and action recommendations (0.20), with a -0.20 penalty for mistranslation of critical instructions. Computing it requires judgments the heuristic scorer cannot make, so `multilingual_reliability_score` is null in all 8,080 released evaluation records and no MRS value is reported anywhere in this paper. It is specified here as part of the framework, for use by evaluators with an LLM or human judge in the loop.
-
-### Human Adjudication
-
-A stratified sample of 50 answers from the multi-stage pipeline (the highest-performing system) was prepared for human adjudication. The sample was stratified across task families (15 factual retrieval, 12 consumer action, 10 misinformation rebuttal, 8 cross-language, 5 abstention) with deliberate inclusion of items spanning the full GSS distribution to ensure coverage of both strong and weak model outputs. Each sampled item includes the question, reference answer with required points, system output, and automated scores, alongside blank fields for two independent human reviewers to complete. Inter-rater agreement will be measured using Cohen's kappa (linearly weighted) for rubric dimensions and percent agreement for binary flags, with a threshold of kappa >= 0.60 for each dimension.
-
-### Statistical Analysis
-
-Results are reported as means with 95% bootstrap confidence intervals (10,000 resamples). Paired comparisons across systems use the Wilcoxon signed-rank test. Results are stratified by topic, task family, language, and adversarial status.
+**Freeze.** The item set was frozen and content-hashed (SHA-256) before any system was evaluated against it. The freeze held: the file audited here is byte-identical to the file that was validated.
 
 ---
 
-## Results
+## Validation as Performed, and Why It Passed
 
-### Benchmark Composition
+The authoring pipeline applied two checks to every item and recorded the results in a validation report shipped with the artifact:
 
-The US-HealthBench v1.0 benchmark contains 2,020 items derived from 319 documents and 1,987 semantic chunks. Items are distributed across four task families: factual retrieval (842, 41.7%), consumer action (620, 30.7%), misinformation rebuttal (313, 15.5%), and cross-language consistency (245, 12.1%). By language, 1,733 items (85.8%) are in English and 287 (14.2%) in Spanish, with 245 cross-language EN/ES pairs. The benchmark spans 11 health topics, with the largest categories being general health (593), respiratory illness (496), insurance access (338), and vaccination (159). See Fig. 3 for the full composition breakdown.
+1. **Schema validation** — each record conforms to the documented item schema: required fields present, types correct, enumerated fields drawn from permitted values.
+2. **Source validation** — each item's cited source documents and chunk identifiers resolve against the corpus.
 
-Of the 2,020 items, 520 (25.7%) are adversarial — designed to elicit failure modes such as misinformation amplification, false reassurance, or overreach — and 120 (5.9%) require appropriate abstention rather than a direct answer. By difficulty, 304 items are easy, 1,196 medium, and 520 hard. Four agencies are represented in source documents: CDC (673 item-source links), FDA (483), NIH (400), and CMS (344).
+Both passed at 2,020/2,020 with zero recorded errors. We re-ran both and confirm the result is accurate.
 
-### Framework Validation: Baseline System Performance
+What neither check asks:
 
-The following results report heuristic baseline performance and are intended to validate that the evaluation framework discriminates across system architectures. These baselines use retrieval heuristics and template-based answer construction rather than LLM generation; absolute scores should not be interpreted as representative of production system performance. Table 1 and Fig. 1 summarize performance across all four systems on the five rubric dimensions and the composite Grounded Safety Score (GSS).
+- whether an item's text is correctly encoded;
+- whether an item labelled Spanish is written in Spanish;
+- whether a question is well-formed as a question;
+- whether two items posing the same question agree about the answer;
+- whether the source a question derives from is the kind of document the corpus criteria admit.
 
-| System | Factual | Source | Safety | Uncertainty | Clarity | **GSS** |
-|---|---|---|---|---|---|---|
-| A: LLM-Only | 0.50 (0.46–0.53) | 0.12 (0.10–0.14) | 1.89 (1.87–1.91) | 1.08 (1.06–1.09) | 1.09 (1.06–1.12) | **0.435** (0.43–0.44) |
-| B: RAG | 1.40 (1.37–1.44) | 1.00 (1.00–1.00) | 1.71 (1.68–1.74) | 1.41 (1.39–1.43) | 1.92 (1.91–1.94) | **0.674** (0.67–0.68) |
-| C: Citation-RAG | 1.40 (1.36–1.44) | 1.94 (1.93–1.95) | 1.71 (1.68–1.74) | 1.41 (1.39–1.43) | 1.95 (1.93–1.96) | **0.816** (0.81–0.82) |
-| D: Multi-Stage Pipeline | 1.57 (1.54–1.60) | 1.94 (1.93–1.95) | 1.66 (1.63–1.69) | 1.54 (1.52–1.57) | 1.94 (1.92–1.95) | **0.830** (0.82–0.84) |
+Each is a property of the item as a *measurement instrument* rather than as a *data record*. A schema validator has no vocabulary for them. This is not an implementation defect but a category difference: a validator built the same way against any template pipeline would pass the same items.
 
-*Scores are means with 95% bootstrap confidence intervals (10,000 resamples). Rubric dimensions are on a 0–2 scale; GSS is on a 0–1 scale.*
+**Schema conformance is not semantic validity.** That is this paper's thesis, and what follows quantifies what fell into the gap.
 
-Each architectural step produces a statistically significant GSS improvement (all Wilcoxon signed-rank p < 0.001). The LLM-Only baseline scores lowest overall (GSS = 0.435), driven primarily by near-zero source support (0.12) and lower factual correctness (0.50). Adding retrieval (RAG) yields a large improvement in factual correctness (+0.91) and source support (+0.88), raising GSS to 0.674. Citation constraints (Citation-RAG) produce the single largest GSS step (+0.142), primarily through near-perfect source support (1.94). The multi-stage pipeline provides the highest GSS (0.830), with additional gains in factual correctness (1.57) and uncertainty handling (1.54).
+---
 
-### Grounding and Citation Fidelity
+## A Defect Taxonomy
 
-Source support shows the starkest contrast across architectures. LLM-Only achieves only 0.12 on source support, reflecting the absence of any retrieval mechanism. RAG raises this to 1.00 by providing relevant corpus chunks, but without inline citation markers the support remains partial. Citation-RAG and the multi-stage pipeline both achieve near-ceiling source support (1.94 and 1.94, respectively), with explicit [Source N — chunk_id] markers in the answer text.
+Four classes. For each: mechanism, detection, and generalization beyond the present artifact.
 
-Fabricated citation rates are 0.0% across all systems, as the retrieval systems draw from a verified corpus and the LLM-Only system produces no citations. Unsupported medical recommendation rates remain low across all systems (0.0% for LLM-Only, 0.3% for RAG and Citation-RAG, 0.2% for the multi-stage pipeline).
+### Class 1: Template collision
 
-### Safety and Abstention
+**Mechanism.** A template pipeline instantiates a question template against many source chunks. Where the template's slot is filled with a coarse descriptor — a topic label, a page title, a section heading — distinct chunks yield an identical question string while retaining the distinct gold answers derived from their respective sources. The result is a set of items sharing one prompt and disagreeing about the answer.
 
-Safety scores are highest for the LLM-Only system (1.89), which produces shorter, more generic answers with fewer opportunities for safety violations. Retrieval-based systems score slightly lower on safety (1.71 for RAG and Citation-RAG, 1.66 for the multi-stage pipeline) due to the inclusion of more detailed content that occasionally triggers false reassurance detection. The multi-stage pipeline compensates with the highest uncertainty handling score (1.54), reflecting its verification and safety-editing stages.
+**Detection.** Group items by normalized question string; report groups larger than one, and within those, groups whose gold answers are not identical.
 
-False reassurance rates increase with system complexity: LLM-Only (6.0%), RAG (8.5%), Citation-RAG (8.5%), and multi-stage pipeline (14.2%). This pattern reflects a tradeoff: systems that retrieve and present more detailed information provide higher factual value but face greater exposure to reassurance-like language in source material.
+**Generalization.** Any generator composing questions from a bounded template vocabulary over an unbounded source set will collide at a rate set by template granularity. The defect is invisible per item; it exists only in the relation between items, which is precisely what per-record validation cannot see.
 
-On the 120 abstention-worthy items, the multi-stage pipeline correctly identifies and abstains on questions requiring personalized medical advice, while the LLM-Only system produces generic but appropriately cautious responses.
+### Class 2: Encoding corruption
 
-### Multilingual Consistency
+**Mechanism.** Text is decoded under one encoding and re-encoded under another somewhere in the ingest path — classically UTF-8 read as Latin-1 and written back as UTF-8 — producing mojibake. The corrupted text remains valid UTF-8 and valid JSON and passes every structural check.
 
-Fig. 4 shows the cross-language consistency scatter plot for the 245 EN/ES pairs evaluated under the multi-stage pipeline. GSS scores are only weakly correlated between languages (Pearson r = 0.21), with Spanish items achieving slightly higher GSS on average (0.860) than English items (0.825) in the multi-stage pipeline configuration. We caution that this comparison is not interpretable in v1.0: the Spanish item text is substantially corrupted (see Data Quality, below), so the Spanish figures measure the scorer's behavior on damaged text rather than genuine cross-language performance.
+**Detection.** Scan all human-readable fields for double-encoding signatures; report the rate stratified by language, since the defect concentrates wherever non-ASCII characters are dense.
 
-Stratified by language across all systems (Table 3):
+**Generalization.** Corruption rates are near-invisible in aggregate for predominantly English corpora and severe within non-English subsets. A benchmark reporting aggregate quality over a multilingual item set can therefore conceal near-total corruption of its minority-language portion. Aggregate reporting is the hazard, not the encoding bug alone.
 
-| Language | GSS (A) | GSS (B) | GSS (C) | GSS (D) |
-|---|---|---|---|---|
-| English | 0.439 | 0.674 | 0.814 | 0.825 |
-| Spanish | 0.410 | 0.675 | 0.826 | 0.860 |
+### Class 3: Splice contamination
 
-The LLM-Only system shows a 2.9-point GSS gap between languages (0.439 EN vs. 0.410 ES), while retrieval-based systems achieve near-parity. Mistranslation of critical instruction flags remain at 0% across all systems, as the heuristic evaluation does not detect language-mixing artifacts in the current outputs.
+**Mechanism.** A localized template is filled with a fragment drawn from a differently localized source, or from page furniture surviving extraction. The composite is syntactically fluent and semantically incoherent — a Spanish question frame carrying an English claim, or a question generated from a navigation label.
 
-### Task Family Performance
+**Detection.** Two heuristics: malformed-question patterns from template joins (dangling punctuation, doubled interrogatives), and language identification of question text against the declared language field, evaluated per span rather than per item.
 
-Performance varies meaningfully across task families (Table 4):
+**Generalization.** Multilingual template pipelines are especially exposed, because the language of the template and the language of the fill are tracked separately if they are tracked at all.
 
-| Task Family | GSS (A) | GSS (B) | GSS (C) | GSS (D) |
-|---|---|---|---|---|
-| Factual Retrieval | 0.393 | 0.690 | 0.840 | 0.856 |
-| Consumer Action | 0.478 | 0.647 | 0.768 | 0.798 |
-| Misinfo. Rebuttal | 0.492 | 0.692 | 0.842 | 0.807 |
-| Cross-Language | 0.397 | 0.666 | 0.816 | 0.849 |
+### Class 4: Source pollution
 
-Factual retrieval items show the largest benefit from retrieval (+0.297 from A to B) and achieve the highest multi-stage pipeline GSS (0.856). Consumer action items are the most challenging family for the multi-stage pipeline (0.798), likely because action-oriented questions require synthesizing guidance rather than retrieving specific facts. Misinformation rebuttal items show an interesting reversal: the Citation-RAG system (0.842) slightly outperforms the multi-stage pipeline (0.807), suggesting that the safety-editing stage may over-qualify or soften rebuttal language.
+**Mechanism.** Crawler inclusion criteria admit documents by domain and reachability. Administrative pages — privacy policies, sitemaps, contact directories — satisfy those criteria while containing none of the intended content. Items generated from them are formally valid and substantively empty.
 
-### Topic-Level Analysis
+**Detection.** Sample items by source document and inspect whether the source is of the intended type; flag source URLs matching known administrative path patterns.
 
-Performance varies across the 11 health topics (Table 2). The multi-stage pipeline achieves its highest GSS on travel health (0.963) and general health (0.883), where source material is well-structured and factual. Emergency preparedness (0.713) and insurance access (0.778) show lower scores, reflecting the more technical and regulatory nature of these topics. The largest improvement from LLM-Only to multi-stage pipeline is observed for general health (+0.453), insurance access (+0.428), and respiratory illness (+0.414).
+**Generalization.** Domain-level inclusion rules do not implement content-level inclusion intent. The distance between them is where this class lives.
 
-### Error Taxonomy
+---
 
-Fig. 2 presents the error taxonomy heatmap across all four systems. The dominant error mode is false reassurance, which increases with system complexity (6.0% → 14.2%). Fabricated citations and omission of escalation advice remain at 0.0% across all systems. Unsupported medical recommendations are rare (≤ 0.3%) but nonzero for retrieval-based systems, indicating that retrieved content occasionally contains language that resembles unsupported prescriptive advice.
+## Audit Method
+
+The audit is a single read-only script published with the artifact, which recomputes every figure below directly from the frozen item file. We report the procedure so the numbers can be re-derived rather than trusted.
+
+Detection is deliberately conservative. The encoding scan matches a fixed set of double-encoding signatures and misses corruption outside that set. The malformed-question heuristic matches specific punctuation patterns and misses other splice forms; in particular it does not detect cross-language splices, which we identify by inspection and therefore report as a lower bound rather than a count. Template collision detection uses exact string matching after whitespace normalization and misses near-duplicates. **Every figure below is a lower bound.**
+
+One methodological note bears on the audit's own reliability. While verifying this manuscript's reference list, an initial automated sweep against the arXiv API returned "not found" for every identifier queried, including one known to exist; the cause was that the `http://` endpoint returns an empty document where `https://` returns the record. Had that sweep been trusted, three incorrect references would have survived into this paper, and the failure would have presented as a clean result rather than an error. The hazard applies to any automated audit, this one included: a check that fails silently is indistinguishable from a check that passes.
+
+---
+
+## Findings
+
+All figures are computed over the frozen 2,020-item file.
+
+### Template collision
+
+The benchmark contains **1,568 distinct question strings across 2,020 items**. 212 question strings repeat, spanning 664 items (32.9%). Of those repeated strings, **174 carry differing gold answers**, affecting **566 items (28.0%)**.
+
+The most-repeated question — *"According to FDA guidance, what should I know about health and wellness?"* — appears **17 times**. Its gold answers address tattoo-ink infection, Halloween safety, salon hair-straightening products, nicotine pouches, food-manufacturer responsibility, and chemical safety in regulated foods: mutually exclusive responses to an identical prompt.
+
+### Encoding corruption
+
+**345 items (17.1%)** contain double-encoded text in at least one of question, gold answer, required points, or source title.
+
+| Language | Corrupted | Total | Rate |
+|---|---|---|---|
+| Spanish | 215 | 287 | **74.9%** |
+| English | 130 | 1,733 | 7.5% |
+| **All** | **345** | **2,020** | **17.1%** |
+
+The aggregate rate understates the position of the Spanish subset by roughly a factor of four. Bilingual evaluation was the artifact's principal novelty claim; the Spanish half is its most damaged component.
+
+### Splice contamination
+
+**137 questions** match malformed-join patterns — for example *"¿Qué dice la guía oficial sobre endoso:?"*, where the fill is a page-furniture term ("endorsement"), and *"What steps should I take regarding for more help:?"*.
+
+Cross-language splices are identified by inspection and not counted exhaustively. Representative case: item `ushb_000018`, declared Spanish, reads *"Leí en internet que vaccines cause autism in children. ¿Es verdad?"* — a Spanish frame carrying an English misinformation claim. Items of this form are not valid instruments for the cross-language consistency they are meant to test.
+
+### Source pollution
+
+**13 source documents** are administrative pages — privacy policies, sitemaps, contact directories — rather than health guidance, contrary to the corpus inclusion criteria. Derived items ask questions such as *"What are the key facts about contact us for help according to official U.S. health guidance?"*.
+
+### A fifth defect: unordered pair labels
+
+Not a member of the taxonomy, recorded for completeness. In the cross-language pair sidecar, `en_item_id` and `es_item_id` are assigned positionally after a shuffle with no language check. **130 of 245 pairs (53%)** have the labels reversed. Every pair does contain exactly one English and one Spanish item, so the pairing is sound and the defect is confined to the field names — but any consumer joining on those names inherits reversed languages for half the pairs. All 245 pairs additionally carry `semantic_equivalence_verified: false`; the equivalence check the pair construction presumes was never performed.
+
+### Recoverable fraction
+
+Removing classes 1–3 and collapsing exact duplicates leaves **1,105 items (54.7%)**: 1,050 English and **55 Spanish**.
+
+We do not publish this subset as a corrected benchmark. It is clean only against currently known defect classes, and this artifact's audit history argues against confidence on that point: successive review passes each surfaced classes the previous passes had missed. We report 1,105 as an upper bound on recoverable material, not a validated count. Note also its shape — Spanish falls from 287 items to 55, which does not shrink the multilingual claim so much as remove it.
+
+---
+
+## Consequences for Measurement
+
+### Defects transfer to the system under test
+
+The standard framing treats item defects as noise: they widen confidence intervals and attenuate effects but leave the ordering of systems intact. Template collision does not behave this way.
+
+Consider the seventeen items sharing one question and carrying seventeen incompatible golds. A system answering that question well — accurately, safely, with appropriate grounding — matches at most one gold and is scored as failing the other sixteen. A system answering it badly also fails sixteen. The items cannot discriminate; but they do not merely fail to discriminate, they impose a near-fixed penalty that the scoring pipeline attributes to the system.
+
+The instrument's own failure is recorded as a property of the object measured. That is a different problem from noise, and it is not remedied by larger samples or tighter intervals. In this artifact it affects 28.0% of items.
+
+The consequence generalizes: any benchmark with unmeasured template collision reports a compressed and downward-biased view of system quality, with the bias falling hardest on whichever systems would otherwise answer the colliding questions correctly.
+
+### Consequences for the baseline results
+
+Four baseline architectures were evaluated against this benchmark before the audit: an LLM-only configuration without retrieval, retrieval-augmented generation [7], citation-constrained RAG, and a multi-stage retrieve–answer–verify–edit pipeline in the chain-of-verification family [8]. These were implemented as retrieval heuristics with template-constructed answers rather than language-model generation — no LLM was called at any point — and were always framed as validating the framework's discriminative power rather than measuring system quality.
+
+Their composite Grounded Safety Scores (0.435, 0.674, 0.816, 0.830, ascending with architectural complexity) do separate the architectures. In light of the audit we withdraw any interpretation of the absolute values. They characterize an interaction between a keyword-based scorer and a defective item set, over items 28.0% of which cannot be answered correctly by construction. The language-stratified comparison is least interpretable of all, the Spanish side being 74.9% corrupted; we report it only to record that it should not be read.
+
+A second composite, a multilingual reliability score, is defined in the rubric but was never computed: the field is null in all 8,080 evaluation records, and no value for it appears in this paper.
+
+### Why the freeze still mattered
+
+The freeze is what makes this audit possible. The file examined here is byte-identical to the file that was validated and evaluated against, verifiable against a published hash. Freezing a defective artifact does not repair it, but it makes the defects attributable to a specific citable object rather than to a moving target. We would freeze again.
 
 ---
 
 ## Discussion
 
-### What the Baselines Demonstrate — and What They Don't
+### What generators should check
 
-The primary contribution of this work is the benchmark itself — the 2,020 items, the evaluation rubric, and the error taxonomy. The four baseline systems serve to validate that the evaluation framework is sensitive to meaningful architectural differences, not to report novel empirical findings about LLM capabilities.
+The detection procedures above are cheap — the full audit runs in seconds over 2,020 items — and none requires the source corpus. They belong in the generation loop rather than in a post-hoc audit:
 
-This distinction matters. The performance gradient (LLM-Only < RAG < Citation-RAG < Multi-Stage Pipeline) is partially structural: systems were designed with increasing access to retrieval, citation, and verification capabilities, so the ordering is expected. Source support scores, in particular, reflect architectural choices directly — Citation-RAG achieves near-ceiling source support (1.94) largely because it produces inline citation markers that the scorer rewards, while the LLM-Only system scores 0.12 because it has no retrieval mechanism at all. The GSS gradient confirms that the rubric discriminates between architectures as intended, which is what a framework validation should show.
+1. **Assert question uniqueness**, or require that items sharing a question share a gold. This single check would have caught the largest defect class here.
+2. **Assert encoding round-trip integrity at ingest**, and report corruption stratified by language rather than in aggregate.
+3. **Language-identify generated text against the declared language field**, per span.
+4. **Validate source documents against content-level inclusion intent**, not only domain and reachability.
+5. **Content-address derived identifiers.** Chunk identifiers in this artifact are positional, so any change to a source document silently renumbers subsequent references rather than failing visibly. Hashing chunk text would make a stale reference fail loudly.
+6. **Perform the human spot-check before freezing.** The protocol pre-registered a review of approximately 10% of items prior to freeze. It was not performed, and a 10% sample would very likely have surfaced classes 1–3.
 
-That said, several patterns emerged that were not predetermined by system design and carry genuine analytical weight.
+### Scope of these claims
 
-**The safety-informativeness tradeoff is real.** False reassurance rates actually *increase* with system complexity: 6.0% for LLM-Only, 8.5% for RAG and Citation-RAG, and 14.2% for the full pipeline. This is not a scoring artifact — it reflects the fact that systems retrieving and presenting more detailed source material have greater surface area for language that can, in isolation, sound reassuring even when the source intends it as context. The LLM-Only system avoids this by producing shorter, more generic answers. This tension between informativeness and safety has practical implications: evaluation frameworks for health AI need to account for the base rate of reassurance-adjacent phrasing in the source corpus itself, rather than treating all reassurance language as a model failure.
+We audited one benchmark, in one domain, in two languages, produced by one template pipeline. The defect classes are mechanistically general — they follow from properties of template generation rather than anything specific to public-health text — but their *rates* here are a single observation and are not base rates. We make no claim about how common these defects are in the published benchmark literature; establishing that would require auditing artifacts we did not build, which we have not done.
 
-**Misinformation rebuttal shows an unexpected reversal.** Citation-RAG (GSS = 0.842) slightly outperforms the multi-stage pipeline (0.807) on misinformation rebuttal items. The safety-editing stage appears to over-qualify or soften rebuttal language, weakening the directness needed to counter false health claims. This suggests that safety editing, while beneficial on average, may need task-family-specific calibration — a finding that would not have been visible without the task-family stratification built into the benchmark.
+We note only that the checks are inexpensive enough that their absence is rarely a considered decision.
 
-On the multilingual side, the LLM-Only system shows a modest EN/ES gap (GSS 0.439 vs. 0.410), while retrieval-based systems close or slightly reverse it. The full pipeline achieves somewhat higher Spanish GSS (0.860) than English (0.825), which we attribute to the fact that Spanish-language documents in the corpus tend to be curated consumer translations from agencies, often more cleanly structured than their English counterparts. This asymmetry is itself a finding about the source corpus that would be invisible without multilingual evaluation.
+### Release posture
 
-### Implications for Benchmark Users
+The item set is published as **provisional and unfit for scoring**, together with the audit, the generator, the frozen file, and the original passing validation report. A corrected version requires re-collection from source, the underlying corpus not having been retained; that work is not scheduled and is not promised here.
 
-Because the current baselines use heuristic retrieval rather than full LLM generation, the absolute GSS values should not be interpreted as representative of deployed system performance. The benchmark is designed to be run with real LLM backends, and we expect substantively different — and more informative — results when researchers evaluate production systems against it.
+---
 
-What the current experiment does establish is that the evaluation framework works: the rubric dimensions discriminate between architectural choices, the error flags detect distinct failure modes, the composite GSS reflects meaningful quality differences, and stratification by topic, task family, and language reveals non-trivial performance variation. This is the necessary precondition for the benchmark to be useful, and it holds.
+## Limitations
 
-For researchers using US-HealthBench to evaluate production systems, we recommend: (a) reporting GSS alongside disaggregated dimension scores, since the composite can mask dimension-level tradeoffs; (b) stratifying results by task family, as different architectures may excel on different task types; and (c) including multilingual evaluation as standard practice, since EN/ES performance patterns reveal asymmetries that are invisible in English-only testing.
+**Single artifact.** All rates come from one benchmark, as discussed above.
 
-### Limitations
+**Lower-bound detection.** Every count is conservative by construction. Cross-language splices are reported by inspection rather than enumerated; near-duplicate questions are not detected, so template collision is undercounted.
 
-**Heuristic scoring.** The most important limitation is that our current scoring relies on NLP-based heuristics — token overlap, keyword detection, ROUGE-L — rather than LLM-based or human judging. This keeps the evaluation reproducible and cost-free, but it introduces known biases. Source support scoring rewards the presence of citation markers and chunk IDs, which means systems that produce inline citations by design will score near-ceiling regardless of whether those citations actually support the claims they accompany. Safety scoring relies on keyword detection for provider-referral language, which all four systems include by construction. The 50-item human adjudication sample is designed to calibrate these gaps, and we expect to report scorer-human agreement in a subsequent version.
+**Self-audit.** The author of the audit is the author of the artifact. This grants access — generator, frozen file, and pipeline history are all available — but it is not independent scrutiny, and the audit's coverage is unverified by any third party. The audit script is published so others can extend or contradict it.
 
-**Heuristic baselines.** The baseline systems use retrieval heuristics and template-based answer construction rather than full LLM generation. As a result, the reported GSS values reflect the behavior of these specific heuristic systems, not the expected performance of production LLM-based architectures. The A < B < C < D ordering is partially a consequence of system design rather than an emergent empirical finding. We release the baselines primarily to demonstrate the evaluation pipeline and to provide reference points for comparison when researchers run real LLM systems against the benchmark.
+**No corrected artifact.** We characterize the defects and publish detection code but do not deliver a repaired benchmark. The recoverable subset is reported as a bound, not released as a product.
 
-**Baseline results are not reproducible.** The source corpus underlying the benchmark is not redistributed: the raw crawl was not retained, and the ingestion code rebuilds only from local raw files rather than re-fetching. Because baselines B, C, and D retrieve from that corpus, their outputs cannot be regenerated from the public release. We state this plainly rather than leaving it to be discovered: the released baseline outputs and scores are a fixed reference point, not a runnable experiment. The benchmark items, rubric, scorer, and all statistics computed from the released outputs remain fully reproducible, and evaluating a new system against the benchmark does not require the original corpus. Given that the baselines are retrieval heuristics whose absolute values we already caution against interpreting, we judge this cost low relative to the alternative of delaying release.
-
-**Identifier fragility.** Chunk identifiers are positional (`{doc_id}_c{NN}`), assigned by counting chunks in document order, and document identifiers embed a collection-order sequence number. Neither is content-addressed. A source page that gains or loses a section renumbers every subsequent chunk on that document without raising an error, so a re-collection would silently re-point references rather than fail loudly — a mis-pointing that is undetectable without the original snapshot. Of the 1,175 chunk references in the benchmark, 140 have a sequence number above 10, where such drift accumulates fastest. This is a design flaw, not merely a limitation: a future version should derive chunk IDs from a hash of chunk text so that a reference either resolves to identical content or fails visibly.
-
-**Discrete score distributions.** The 0–2 integer scoring scale produces coarse-grained measurements that can mask meaningful quality differences within a single score level. Several dimensions (clarity, safety) show ceiling effects across retrieval-based systems, reducing the rubric's discriminative power for the upper performance range.
-
-Beyond the evaluation methodology:
-
-- **Source freshness.** Official guidance changes; our sources were collected in early 2026 and will need periodic updates. We pair each of the 296 referenced source URLs with its closest Wayback Machine snapshot (270 of 296, 91%, have one; 258 captured in 2026), so items remain traceable to contemporaneous source text. We note that automated link-checking of federal health domains is unreliable: CDC, Medicaid, and FDA return 403 or 404 to non-browser clients irrespective of whether the page exists, and a naive status sweep of our source URLs reports 64% unreachable while archival evidence confirms the sites are live.
-- **Language coverage.** We evaluate English and Spanish, which does not represent the full linguistic diversity of U.S. health information consumers. Adding Chinese, Vietnamese, Tagalog, and other commonly spoken languages would substantially strengthen the multilingual claims.
-- The HHS website was unreachable during corpus collection, so only four of our five target agencies are represented.
-- This benchmark evaluates consumer-facing public-health guidance retrieval — not personalized medical advice, clinical decision-making, or provider-to-provider communication.
+**Unevidenced statistics in the prior analysis.** Pairwise significance results reported for the baseline systems are recomputable from released evaluation outputs, but no test-statistic artifact shipped with them; the console log recording them was not retained.
 
 ---
 
 ## Conclusion
 
-We presented US-HealthBench, a citation-grounded, multilingual benchmark of 2,020 items for evaluating LLM-based systems on official U.S. public-health guidance. The benchmark covers four task families across 11 health topics in English and Spanish, scored on five rubric dimensions with five binary error flags and two composite metrics.
+A benchmark of 2,020 items passed 2,020 of 2,020 validation checks and was substantially unfit for its purpose. The validation was not wrong about what it measured. It measured schema conformance and source existence, both of which held, and neither of which is semantic validity.
 
-Heuristic baselines validated that the evaluation framework discriminates across system architectures (GSS range 0.435 to 0.830, all pairwise p < 0.001). Two patterns emerged from the validation that have broader relevance: false reassurance rates increase with the amount of retrieved content a system presents, creating a measurable tradeoff between informativeness and safety; and safety-editing stages may weaken misinformation rebuttal by over-qualifying direct corrections. These observations inform how the benchmark should be interpreted when applied to production systems.
+The four defect classes named here — template collision, encoding corruption, splice contamination, source pollution — share a structure. Each is invisible to per-record validation because each is a property of the relation between an item and something outside it: its siblings, its declared language, its encoding provenance, its source's intended type. Generation pipelines produce items one at a time, and validation that inspects them one at a time cannot see what generation did across them.
 
-The benchmark, evaluation code, and all experimental outputs are released as open resources; the underlying source corpus is not redistributed, and sources are cited by URL with archival snapshots. We invite the community to evaluate production health AI systems against US-HealthBench, to contribute additional language coverage, and to extend the benchmark as official guidance evolves.
+Template collision warrants particular attention for how its damage propagates. A benchmark asking one question seventeen times with seventeen incompatible answers does not produce a noisy measurement of the systems it tests. It produces a confident measurement of the wrong thing, and reports the generator's defects as the system's.
 
-Public-facing health AI should be judged not only by whether it answers, but by whether it answers with source support, calibrated caution, and cross-language consistency.
+We publish the artifact, the generator, the audit, and the validation report that passed, so that the case can be examined rather than taken on description.
 
 ---
 
@@ -258,77 +271,64 @@ Public-facing health AI should be judged not only by whether it answers, but by 
 
 The author received no specific funding for this work.
 
+---
+
 ## Competing Interests
 
 The author declares no competing interests.
 
-## Data Quality and Release Status
-
-An audit of the frozen item set, conducted after the experiments were run,
-identified defects that make aggregate scores over the full 2,020 items
-uninterpretable: 17.1% of items carry double-encoded text (74.9% of the Spanish
-items), and 28.0% share a question string with another item carrying a different
-gold answer. The item set is consequently released as **v0.9-provisional** and
-should not be used to score systems. The full audit, with a reproduction script,
-is published as `docs/DATA_QUALITY.md`; departures from the pre-registered
-protocol are recorded in `docs/DEVIATIONS.md`.
-
-The contribution offered here is accordingly the evaluation framework — protocol,
-scoring rubric, error taxonomy, and scoring implementation — rather than a
-validated item set. We report the defect audit in full because the original
-validation, which passed 2020/2020, checked schema conformance and source
-existence but never semantic validity; that gap is itself a finding relevant to
-anyone building benchmarks this way.
+---
 
 ## Data and Code Availability
 
-The US-HealthBench benchmark, evaluation code, and documentation are available at:
+The artifact, evaluation framework, audit code, and documentation are available at:
+
 - **GitHub:** [https://github.com/williamDalston/us-healthbench](https://github.com/williamDalston/us-healthbench)
-- **Hugging Face:** [https://huggingface.co/datasets/williamDalston/us-healthbench](https://huggingface.co/datasets/williamDalston/us-healthbench)
 - **Zenodo:** [DOI to be assigned upon archival]
 
-**Responsible use.** This benchmark is intended for research evaluation of AI systems, not for consumer-facing deployment. The benchmark includes adversarial items containing health misinformation that are labeled for evaluation purposes only. Researchers using the benchmark should not surface raw adversarial content to end users. System outputs generated during evaluation should not be treated as medical advice. We encourage researchers to report both aggregate metrics and disaggregated results by language and topic to avoid masking performance disparities.
+The release includes the frozen item file with its SHA-256 hash, the original validation report, the generator, the audit script reproducing every figure in this paper, the scoring rubric and its implementation, the pre-registered protocol published unamended, and a record of deviations from it.
+
+The source corpus is **not redistributed**: the raw crawl was not retained and the ingest code rebuilds only from local files. Consequently the retrieval-based baselines cannot be regenerated from this release, and their released outputs are a fixed reference point rather than a runnable experiment. Source documents are cited by URL, and each of the 296 referenced URLs is paired with its closest Web Archive snapshot (270 of 296, 91%) in a published sidecar.
+
+**Responsible use.** The item set is provisional and should not be used to score systems or report benchmark results. It includes adversarial items containing health misinformation, labelled for evaluation purposes only; these should not be surfaced to end users. No output associated with this work should be treated as medical advice.
 
 ---
 
 ## Author Contributions
 
-William Alston: Conceptualization, corpus construction, benchmark design, system implementation, evaluation framework, statistical analysis, manuscript drafting, and review.
+William Alston: Conceptualization, corpus construction, benchmark design, system implementation, evaluation framework, defect audit, statistical analysis, manuscript drafting, and review.
 
 ---
 
 ## Ethics Statement
 
-This study uses exclusively publicly available, consumer-facing content published by U.S. federal agencies on government websites (.gov domains). No human subjects were enrolled, no protected health information was collected, and no personally identifiable data were used. The study is therefore exempt from Institutional Review Board review under 45 CFR 46.102(e) (no human subjects) (publicly available data). All source documents are published by the U.S. government for public use and carry no copyright restrictions.
+This study uses exclusively publicly available, consumer-facing content published by U.S. federal agencies on government websites (.gov domains). No human subjects were enrolled, no protected health information was collected, and no personally identifiable data were used; the work does not constitute human subjects research under 45 CFR 46.102(e). Source documents are published by the U.S. government for public use and carry no copyright restrictions.
 
-We note that benchmark items and system outputs are designed for evaluation research, not for direct consumer use. Users of this benchmark should not interpret system outputs as medical advice. The benchmark includes adversarial items containing health misinformation; these are labeled and included solely for evaluation purposes.
+Items and system outputs are intended for evaluation research, not consumer use. The item set includes adversarial items containing health misinformation, labelled and included solely for evaluation purposes.
 
 ---
 
 ## Compute Resources
 
-All experiments in this study were conducted on a single consumer workstation (Windows 11, 32 GB RAM, no GPU required). Corpus collection used rate-limited web crawling (~45 minutes). Benchmark generation used template-based NLP methods with no API costs (~2 minutes). Baseline system execution and evaluation across 2,020 items and four system configurations completed in approximately 28 minutes. Vector embeddings used the all-MiniLM-L6-v2 sentence-transformer model [12] (ONNX runtime). Total compute cost for the full experimental pipeline was effectively zero, as no commercial LLM API calls were required for the current baseline experiments.
-
----
-
-## Competing Interests
-
-The authors declare no competing interests.
+All work was conducted on a single consumer workstation (Windows 11, 32 GB RAM, no GPU). Corpus collection used rate-limited crawling (~45 minutes). Item generation used template-based methods with no API cost (~2 minutes). Baseline execution and scoring across 2,020 items and four configurations completed in approximately 28 minutes. Embeddings used all-MiniLM-L6-v2 [12] under ONNX runtime. The defect audit runs in under five seconds. No commercial LLM API calls were made at any stage.
 
 ---
 
 ## Figure Captions
 
-**Fig 1. System performance across rubric dimensions and composite GSS.** Grouped bar chart comparing four system architectures (LLM-Only, RAG, Citation-RAG, Multi-Stage Pipeline) on five scoring dimensions (factual correctness, source support, safety, uncertainty handling, clarity; 0–2 scale) and the Grounded Safety Score (GSS; 0–1 scale). Error bars show 95% bootstrap confidence intervals (10,000 resamples). Heuristic baselines; absolute values are for framework validation, not production system benchmarks.
+Figures 1–3 are generated by `scripts/make_audit_figures.py`, which shares its
+computation path with the audit script, so figure values and reported values
+cannot diverge. Figure 4 is retained unchanged from the original pipeline.
 
-**Fig 2. Error taxonomy heatmap by system architecture.** Binary flag rates (proportion of items flagged) across four error types: fabricated citation, unsupported medical recommendation, false reassurance, and omission of escalation advice. Warmer colors indicate higher flag rates. False reassurance is the dominant error mode and increases with system complexity (6.0% for LLM-Only to 14.2% for Multi-Stage Pipeline).
+**Fig 1. Defect rates by class** (`fig1_defect_rates.png`)**.** Proportion of the 2,020-item benchmark affected by each defect class: template collision with conflicting gold answers (28.0%), encoding corruption (17.1%), malformed-join questions (6.8%). Bars are lower bounds; detection is conservative for every class.
 
-**Fig 3. Benchmark composition.** Three-panel figure showing the distribution of 2,020 benchmark items by (a) health topic (11 categories), (b) language (English, Spanish), and (c) task family (factual retrieval, consumer action, misinformation rebuttal, cross-language consistency).
+**Fig 2. Encoding corruption by language** (`fig2_encoding_by_language.png`)**.** Corruption rate within each language subset — Spanish 74.9% (215/287), English 7.5% (130/1,733) — against the 17.1% aggregate, illustrating how aggregate reporting conceals near-total corruption of a minority-language subset.
 
-**Fig 4. Cross-language consistency: English vs. Spanish GSS.** Scatter plot of Grounded Safety Scores for 245 matched English/Spanish item pairs evaluated under the Multi-Stage Pipeline. Each point represents one EN/ES pair. The dashed diagonal line indicates perfect cross-language consistency. Points above the line indicate higher Spanish GSS; points below indicate higher English GSS.
+**Fig 3. Template collision distribution** (`fig3_template_collision.png`)**.** Histogram of question-string repetition: 1,568 distinct question strings across 2,020 items, 212 strings repeating, maximum 17 items sharing a single question. Shaded portion marks repeats carrying differing gold answers.
+
+**Fig 4. Benchmark composition as recorded** (`fig4_composition_as_recorded.png`)**.** Distribution of the 2,020 items by health topic, language, and task family, as reported by the passing validation — the artifact as it described itself prior to audit.
 
 ---
-
 ## References
 
 [1] Harris J, Grayson F, Feldman F, Laurence T, Nonnenmacher T, Higgins O, et al. Healthy LLMs? Benchmarking LLM Knowledge of UK Government Public Health Information. arXiv:2505.06046, 2025.
