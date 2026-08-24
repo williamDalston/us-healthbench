@@ -1,94 +1,117 @@
-"""Human adjudication of under-identification flags (defect class 5).
+"""Adjudicate under-identification (defect class 5). A chore, not a research task.
 
-Shows one item at a time: the question, then its gold. You decide whether the
-question identifies that gold. Keys:
+=============================================================================
+DECISION RULE -- fixed 2026-08-24, BEFORE any item was seen. Do not amend it
+mid-pass; an amended criterion turns labels into impressions.
 
-    j = KEEP    the question does pick out this gold
-    f = REJECT  under-identified; no system could derive this gold
-    u = UNSURE
-    b = back one item
-    q = save and quit
+    Could a competent reader, given ONLY the question, have produced this gold?
 
-Resumable: decisions are appended to adjudication_labels.jsonl and already
-labelled items are skipped. Nothing is deleted; this only produces labels.
+    y = yes, the question identifies this gold  -> KEEP
+    n = no                                      -> REJECT (under-identified)
 
-The queue is the relational detector's ranking (worst first). Because that
-detector is triage-grade, these labels are also the ground truth used to report
-its precision honestly -- see scripts/detector_precision.py.
+Nothing about whether the gold is good, accurate, well-written, or useful.
+Nothing about whether the question is well-phrased. One question only.
+=============================================================================
 
-Usage:  python -m scripts.adjudicate [--n 300]
+Binary. No notes field, no going back, no skipping -- each of those multiplies
+the time per item and none improves the label.
+
+The queue is blinded: flagged and control items are shuffled together and the
+stratum is never displayed. Sessions are capped (default 100) because the last
+items of a long sitting are systematically sloppier than the first. Three
+sittings, not one.
+
+Resumable. Append-only. Nothing is deleted and no item is ever modified.
+
+Usage:
+  python -m scripts.adjudicate                # next 100
+  python -m scripts.adjudicate --n 50
+  python -m scripts.adjudicate --reliability  # re-label 30 already done, blind
 """
 
 from __future__ import annotations
 
 import argparse
 import json
+import random
 from datetime import datetime, timezone
 from pathlib import Path
 
 ITEMS = Path("data/benchmark_v1_1_candidate/clean_items.jsonl")
-FLAGS = Path("data/benchmark_v1_1_candidate/underspecified.json")
+QUEUE = Path("data/benchmark_v1_1_candidate/adjudication_queue.json")
 LABELS = Path("data/benchmark_v1_1_candidate/adjudication_labels.jsonl")
+RELABELS = Path("data/benchmark_v1_1_candidate/adjudication_relabels.jsonl")
 
-KEYS = {"j": "keep", "f": "reject", "u": "unsure"}
+
+def load_labels(path: Path) -> dict:
+    if not path.exists():
+        return {}
+    return {json.loads(l)["item_id"]: json.loads(l)["label"]
+            for l in open(path, encoding="utf-8")}
+
+
+def ask(it: dict, n: int, total: int) -> str | None:
+    ra = it.get("reference_answer") or {}
+    print("\n" + "=" * 72)
+    print(f"[{n}/{total}]")
+    print(f"\nQUESTION\n  {it['question']}")
+    print(f"\nGOLD\n  {(ra.get('answer_text') or '')[:400]}")
+    for p in (ra.get("required_points") or [])[:3]:
+        print(f"  - {p[:110]}")
+    print("\n  Could a reader given ONLY the question have produced this gold?")
+    while True:
+        try:
+            k = input("  y / n  > ").strip().lower()
+        except (EOFError, KeyboardInterrupt):
+            return None
+        if k in ("y", "n"):
+            return "keep" if k == "y" else "reject"
+        if k == "q":
+            return None
 
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--n", type=int, default=300)
+    ap.add_argument("--n", type=int, default=100)
+    ap.add_argument("--reliability", action="store_true",
+                    help="re-label 30 already-adjudicated items, prior calls hidden")
     args = ap.parse_args()
 
     items = {json.loads(l)["item_id"]: json.loads(l) for l in open(ITEMS, encoding="utf-8")}
-    queue = json.loads(FLAGS.read_text())["flagged_ids"][: args.n]
+    queue = json.loads(QUEUE.read_text())["queue"]
+    done = load_labels(LABELS)
 
-    done = {}
-    if LABELS.exists():
-        for l in open(LABELS, encoding="utf-8"):
-            r = json.loads(l)
-            done[r["item_id"]] = r["label"]
+    if args.reliability:
+        already = load_labels(RELABELS)
+        pool = [q for q in queue if q["item_id"] in done and q["item_id"] not in already]
+        random.Random(99).shuffle(pool)
+        todo, out_path = pool[:30], RELABELS
+        print(f"RELIABILITY PASS: {len(todo)} items, your earlier calls are not shown.")
+    else:
+        todo = [q for q in queue if q["item_id"] not in done][: args.n]
+        out_path = LABELS
+        print(f"queue {len(queue)}  labelled {len(done)}  this sitting {len(todo)}")
 
-    todo = [i for i in queue if i not in done]
-    print(f"queue {len(queue)}  labelled {len(done)}  remaining {len(todo)}\n")
+    if not todo:
+        print("nothing to do")
+        return
 
-    out = open(LABELS, "a", encoding="utf-8")
-    idx = 0
-    while idx < len(todo):
-        iid = todo[idx]
-        it = items[iid]
-        ra = it.get("reference_answer") or {}
-        print("=" * 72)
-        print(f"[{idx + 1}/{len(todo)}]  {iid}   topic={it.get('topic')}  family={it.get('task_family')}")
-        print(f"\nQUESTION:\n  {it['question']}")
-        print(f"\nGOLD:\n  {(ra.get('answer_text') or '')[:420]}")
-        pts = ra.get("required_points") or []
-        if pts:
-            print("\nREQUIRED POINTS:")
-            for p in pts[:3]:
-                print(f"  - {p[:110]}")
-        print("\n  j=keep   f=reject(under-identified)   u=unsure   b=back   q=quit")
-        try:
-            k = input("  > ").strip().lower()
-        except (EOFError, KeyboardInterrupt):
-            break
-        if k == "q":
-            break
-        if k == "b":
-            idx = max(0, idx - 1)
-            continue
-        if k not in KEYS:
-            continue
-        out.write(json.dumps({
-            "item_id": iid,
-            "label": KEYS[k],
-            "rank": queue.index(iid),
-            "timestamp": datetime.now(timezone.utc).isoformat(),
-        }) + "\n")
-        out.flush()
-        idx += 1
+    with open(out_path, "a", encoding="utf-8") as f:
+        for n, q in enumerate(todo, 1):
+            label = ask(items[q["item_id"]], n, len(todo))
+            if label is None:
+                print("\nstopped early - progress saved")
+                break
+            f.write(json.dumps({
+                "item_id": q["item_id"],
+                "label": label,
+                "timestamp": datetime.now(timezone.utc).isoformat(),
+            }) + "\n")
+            f.flush()
 
-    out.close()
-    n = sum(1 for _ in open(LABELS, encoding="utf-8")) if LABELS.exists() else 0
-    print(f"\nsaved. {n} labels total in {LABELS}")
+    total = len(load_labels(out_path))
+    print(f"\nsaved. {total} labels in {out_path.name}")
+    print("next: python -m scripts.adjudication_stats")
 
 
 if __name__ == "__main__":

@@ -89,3 +89,32 @@ no artifact evidencing it.
 Draft — freeze after Day 1 review" — simultaneously frozen and awaiting freeze,
 while `release_checklist.md` marks it finalized. The document is published as-is
 rather than tidied, for the same reason as everything else in this file.
+
+
+## Adjudication (opened 2026-08-24)
+
+The pre-registration required human adjudication; v1.0 shipped without it. It is
+now underway, targeting defect class 5 (under-identification), which is the one
+class no automated detector has caught reliably.
+
+Design fixed before any item was seen:
+
+* **Criterion**, recorded in `scripts/adjudicate.py`: *could a competent reader,
+  given only the question, have produced this gold?* Binary. Nothing about
+  answer quality or phrasing.
+* **Blinded queue** of 350 items (`adjudication_queue.json`, seed 20260824):
+  300 from the top of the detector ranking plus 50 controls drawn from items the
+  detector did not flag, shuffled together, stratum never displayed. The
+  controls are what make recall and prevalence estimable rather than just
+  precision.
+* **Binary interface, no notes, no back.** Deliberate: each addition multiplies
+  time per item without improving the label.
+* **Sittings capped at 100 items** to limit fatigue effects on label quality.
+* **Reliability pass**: 30 items re-labelled later with earlier calls hidden,
+  reported as raw agreement and Cohen's kappa. A paper claiming automation
+  cannot do this task needs evidence that a human does it consistently.
+
+Reporting (`scripts/adjudication_stats.py`): precision on the flagged stratum,
+defect rate among controls, a stratified prevalence estimate over all 1,058
+items with a Wilson interval, and self-agreement. Precision on a ranked prefix
+is not prevalence, and the two are reported separately.

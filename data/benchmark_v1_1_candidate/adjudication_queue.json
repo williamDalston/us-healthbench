@@ -1,0 +1,1760 @@
+{
+  "seed": 20260824,
+  "n_flagged_total": 525,
+  "n_unflagged_total": 533,
+  "sampled_flagged": 300,
+  "sampled_control": 50,
+  "queue": [
+    {
+      "item_id": "ushb_000190",
+      "stratum": "flagged",
+      "rank": 299
+    },
+    {
+      "item_id": "ushb_000123",
+      "stratum": "flagged",
+      "rank": 164
+    },
+    {
+      "item_id": "ushb_000679",
+      "stratum": "flagged",
+      "rank": 58
+    },
+    {
+      "item_id": "ushb_001711",
+      "stratum": "flagged",
+      "rank": 133
+    },
+    {
+      "item_id": "ushb_000529",
+      "stratum": "flagged",
+      "rank": 45
+    },
+    {
+      "item_id": "ushb_001882",
+      "stratum": "flagged",
+      "rank": 202
+    },
+    {
+      "item_id": "ushb_000313",
+      "stratum": "flagged",
+      "rank": 29
+    },
+    {
+      "item_id": "ushb_000108",
+      "stratum": "flagged",
+      "rank": 9
+    },
+    {
+      "item_id": "ushb_001597",
+      "stratum": "flagged",
+      "rank": 127
+    },
+    {
+      "item_id": "ushb_000530",
+      "stratum": "flagged",
+      "rank": 46
+    },
+    {
+      "item_id": "ushb_000644",
+      "stratum": "flagged",
+      "rank": 53
+    },
+    {
+      "item_id": "ushb_000098",
+      "stratum": "flagged",
+      "rank": 8
+    },
+    {
+      "item_id": "ushb_001313",
+      "stratum": "flagged",
+      "rank": 101
+    },
+    {
+      "item_id": "ushb_000945",
+      "stratum": "flagged",
+      "rank": 81
+    },
+    {
+      "item_id": "ushb_001660",
+      "stratum": "flagged",
+      "rank": 217
+    },
+    {
+      "item_id": "ushb_001680",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_000734",
+      "stratum": "flagged",
+      "rank": 234
+    },
+    {
+      "item_id": "ushb_000323",
+      "stratum": "flagged",
+      "rank": 30
+    },
+    {
+      "item_id": "ushb_001997",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_001892",
+      "stratum": "flagged",
+      "rank": 145
+    },
+    {
+      "item_id": "ushb_001696",
+      "stratum": "flagged",
+      "rank": 132
+    },
+    {
+      "item_id": "ushb_000541",
+      "stratum": "flagged",
+      "rank": 47
+    },
+    {
+      "item_id": "ushb_001211",
+      "stratum": "flagged",
+      "rank": 96
+    },
+    {
+      "item_id": "ushb_000524",
+      "stratum": "flagged",
+      "rank": 44
+    },
+    {
+      "item_id": "ushb_001563",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_001877",
+      "stratum": "flagged",
+      "rank": 252
+    },
+    {
+      "item_id": "ushb_000611",
+      "stratum": "flagged",
+      "rank": 280
+    },
+    {
+      "item_id": "ushb_000299",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_001852",
+      "stratum": "flagged",
+      "rank": 142
+    },
+    {
+      "item_id": "ushb_001426",
+      "stratum": "flagged",
+      "rank": 112
+    },
+    {
+      "item_id": "ushb_001991",
+      "stratum": "flagged",
+      "rank": 215
+    },
+    {
+      "item_id": "ushb_001884",
+      "stratum": "flagged",
+      "rank": 143
+    },
+    {
+      "item_id": "ushb_001352",
+      "stratum": "flagged",
+      "rank": 104
+    },
+    {
+      "item_id": "ushb_000459",
+      "stratum": "flagged",
+      "rank": 290
+    },
+    {
+      "item_id": "ushb_000344",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_001960",
+      "stratum": "flagged",
+      "rank": 152
+    },
+    {
+      "item_id": "ushb_001851",
+      "stratum": "flagged",
+      "rank": 141
+    },
+    {
+      "item_id": "ushb_001747",
+      "stratum": "flagged",
+      "rank": 286
+    },
+    {
+      "item_id": "ushb_001826",
+      "stratum": "flagged",
+      "rank": 237
+    },
+    {
+      "item_id": "ushb_000757",
+      "stratum": "flagged",
+      "rank": 65
+    },
+    {
+      "item_id": "ushb_001574",
+      "stratum": "flagged",
+      "rank": 222
+    },
+    {
+      "item_id": "ushb_001033",
+      "stratum": "flagged",
+      "rank": 88
+    },
+    {
+      "item_id": "ushb_001809",
+      "stratum": "flagged",
+      "rank": 139
+    },
+    {
+      "item_id": "ushb_001542",
+      "stratum": "flagged",
+      "rank": 200
+    },
+    {
+      "item_id": "ushb_001909",
+      "stratum": "flagged",
+      "rank": 287
+    },
+    {
+      "item_id": "ushb_000681",
+      "stratum": "flagged",
+      "rank": 293
+    },
+    {
+      "item_id": "ushb_001028",
+      "stratum": "flagged",
+      "rank": 87
+    },
+    {
+      "item_id": "ushb_000554",
+      "stratum": "flagged",
+      "rank": 263
+    },
+    {
+      "item_id": "ushb_000212",
+      "stratum": "flagged",
+      "rank": 232
+    },
+    {
+      "item_id": "ushb_001449",
+      "stratum": "flagged",
+      "rank": 165
+    },
+    {
+      "item_id": "ushb_001140",
+      "stratum": "flagged",
+      "rank": 273
+    },
+    {
+      "item_id": "ushb_002019",
+      "stratum": "flagged",
+      "rank": 156
+    },
+    {
+      "item_id": "ushb_001233",
+      "stratum": "flagged",
+      "rank": 98
+    },
+    {
+      "item_id": "ushb_001777",
+      "stratum": "flagged",
+      "rank": 254
+    },
+    {
+      "item_id": "ushb_001496",
+      "stratum": "flagged",
+      "rank": 181
+    },
+    {
+      "item_id": "ushb_000999",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_001098",
+      "stratum": "flagged",
+      "rank": 93
+    },
+    {
+      "item_id": "ushb_001477",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_001044",
+      "stratum": "flagged",
+      "rank": 272
+    },
+    {
+      "item_id": "ushb_000512",
+      "stratum": "flagged",
+      "rank": 233
+    },
+    {
+      "item_id": "ushb_002020",
+      "stratum": "flagged",
+      "rank": 184
+    },
+    {
+      "item_id": "ushb_001080",
+      "stratum": "flagged",
+      "rank": 91
+    },
+    {
+      "item_id": "ushb_001267",
+      "stratum": "flagged",
+      "rank": 100
+    },
+    {
+      "item_id": "ushb_001079",
+      "stratum": "flagged",
+      "rank": 90
+    },
+    {
+      "item_id": "ushb_001089",
+      "stratum": "flagged",
+      "rank": 92
+    },
+    {
+      "item_id": "ushb_001379",
+      "stratum": "flagged",
+      "rank": 216
+    },
+    {
+      "item_id": "ushb_000173",
+      "stratum": "flagged",
+      "rank": 16
+    },
+    {
+      "item_id": "ushb_000912",
+      "stratum": "flagged",
+      "rank": 79
+    },
+    {
+      "item_id": "ushb_001018",
+      "stratum": "flagged",
+      "rank": 85
+    },
+    {
+      "item_id": "ushb_001423",
+      "stratum": "flagged",
+      "rank": 111
+    },
+    {
+      "item_id": "ushb_001898",
+      "stratum": "flagged",
+      "rank": 147
+    },
+    {
+      "item_id": "ushb_001430",
+      "stratum": "flagged",
+      "rank": 113
+    },
+    {
+      "item_id": "ushb_001817",
+      "stratum": "flagged",
+      "rank": 291
+    },
+    {
+      "item_id": "ushb_000259",
+      "stratum": "flagged",
+      "rank": 26
+    },
+    {
+      "item_id": "ushb_001800",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_001636",
+      "stratum": "flagged",
+      "rank": 257
+    },
+    {
+      "item_id": "ushb_001374",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_000633",
+      "stratum": "flagged",
+      "rank": 195
+    },
+    {
+      "item_id": "ushb_000263",
+      "stratum": "flagged",
+      "rank": 179
+    },
+    {
+      "item_id": "ushb_001027",
+      "stratum": "flagged",
+      "rank": 86
+    },
+    {
+      "item_id": "ushb_000318",
+      "stratum": "flagged",
+      "rank": 246
+    },
+    {
+      "item_id": "ushb_000513",
+      "stratum": "flagged",
+      "rank": 43
+    },
+    {
+      "item_id": "ushb_001578",
+      "stratum": "flagged",
+      "rank": 285
+    },
+    {
+      "item_id": "ushb_000154",
+      "stratum": "flagged",
+      "rank": 13
+    },
+    {
+      "item_id": "ushb_001025",
+      "stratum": "flagged",
+      "rank": 207
+    },
+    {
+      "item_id": "ushb_000134",
+      "stratum": "flagged",
+      "rank": 11
+    },
+    {
+      "item_id": "ushb_001830",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_001498",
+      "stratum": "flagged",
+      "rank": 120
+    },
+    {
+      "item_id": "ushb_001193",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_000417",
+      "stratum": "flagged",
+      "rank": 37
+    },
+    {
+      "item_id": "ushb_000818",
+      "stratum": "flagged",
+      "rank": 74
+    },
+    {
+      "item_id": "ushb_000369",
+      "stratum": "flagged",
+      "rank": 183
+    },
+    {
+      "item_id": "ushb_000645",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_000331",
+      "stratum": "flagged",
+      "rank": 230
+    },
+    {
+      "item_id": "ushb_001512",
+      "stratum": "flagged",
+      "rank": 121
+    },
+    {
+      "item_id": "ushb_001769",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_000651",
+      "stratum": "flagged",
+      "rank": 239
+    },
+    {
+      "item_id": "ushb_000005",
+      "stratum": "flagged",
+      "rank": 238
+    },
+    {
+      "item_id": "ushb_001398",
+      "stratum": "flagged",
+      "rank": 297
+    },
+    {
+      "item_id": "ushb_000130",
+      "stratum": "flagged",
+      "rank": 243
+    },
+    {
+      "item_id": "ushb_000267",
+      "stratum": "flagged",
+      "rank": 250
+    },
+    {
+      "item_id": "ushb_000934",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_000907",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_000012",
+      "stratum": "flagged",
+      "rank": 274
+    },
+    {
+      "item_id": "ushb_001016",
+      "stratum": "flagged",
+      "rank": 167
+    },
+    {
+      "item_id": "ushb_000827",
+      "stratum": "flagged",
+      "rank": 177
+    },
+    {
+      "item_id": "ushb_000194",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_000054",
+      "stratum": "flagged",
+      "rank": 2
+    },
+    {
+      "item_id": "ushb_001930",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_000739",
+      "stratum": "flagged",
+      "rank": 64
+    },
+    {
+      "item_id": "ushb_000778",
+      "stratum": "flagged",
+      "rank": 68
+    },
+    {
+      "item_id": "ushb_000008",
+      "stratum": "flagged",
+      "rank": 0
+    },
+    {
+      "item_id": "ushb_002011",
+      "stratum": "flagged",
+      "rank": 155
+    },
+    {
+      "item_id": "ushb_001687",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_000682",
+      "stratum": "flagged",
+      "rank": 187
+    },
+    {
+      "item_id": "ushb_000288",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_001366",
+      "stratum": "flagged",
+      "rank": 106
+    },
+    {
+      "item_id": "ushb_000339",
+      "stratum": "flagged",
+      "rank": 31
+    },
+    {
+      "item_id": "ushb_000664",
+      "stratum": "flagged",
+      "rank": 209
+    },
+    {
+      "item_id": "ushb_001341",
+      "stratum": "flagged",
+      "rank": 275
+    },
+    {
+      "item_id": "ushb_001958",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_000456",
+      "stratum": "flagged",
+      "rank": 39
+    },
+    {
+      "item_id": "ushb_000458",
+      "stratum": "flagged",
+      "rank": 40
+    },
+    {
+      "item_id": "ushb_000567",
+      "stratum": "flagged",
+      "rank": 50
+    },
+    {
+      "item_id": "ushb_000954",
+      "stratum": "flagged",
+      "rank": 82
+    },
+    {
+      "item_id": "ushb_000015",
+      "stratum": "flagged",
+      "rank": 294
+    },
+    {
+      "item_id": "ushb_000534",
+      "stratum": "flagged",
+      "rank": 171
+    },
+    {
+      "item_id": "ushb_001434",
+      "stratum": "flagged",
+      "rank": 219
+    },
+    {
+      "item_id": "ushb_001413",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_001469",
+      "stratum": "flagged",
+      "rank": 214
+    },
+    {
+      "item_id": "ushb_000798",
+      "stratum": "flagged",
+      "rank": 173
+    },
+    {
+      "item_id": "ushb_001099",
+      "stratum": "flagged",
+      "rank": 227
+    },
+    {
+      "item_id": "ushb_001879",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_000198",
+      "stratum": "flagged",
+      "rank": 162
+    },
+    {
+      "item_id": "ushb_001407",
+      "stratum": "flagged",
+      "rank": 204
+    },
+    {
+      "item_id": "ushb_000089",
+      "stratum": "flagged",
+      "rank": 6
+    },
+    {
+      "item_id": "ushb_000149",
+      "stratum": "flagged",
+      "rank": 255
+    },
+    {
+      "item_id": "ushb_001345",
+      "stratum": "flagged",
+      "rank": 264
+    },
+    {
+      "item_id": "ushb_000063",
+      "stratum": "flagged",
+      "rank": 210
+    },
+    {
+      "item_id": "ushb_000613",
+      "stratum": "flagged",
+      "rank": 172
+    },
+    {
+      "item_id": "ushb_001890",
+      "stratum": "flagged",
+      "rank": 144
+    },
+    {
+      "item_id": "ushb_001357",
+      "stratum": "flagged",
+      "rank": 105
+    },
+    {
+      "item_id": "ushb_000170",
+      "stratum": "flagged",
+      "rank": 282
+    },
+    {
+      "item_id": "ushb_000405",
+      "stratum": "flagged",
+      "rank": 34
+    },
+    {
+      "item_id": "ushb_000616",
+      "stratum": "flagged",
+      "rank": 52
+    },
+    {
+      "item_id": "ushb_001669",
+      "stratum": "flagged",
+      "rank": 163
+    },
+    {
+      "item_id": "ushb_000559",
+      "stratum": "flagged",
+      "rank": 271
+    },
+    {
+      "item_id": "ushb_001448",
+      "stratum": "flagged",
+      "rank": 278
+    },
+    {
+      "item_id": "ushb_000337",
+      "stratum": "flagged",
+      "rank": 247
+    },
+    {
+      "item_id": "ushb_001575",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_000621",
+      "stratum": "flagged",
+      "rank": 242
+    },
+    {
+      "item_id": "ushb_000964",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_000508",
+      "stratum": "flagged",
+      "rank": 42
+    },
+    {
+      "item_id": "ushb_000660",
+      "stratum": "flagged",
+      "rank": 55
+    },
+    {
+      "item_id": "ushb_000908",
+      "stratum": "flagged",
+      "rank": 182
+    },
+    {
+      "item_id": "ushb_001918",
+      "stratum": "flagged",
+      "rank": 149
+    },
+    {
+      "item_id": "ushb_001728",
+      "stratum": "flagged",
+      "rank": 136
+    },
+    {
+      "item_id": "ushb_000689",
+      "stratum": "flagged",
+      "rank": 60
+    },
+    {
+      "item_id": "ushb_001230",
+      "stratum": "flagged",
+      "rank": 97
+    },
+    {
+      "item_id": "ushb_001899",
+      "stratum": "flagged",
+      "rank": 148
+    },
+    {
+      "item_id": "ushb_000791",
+      "stratum": "flagged",
+      "rank": 283
+    },
+    {
+      "item_id": "ushb_000365",
+      "stratum": "flagged",
+      "rank": 267
+    },
+    {
+      "item_id": "ushb_001927",
+      "stratum": "flagged",
+      "rank": 150
+    },
+    {
+      "item_id": "ushb_000099",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_000105",
+      "stratum": "flagged",
+      "rank": 211
+    },
+    {
+      "item_id": "ushb_000045",
+      "stratum": "flagged",
+      "rank": 261
+    },
+    {
+      "item_id": "ushb_000961",
+      "stratum": "flagged",
+      "rank": 83
+    },
+    {
+      "item_id": "ushb_000302",
+      "stratum": "flagged",
+      "rank": 197
+    },
+    {
+      "item_id": "ushb_001082",
+      "stratum": "flagged",
+      "rank": 180
+    },
+    {
+      "item_id": "ushb_000418",
+      "stratum": "flagged",
+      "rank": 38
+    },
+    {
+      "item_id": "ushb_000632",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_000649",
+      "stratum": "flagged",
+      "rank": 54
+    },
+    {
+      "item_id": "ushb_001266",
+      "stratum": "flagged",
+      "rank": 99
+    },
+    {
+      "item_id": "ushb_000043",
+      "stratum": "flagged",
+      "rank": 159
+    },
+    {
+      "item_id": "ushb_000342",
+      "stratum": "flagged",
+      "rank": 206
+    },
+    {
+      "item_id": "ushb_001120",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_000204",
+      "stratum": "flagged",
+      "rank": 19
+    },
+    {
+      "item_id": "ushb_000869",
+      "stratum": "flagged",
+      "rank": 193
+    },
+    {
+      "item_id": "ushb_000673",
+      "stratum": "flagged",
+      "rank": 185
+    },
+    {
+      "item_id": "ushb_000226",
+      "stratum": "flagged",
+      "rank": 21
+    },
+    {
+      "item_id": "ushb_000786",
+      "stratum": "flagged",
+      "rank": 70
+    },
+    {
+      "item_id": "ushb_000542",
+      "stratum": "flagged",
+      "rank": 48
+    },
+    {
+      "item_id": "ushb_000117",
+      "stratum": "flagged",
+      "rank": 158
+    },
+    {
+      "item_id": "ushb_000984",
+      "stratum": "flagged",
+      "rank": 190
+    },
+    {
+      "item_id": "ushb_000844",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_000792",
+      "stratum": "flagged",
+      "rank": 221
+    },
+    {
+      "item_id": "ushb_000829",
+      "stratum": "flagged",
+      "rank": 218
+    },
+    {
+      "item_id": "ushb_000109",
+      "stratum": "flagged",
+      "rank": 279
+    },
+    {
+      "item_id": "ushb_000160",
+      "stratum": "flagged",
+      "rank": 160
+    },
+    {
+      "item_id": "ushb_000807",
+      "stratum": "flagged",
+      "rank": 71
+    },
+    {
+      "item_id": "ushb_000181",
+      "stratum": "flagged",
+      "rank": 161
+    },
+    {
+      "item_id": "ushb_001588",
+      "stratum": "flagged",
+      "rank": 186
+    },
+    {
+      "item_id": "ushb_000406",
+      "stratum": "flagged",
+      "rank": 35
+    },
+    {
+      "item_id": "ushb_000412",
+      "stratum": "flagged",
+      "rank": 176
+    },
+    {
+      "item_id": "ushb_001480",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_001559",
+      "stratum": "flagged",
+      "rank": 124
+    },
+    {
+      "item_id": "ushb_001725",
+      "stratum": "flagged",
+      "rank": 135
+    },
+    {
+      "item_id": "ushb_000009",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_001893",
+      "stratum": "flagged",
+      "rank": 146
+    },
+    {
+      "item_id": "ushb_001421",
+      "stratum": "flagged",
+      "rank": 110
+    },
+    {
+      "item_id": "ushb_001794",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_001343",
+      "stratum": "flagged",
+      "rank": 103
+    },
+    {
+      "item_id": "ushb_001411",
+      "stratum": "flagged",
+      "rank": 213
+    },
+    {
+      "item_id": "ushb_000672",
+      "stratum": "flagged",
+      "rank": 56
+    },
+    {
+      "item_id": "ushb_000795",
+      "stratum": "flagged",
+      "rank": 189
+    },
+    {
+      "item_id": "ushb_001719",
+      "stratum": "flagged",
+      "rank": 134
+    },
+    {
+      "item_id": "ushb_001470",
+      "stratum": "flagged",
+      "rank": 117
+    },
+    {
+      "item_id": "ushb_001376",
+      "stratum": "flagged",
+      "rank": 107
+    },
+    {
+      "item_id": "ushb_000966",
+      "stratum": "flagged",
+      "rank": 258
+    },
+    {
+      "item_id": "ushb_001744",
+      "stratum": "flagged",
+      "rank": 292
+    },
+    {
+      "item_id": "ushb_001676",
+      "stratum": "flagged",
+      "rank": 225
+    },
+    {
+      "item_id": "ushb_001656",
+      "stratum": "flagged",
+      "rank": 228
+    },
+    {
+      "item_id": "ushb_001949",
+      "stratum": "flagged",
+      "rank": 288
+    },
+    {
+      "item_id": "ushb_000235",
+      "stratum": "flagged",
+      "rank": 205
+    },
+    {
+      "item_id": "ushb_001985",
+      "stratum": "flagged",
+      "rank": 168
+    },
+    {
+      "item_id": "ushb_001908",
+      "stratum": "flagged",
+      "rank": 203
+    },
+    {
+      "item_id": "ushb_001516",
+      "stratum": "flagged",
+      "rank": 262
+    },
+    {
+      "item_id": "ushb_000652",
+      "stratum": "flagged",
+      "rank": 223
+    },
+    {
+      "item_id": "ushb_001843",
+      "stratum": "flagged",
+      "rank": 140
+    },
+    {
+      "item_id": "ushb_000995",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_001096",
+      "stratum": "flagged",
+      "rank": 248
+    },
+    {
+      "item_id": "ushb_000072",
+      "stratum": "flagged",
+      "rank": 266
+    },
+    {
+      "item_id": "ushb_001764",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_001616",
+      "stratum": "flagged",
+      "rank": 128
+    },
+    {
+      "item_id": "ushb_000727",
+      "stratum": "flagged",
+      "rank": 240
+    },
+    {
+      "item_id": "ushb_001197",
+      "stratum": "flagged",
+      "rank": 260
+    },
+    {
+      "item_id": "ushb_000794",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_000136",
+      "stratum": "flagged",
+      "rank": 12
+    },
+    {
+      "item_id": "ushb_001204",
+      "stratum": "flagged",
+      "rank": 95
+    },
+    {
+      "item_id": "ushb_001446",
+      "stratum": "flagged",
+      "rank": 188
+    },
+    {
+      "item_id": "ushb_000629",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_000900",
+      "stratum": "flagged",
+      "rank": 199
+    },
+    {
+      "item_id": "ushb_001964",
+      "stratum": "flagged",
+      "rank": 277
+    },
+    {
+      "item_id": "ushb_001626",
+      "stratum": "flagged",
+      "rank": 129
+    },
+    {
+      "item_id": "ushb_001132",
+      "stratum": "flagged",
+      "rank": 245
+    },
+    {
+      "item_id": "ushb_000820",
+      "stratum": "flagged",
+      "rank": 289
+    },
+    {
+      "item_id": "ushb_001573",
+      "stratum": "flagged",
+      "rank": 125
+    },
+    {
+      "item_id": "ushb_001191",
+      "stratum": "flagged",
+      "rank": 94
+    },
+    {
+      "item_id": "ushb_001797",
+      "stratum": "flagged",
+      "rank": 138
+    },
+    {
+      "item_id": "ushb_001632",
+      "stratum": "flagged",
+      "rank": 130
+    },
+    {
+      "item_id": "ushb_000116",
+      "stratum": "flagged",
+      "rank": 10
+    },
+    {
+      "item_id": "ushb_001796",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_000772",
+      "stratum": "flagged",
+      "rank": 67
+    },
+    {
+      "item_id": "ushb_001360",
+      "stratum": "flagged",
+      "rank": 251
+    },
+    {
+      "item_id": "ushb_000126",
+      "stratum": "flagged",
+      "rank": 170
+    },
+    {
+      "item_id": "ushb_000236",
+      "stratum": "flagged",
+      "rank": 22
+    },
+    {
+      "item_id": "ushb_001982",
+      "stratum": "flagged",
+      "rank": 154
+    },
+    {
+      "item_id": "ushb_001635",
+      "stratum": "flagged",
+      "rank": 166
+    },
+    {
+      "item_id": "ushb_001514",
+      "stratum": "flagged",
+      "rank": 123
+    },
+    {
+      "item_id": "ushb_000736",
+      "stratum": "flagged",
+      "rank": 231
+    },
+    {
+      "item_id": "ushb_000768",
+      "stratum": "flagged",
+      "rank": 66
+    },
+    {
+      "item_id": "ushb_000646",
+      "stratum": "flagged",
+      "rank": 178
+    },
+    {
+      "item_id": "ushb_001806",
+      "stratum": "flagged",
+      "rank": 268
+    },
+    {
+      "item_id": "ushb_001017",
+      "stratum": "flagged",
+      "rank": 84
+    },
+    {
+      "item_id": "ushb_001770",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_001262",
+      "stratum": "flagged",
+      "rank": 236
+    },
+    {
+      "item_id": "ushb_001790",
+      "stratum": "flagged",
+      "rank": 137
+    },
+    {
+      "item_id": "ushb_000909",
+      "stratum": "flagged",
+      "rank": 175
+    },
+    {
+      "item_id": "ushb_000809",
+      "stratum": "flagged",
+      "rank": 72
+    },
+    {
+      "item_id": "ushb_000086",
+      "stratum": "flagged",
+      "rank": 5
+    },
+    {
+      "item_id": "ushb_000469",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_001838",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_000096",
+      "stratum": "flagged",
+      "rank": 7
+    },
+    {
+      "item_id": "ushb_000300",
+      "stratum": "flagged",
+      "rank": 28
+    },
+    {
+      "item_id": "ushb_000729",
+      "stratum": "flagged",
+      "rank": 63
+    },
+    {
+      "item_id": "ushb_001057",
+      "stratum": "flagged",
+      "rank": 298
+    },
+    {
+      "item_id": "ushb_001850",
+      "stratum": "flagged",
+      "rank": 270
+    },
+    {
+      "item_id": "ushb_000183",
+      "stratum": "flagged",
+      "rank": 18
+    },
+    {
+      "item_id": "ushb_000482",
+      "stratum": "flagged",
+      "rank": 212
+    },
+    {
+      "item_id": "ushb_001187",
+      "stratum": "flagged",
+      "rank": 174
+    },
+    {
+      "item_id": "ushb_000740",
+      "stratum": "flagged",
+      "rank": 296
+    },
+    {
+      "item_id": "ushb_001513",
+      "stratum": "flagged",
+      "rank": 122
+    },
+    {
+      "item_id": "ushb_000095",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_000635",
+      "stratum": "flagged",
+      "rank": 226
+    },
+    {
+      "item_id": "ushb_000851",
+      "stratum": "flagged",
+      "rank": 76
+    },
+    {
+      "item_id": "ushb_000674",
+      "stratum": "flagged",
+      "rank": 57
+    },
+    {
+      "item_id": "ushb_000817",
+      "stratum": "flagged",
+      "rank": 73
+    },
+    {
+      "item_id": "ushb_000032",
+      "stratum": "flagged",
+      "rank": 1
+    },
+    {
+      "item_id": "ushb_000301",
+      "stratum": "flagged",
+      "rank": 295
+    },
+    {
+      "item_id": "ushb_000363",
+      "stratum": "flagged",
+      "rank": 32
+    },
+    {
+      "item_id": "ushb_000257",
+      "stratum": "flagged",
+      "rank": 25
+    },
+    {
+      "item_id": "ushb_001362",
+      "stratum": "flagged",
+      "rank": 229
+    },
+    {
+      "item_id": "ushb_000091",
+      "stratum": "flagged",
+      "rank": 284
+    },
+    {
+      "item_id": "ushb_001064",
+      "stratum": "flagged",
+      "rank": 89
+    },
+    {
+      "item_id": "ushb_001453",
+      "stratum": "flagged",
+      "rank": 244
+    },
+    {
+      "item_id": "ushb_001484",
+      "stratum": "flagged",
+      "rank": 119
+    },
+    {
+      "item_id": "ushb_000249",
+      "stratum": "flagged",
+      "rank": 24
+    },
+    {
+      "item_id": "ushb_001595",
+      "stratum": "flagged",
+      "rank": 201
+    },
+    {
+      "item_id": "ushb_000113",
+      "stratum": "flagged",
+      "rank": 191
+    },
+    {
+      "item_id": "ushb_001078",
+      "stratum": "flagged",
+      "rank": 194
+    },
+    {
+      "item_id": "ushb_000847",
+      "stratum": "flagged",
+      "rank": 192
+    },
+    {
+      "item_id": "ushb_001103",
+      "stratum": "flagged",
+      "rank": 253
+    },
+    {
+      "item_id": "ushb_000211",
+      "stratum": "flagged",
+      "rank": 20
+    },
+    {
+      "item_id": "ushb_000290",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_001840",
+      "stratum": "flagged",
+      "rank": 169
+    },
+    {
+      "item_id": "ushb_000726",
+      "stratum": "flagged",
+      "rank": 62
+    },
+    {
+      "item_id": "ushb_000699",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_000476",
+      "stratum": "flagged",
+      "rank": 41
+    },
+    {
+      "item_id": "ushb_000946",
+      "stratum": "flagged",
+      "rank": 281
+    },
+    {
+      "item_id": "ushb_000271",
+      "stratum": "flagged",
+      "rank": 27
+    },
+    {
+      "item_id": "ushb_000156",
+      "stratum": "flagged",
+      "rank": 15
+    },
+    {
+      "item_id": "ushb_001200",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_000184",
+      "stratum": "flagged",
+      "rank": 196
+    },
+    {
+      "item_id": "ushb_001068",
+      "stratum": "flagged",
+      "rank": 256
+    },
+    {
+      "item_id": "ushb_001412",
+      "stratum": "flagged",
+      "rank": 108
+    },
+    {
+      "item_id": "ushb_000718",
+      "stratum": "flagged",
+      "rank": 61
+    },
+    {
+      "item_id": "ushb_000410",
+      "stratum": "flagged",
+      "rank": 36
+    },
+    {
+      "item_id": "ushb_000155",
+      "stratum": "flagged",
+      "rank": 14
+    },
+    {
+      "item_id": "ushb_000615",
+      "stratum": "flagged",
+      "rank": 51
+    },
+    {
+      "item_id": "ushb_001051",
+      "stratum": "flagged",
+      "rank": 241
+    },
+    {
+      "item_id": "ushb_000237",
+      "stratum": "flagged",
+      "rank": 23
+    },
+    {
+      "item_id": "ushb_001160",
+      "stratum": "flagged",
+      "rank": 157
+    },
+    {
+      "item_id": "ushb_000082",
+      "stratum": "flagged",
+      "rank": 3
+    },
+    {
+      "item_id": "ushb_000085",
+      "stratum": "flagged",
+      "rank": 4
+    },
+    {
+      "item_id": "ushb_001014",
+      "stratum": "flagged",
+      "rank": 265
+    },
+    {
+      "item_id": "ushb_000898",
+      "stratum": "flagged",
+      "rank": 78
+    },
+    {
+      "item_id": "ushb_000935",
+      "stratum": "flagged",
+      "rank": 80
+    },
+    {
+      "item_id": "ushb_000733",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_000265",
+      "stratum": "flagged",
+      "rank": 220
+    },
+    {
+      "item_id": "ushb_001336",
+      "stratum": "flagged",
+      "rank": 102
+    },
+    {
+      "item_id": "ushb_001590",
+      "stratum": "flagged",
+      "rank": 126
+    },
+    {
+      "item_id": "ushb_001447",
+      "stratum": "flagged",
+      "rank": 115
+    },
+    {
+      "item_id": "ushb_000780",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_000846",
+      "stratum": "flagged",
+      "rank": 75
+    },
+    {
+      "item_id": "ushb_001645",
+      "stratum": "flagged",
+      "rank": 198
+    },
+    {
+      "item_id": "ushb_001436",
+      "stratum": "flagged",
+      "rank": 114
+    },
+    {
+      "item_id": "ushb_001699",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_000119",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_001184",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_001471",
+      "stratum": "flagged",
+      "rank": 118
+    },
+    {
+      "item_id": "ushb_000177",
+      "stratum": "flagged",
+      "rank": 17
+    },
+    {
+      "item_id": "ushb_000776",
+      "stratum": "flagged",
+      "rank": 269
+    },
+    {
+      "item_id": "ushb_001463",
+      "stratum": "flagged",
+      "rank": 116
+    },
+    {
+      "item_id": "ushb_001865",
+      "stratum": "flagged",
+      "rank": 208
+    },
+    {
+      "item_id": "ushb_001007",
+      "stratum": "flagged",
+      "rank": 259
+    },
+    {
+      "item_id": "ushb_000897",
+      "stratum": "flagged",
+      "rank": 77
+    },
+    {
+      "item_id": "ushb_001306",
+      "stratum": "flagged",
+      "rank": 249
+    },
+    {
+      "item_id": "ushb_001613",
+      "stratum": "flagged",
+      "rank": 224
+    },
+    {
+      "item_id": "ushb_000812",
+      "stratum": "flagged",
+      "rank": 235
+    },
+    {
+      "item_id": "ushb_001419",
+      "stratum": "flagged",
+      "rank": 109
+    },
+    {
+      "item_id": "ushb_001970",
+      "stratum": "flagged",
+      "rank": 153
+    },
+    {
+      "item_id": "ushb_000781",
+      "stratum": "flagged",
+      "rank": 69
+    },
+    {
+      "item_id": "ushb_000685",
+      "stratum": "flagged",
+      "rank": 59
+    },
+    {
+      "item_id": "ushb_001955",
+      "stratum": "flagged",
+      "rank": 151
+    },
+    {
+      "item_id": "ushb_001121",
+      "stratum": "flagged",
+      "rank": 276
+    },
+    {
+      "item_id": "ushb_000400",
+      "stratum": "flagged",
+      "rank": 33
+    },
+    {
+      "item_id": "ushb_001634",
+      "stratum": "flagged",
+      "rank": 131
+    },
+    {
+      "item_id": "ushb_000303",
+      "stratum": "control",
+      "rank": null
+    },
+    {
+      "item_id": "ushb_000547",
+      "stratum": "flagged",
+      "rank": 49
+    },
+    {
+      "item_id": "ushb_001508",
+      "stratum": "control",
+      "rank": null
+    }
+  ],
+  "sha256": "4d674f2a442a65d37ff1adc0babb86e6277a6af34c3533feb10634ce8227c44a"
+}
