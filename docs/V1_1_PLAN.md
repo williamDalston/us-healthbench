@@ -1,6 +1,13 @@
 # v1.1 Plan: from a provisional artifact to a measured result
 
-Status: active. Owner: W. Alston. Predecessor: v1.0 defect-taxonomy release
+Status: **SUPERSEDED 2026-08-24 — the evaluation experiment is STOPPED, not paused.**
+A fifth defect class (under-identification, docs/DATA_QUALITY.md) was found in the
+so-called clean subset, so no comparative number produced from it means anything
+until adjudication resolves prevalence. Do not run 1,058 items. Do not run further
+system comparisons. The work re-scoped to adjudication and the class-5 paper
+(paper2/SKELETON.md); the evaluation design below is retained for a later project.
+
+Original status: active. Owner: W. Alston. Predecessor: v1.0 defect-taxonomy release
 (DOI 10.5281/zenodo.22086136), which is **frozen and not modified by this work**.
 
 ## Goal
@@ -23,11 +30,11 @@ with the v1.0 taxonomy paper as its methodological predecessor.
 
 | Gate | Status |
 |---|---|
-| Clean subset extracted (1,058 items, 4 defect classes removed) | DONE |
+| Clean subset extracted (1,058 items, 4 defect classes removed) | DONE — but NOT clean: class 5 unfiltered |
 | Human spot-check, 10% (106 items) | DONE 2026-08-24, by author |
-| Condition-1 pilot (30 items x 2 systems) | pending |
+| Condition-1 pilot (30 items x 2 systems) | DONE — invalidated the design (see D5, D6) |
 | Condition-2 viability (period-correct source coverage) | BLOCKED: Wayback 429 |
-| Full run | gated on all of the above |
+| Full run | STOPPED — blocked on adjudication, not on scheduling |
 
 ## Known defects in *this* work (open)
 
@@ -37,6 +44,8 @@ with the v1.0 taxonomy paper as its methodological predecessor.
 | D2 | Rebuild recorded HTTP 429 throttling as "not archived" | FIXED (records `unknown`) |
 | D3 | Scorer floors `source_support` at 0 for any system without corpus chunk IDs; composite silently caps a no-retrieval system at 0.70 | OPEN - this is a finding, not a bug to paper over |
 | D4 | Claude evaluated by a Claude-family scorer, rubric by the same author | OPEN - mitigated by comparator, disclosed in follow-up |
+| D5 | `claude -p` is a coding agent; --append-system-prompt left that persona in place and 21/29 answers carried harness framing | FIXED (--system-prompt, neutral cwd, contaminated answers rejected not scored) |
+| D6 | Class 5 (under-identification) is present in the clean subset and no detector is cut-grade | OPEN - adjudication in progress |
 
 ## Design
 

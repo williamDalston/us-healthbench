@@ -8,8 +8,12 @@ Removes all four audited defect classes (docs/DATA_QUALITY.md):
   4. items derived from administrative (polluted) source documents
 
 Writes data/benchmark_v1_1_candidate/clean_items.jsonl + stats.json.
-The v1.0 freeze is untouched. This output is a CANDIDATE: it does not
-become v1.1 until the human spot-check required by the protocol is done.
+The v1.0 freeze is untouched. This output is a CANDIDATE and is NOT clean:
+it removes classes 1-4 only. Class 5 (under-identification, a question too
+generic to identify its own gold) is present and unfiltered, because no
+automated detector for it is reliable enough to cut on. See
+docs/DATA_QUALITY.md and scripts/detect_underspecified.py. Do not describe
+this output as a clean benchmark.
 
 Usage:  python -m scripts.extract_clean_subset
 """
