@@ -19,6 +19,7 @@ import math
 from pathlib import Path
 
 QUEUE = Path("data/benchmark_v1_1_candidate/adjudication_queue.json")
+MODEL = Path("data/benchmark_v1_1_candidate/model_adjudication_labels.jsonl")
 LABELS = Path("data/benchmark_v1_1_candidate/adjudication_labels.jsonl")
 RELABELS = Path("data/benchmark_v1_1_candidate/adjudication_relabels.jsonl")
 
@@ -83,6 +84,23 @@ def main() -> None:
         print(f"estimated defective items the detector MISSED: {est_missed:.0f}")
         if tp + est_missed > 0:
             print(f"recall {NF * pf / (NF * pf + est_missed):.1%}")
+
+    # model detector scored against the human reference (never the reverse)
+    if MODEL.exists():
+        model = load(MODEL)
+        both = [i for i in labels if i in model]
+        if both:
+            mtp = sum(1 for i in both if model[i] == "reject" and labels[i] == "reject")
+            mfp = sum(1 for i in both if model[i] == "reject" and labels[i] == "keep")
+            mfn = sum(1 for i in both if model[i] == "keep" and labels[i] == "reject")
+            prec = mtp / (mtp + mfp) if mtp + mfp else 0.0
+            rec = mtp / (mtp + mfn) if mtp + mfn else 0.0
+            lo, hi = wilson(mtp, mtp + mfp) if mtp + mfp else (0, 0)
+            print(f"\nMODEL DETECTOR vs human reference, on {len(both)} co-labelled items")
+            print(f"  precision {prec:.1%}  95% CI [{lo:.1%}, {hi:.1%}]")
+            print(f"  recall    {rec:.1%}")
+            agree = sum(1 for i in both if model[i] == labels[i])
+            print(f"  raw agreement {agree / len(both):.1%}")
 
     # self-agreement
     re = load(RELABELS)
