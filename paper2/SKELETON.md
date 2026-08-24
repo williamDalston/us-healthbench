@@ -26,8 +26,8 @@ Contribution list:
 1. **Under-identification** defined: a question too generic to pick out its own
    gold answer.
 2. Why collision detection is structurally blind to it.
-3. Two detectors, both inadequate, with the inadequacy characterized rather
-   than tuned away.
+3. Three detectors — lexical, relational, and model-based — each characterized
+   against human labels rather than trusted or tuned away.
 4. `[NUMBERS]` Human adjudication: precision, recall, stratified prevalence,
    and intra-rater agreement.
 5. The implication: automated validation has a ceiling, and reporting where
@@ -72,47 +72,90 @@ Under-identification is a property of the *relation* between question and gold,
 and one that has no lexical signature. Note the asymmetry with collision, which
 is also relational but decidable, because string equality is a usable proxy.
 
-## 4. Two detectors, both inadequate
+## 4. Three detectors, all characterized, none trusted
 
-### 4.1 Lexical
+The question is not *can automation catch this?* but *how far does automation
+get before a human is required?* Three detectors are reported with measured
+performance against human labels; none is treated as a reference.
+
+### 4.1 Lexical (rejected)
 Flag items whose question shares little vocabulary with its gold.
-Result: 33.6% of 1,058 flagged. Hand-inspection: mostly false positives — a
-sound item whose gold happens to use different words is indistinguishable from
-a defective one. **Rejected.**
+33.6% of 1,058 flagged. Hand-inspection: mostly false positives — a sound item
+whose gold happens to use different words is indistinguishable from a defective
+one. Reported as a failed attempt, not carried forward.
 
 ### 4.2 Relational
 For each question, count how many *other* items' golds match it at least as well
-as its own. Many rivals => the question does not select its answer. Directly
-analogous to the collision argument, generalized from equality to ranking.
-Result: 525 of 1,058 (49.6%) after exempting 202 adversarial items.
-Hand-inspection of a random sample: roughly half false positives.
+as its own; many rivals means the question does not select its answer. This
+generalizes the collision argument from string equality to ranking.
+525 of 1,058 flagged (49.6%), after exempting 202 adversarial items whose
+safety-refusal golds share no vocabulary with the question by design.
 
-### 4.3 On not tuning the threshold
-The threshold was not adjusted until the flagged count looked plausible. State
-plainly: with no ground truth, tuning to an expected prevalence fits the
-instrument to the hypothesis. The detector is therefore reported as
-**triage-grade, not cut-grade** — usable to rank, not to cut.
-`[NUMBERS]` Whether the ranking carries signal is an empirical question the
-adjudication answers, via precision by rank band.
+### 4.3 Model
+A language model applied to the same 350-item queue, one judgement per item
+against the same written criterion (`model_adjudication_labels.jsonl`).
+231 reject / 119 keep. Structurally it behaves as a rule applier: nine
+`rationale_code` values, each mapping to exactly one label without exception
+across 350 items.
 
-## 5. Human adjudication  `[NUMBERS]`
+**Provenance note for the paper.** These labels were received with their source
+field rewritten to read as human adjudication; the original provenance was
+restored before use. Worth one sentence in the methods, because the failure mode
+it illustrates — model output silently becoming the reference standard — is the
+same class of defect the paper is about, and it nearly happened inside the study
+of it.
+
+### 4.4 What the two automated detectors say about each other  `[PROVISIONAL]`
+Detector-vs-detector agreement, pending human labels. Reported only as a
+prediction to be tested, never as validation:
+
+* The relational ranking carries signal. Model agreement with relational flags
+  runs 84-88% over ranks 0-149 and falls to 52-56% over ranks 150-299.
+* Recall, not precision, looks like the relational detector's real weakness: the
+  model rejects 21 of 50 *unflagged* control items, and 18 of those carry
+  `gold_unrelated_to_question` — a failure the relational test is blind to by
+  construction, since it asks only whether rival golds match the question better.
+
+### 4.5 On not tuning thresholds
+No threshold was adjusted to make a flagged count look plausible. With no ground
+truth available at the time, tuning to an expected prevalence fits the
+instrument to the hypothesis. The relational detector is therefore reported as
+triage-grade, not cut-grade: usable to rank, not to cut.
+
+## 5. Human adjudication and detector evaluation  `[NUMBERS]`
+
+Human labels are the reference. Both automated detectors are scored against
+them; neither is scored against the other.
 
 Pre-registered before any item was seen (`docs/DEVIATIONS.md`):
 - Criterion fixed in writing; binary; no notes field, no revisiting.
-- Blinded queue: 300 top-ranked flags + 50 controls drawn from unflagged items,
-  shuffled, stratum never shown. Controls are what make recall and prevalence
-  estimable; precision alone would be uninterpretable.
+- Blinded queue: 300 top-ranked relational flags + 50 controls drawn from
+  unflagged items, shuffled, stratum never displayed. Controls are what make
+  recall and prevalence estimable; precision alone would be uninterpretable.
+- Model labels are withheld from the annotator during labelling. They are not
+  present in the adjudication tool, which carries only question, gold, and
+  required points.
 - Sittings capped at 100 items against fatigue effects.
-- Reliability pass: 30 items re-labelled later, prior calls hidden.
+- Reliability pass: 30 items re-labelled later with prior calls hidden.
 
-Report: precision (Wilson CI); defect rate among controls; stratified prevalence
-over all 1,058 items with interval; estimated missed defects; recall; intra-rater
-agreement as raw agreement and Cohen's kappa.
+Reported per detector: precision (Wilson CI), recall, and the stratified
+prevalence estimate over all 1,058 items. Reported once for the human pass:
+intra-rater agreement as raw agreement and Cohen's kappa.
 
-Precision on a ranked prefix is not prevalence. Report separately, always.
+Precision on a ranked prefix is not prevalence. They are reported separately and
+labelled as such.
+
+**The headline quantity** is the gap between the best detector's performance and
+the human reference. That number is the answer to "how far does automation get",
+and it is more useful to a benchmark builder than either "automation fails" or
+"automation works".
 
 ## 6. Discussion
 
+- **How far automation gets.** `[NUMBERS]` If the model detector reaches high
+  precision but poor recall, the practical guidance is that automation triages
+  and a human adjudicates the residue — a workable protocol, not a counsel of
+  despair.
 - **A single human's labels are themselves an instrument** — hence the kappa. If
   agreement is low, the honest conclusion is that the class is hard for people
   too, which strengthens rather than weakens the undetectability claim.
@@ -143,7 +186,7 @@ predecessor repository. Labels released with this paper.
 ---
 
 ## Blocked on labels
-- 4.3 precision-by-rank-band
+- 4.4 becomes measured rather than provisional
 - all of 5
 - prevalence and recall figures wherever quoted
 - the kappa in 6
