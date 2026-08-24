@@ -1,3 +1,8 @@
+> **Withdrawn analysis.** These values were computed before the defect audit
+> (`docs/DATA_QUALITY.md`) over an item set in which 28.0% of items are unscoreable
+> by construction. They are retained as a record of what was computed. Absolute
+> values are withdrawn and should not be cited as measurements of system quality.
+
 | System | Factual | Source | Safety | Uncertainty | Clarity | GSS |
 |---|---|---|---|---|---|---|
 | A: LLM-Only | 0.495 (0.464-0.526) | 0.119 (0.099-0.140) | 1.891 (1.871-1.911) | 1.076 (1.064-1.088) | 1.089 (1.059-1.118) | 0.435 (0.429-0.441) |

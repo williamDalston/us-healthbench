@@ -1,3 +1,8 @@
+> **Withdrawn analysis.** These values were computed before the defect audit
+> (`docs/DATA_QUALITY.md`) over an item set in which 28.0% of items are unscoreable
+> by construction. They are retained as a record of what was computed. Absolute
+> values are withdrawn and should not be cited as measurements of system quality.
+
 | Topic | GSS (A) | GSS (B) | GSS (C) | GSS (D) |
 |---|---|---|---|---|
 | Chronic Disease | 0.511 | 0.673 | 0.805 | 0.810 |

@@ -1,6 +1,6 @@
-"""Regenerate the defect-audit figures (Fig 1-3) from the frozen item file.
+"""Regenerate the defect-audit figures (Fig 2-4) from the frozen item file.
 
-Fig 4 (composition as recorded) is produced by the original pipeline and is
+Fig 1 (composition as recorded) is produced by the original pipeline and is
 unchanged. All figures here are computed by the same code path as
 scripts/audit_data_quality.py, so captions and figures cannot drift apart.
 
@@ -59,7 +59,7 @@ def main() -> None:
         ax.text(b.get_x() + b.get_width() / 2, v + 0.6, f"{v:.1f}%", ha="center", fontsize=10, color=INK)
     ax.set_ylim(0, max(vals) * 1.25)
     _finish(ax, f"Defect rates in the frozen benchmark (n = {n:,}); all values are lower bounds", "% of items")
-    fig.tight_layout(); fig.savefig(OUT / "fig1_defect_rates.png", dpi=200); plt.close(fig)
+    fig.tight_layout(); fig.savefig(OUT / "fig2_defect_rates.png", dpi=200); plt.close(fig)
 
     # --- Fig 2: encoding corruption by language ---
     lang_tot = collections.Counter(i["language"] for i in items)
@@ -82,7 +82,7 @@ def main() -> None:
     ax.margins(y=0.28)
     _finish(ax, "Encoding corruption concentrates in the minority-language subset", None)
     ax.set_xlabel("% of items in that language", fontsize=9, color=INK)
-    fig.tight_layout(); fig.savefig(OUT / "fig2_encoding_by_language.png", dpi=200); plt.close(fig)
+    fig.tight_layout(); fig.savefig(OUT / "fig4_encoding_by_language.png", dpi=200); plt.close(fig)
 
     # --- Fig 3: template collision distribution ---
     sizes = collections.Counter(len(v) for v in byq.values())

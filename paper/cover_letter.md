@@ -31,7 +31,8 @@ The item set is released as provisional and explicitly unfit for scoring. I am n
 
 - **Article type:** Research Article
 - **Word count:** ~5,000 (main text)
-- **Figures:** 4, generated from the same code path as the reported figures so the two cannot diverge
+- **Figures:** 4 (three generated from the same code path as the reported counts, so the two cannot diverge)
+- **Tables:** 1 in-text; the withdrawn pre-audit analysis is retained in the release as supplementary tables, each headed with a withdrawal notice
 - **Supplementary materials:** scoring rubric, pre-registered protocol (published unamended), deviations record, data-quality audit, MI-CLAIM-GEN checklist
 - **Data availability:** The artifact, audit code, and documentation are public on GitHub and archived on Zenodo. The source corpus is not redistributed — the raw crawl was not retained — so the retrieval baselines are not reproducible; this is stated in the manuscript rather than left to be discovered.
 - **Competing interests:** None declared.
