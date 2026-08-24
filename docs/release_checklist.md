@@ -78,8 +78,8 @@
 
 ## Distribution
 
-- [ ] GitHub repository public
-- [ ] Zenodo snapshot created with DOI
+- [x] GitHub repository public (2026-08-24)
+- [x] Zenodo snapshot created with DOI (concept 10.5281/zenodo.22086136, v1.0.0 10.5281/zenodo.22086137)
 - [ ] Hugging Face dataset repo created with dataset card
 - [ ] Preprint uploaded to arXiv and/or OSF
 - [ ] Journal submission made (PLOS Digital Health primary target)

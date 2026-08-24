@@ -155,10 +155,12 @@ No personal identifiers appear in the benchmark. Reference answers quoted from s
 
 ```bibtex
 @misc{ushealthbench2026,
-  title={US-HealthBench: A Citation-Grounded, Multilingual Benchmark for
-         Evaluating LLM Systems on Official U.S. Public-Health Guidance},
+  title={US-HealthBench: an evaluation framework for LLM systems on official
+         U.S. public-health guidance, with a defect audit of the benchmark
+         it produced},
   author={Alston, William},
   year={2026},
+  doi={10.5281/zenodo.22086136},
   url={https://github.com/williamDalston/us-healthbench}
 }
 ```
