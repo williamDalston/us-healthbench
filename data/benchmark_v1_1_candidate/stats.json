@@ -1,0 +1,22 @@
+{
+  "source": "data/benchmark_v1/benchmark_items.jsonl (frozen v1.0)",
+  "items": 1058,
+  "of_v1_items": 2020,
+  "by_language": {
+    "en": 1006,
+    "es": 52
+  },
+  "by_task_family": {
+    "factual_retrieval": 515,
+    "consumer_action": 393,
+    "cross_language": 52,
+    "misinformation_rebuttal": 98
+  },
+  "by_difficulty": {
+    "easy": 149,
+    "medium": 707,
+    "hard": 202
+  },
+  "sha256": "8ffb32034f292707b2b2f22b8f7c31f9884e79c324c88ab4ab24f176bd62b73f",
+  "status": "candidate \u2014 pending human spot-check"
+}

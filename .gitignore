@@ -40,3 +40,6 @@ nul
 
 # Private planning notes — never ship
 idea.md
+
+# v1.1 work in progress (candidate subset + live model runs)
+data/experiment_v1_1/
