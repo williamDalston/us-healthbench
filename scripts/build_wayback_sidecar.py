@@ -14,14 +14,20 @@ Usage:  python -m scripts.build_wayback_sidecar
 from __future__ import annotations
 
 import json
+import os
 import subprocess
 import time
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 ITEMS = Path("data/benchmark_v1/benchmark_items.jsonl")
-OUT = Path("data/benchmark_v1/source_archive.json")
+OUT = Path(os.environ.get("WAYBACK_OUT", "data/benchmark_v1/source_archive.json"))
 WAYBACK = "https://archive.org/wayback/available?url="
+# Target the corpus collection window, not "now". Without an explicit
+# timestamp the API returns the snapshot closest to the present day, which
+# for a benchmark frozen in March 2026 means scoring against pages that may
+# have been revised months after the gold answers were written.
+TARGET_TIMESTAMP = os.environ.get("WAYBACK_TARGET", "20260320")
 TIMEOUT = 30
 
 
@@ -42,30 +48,42 @@ def referenced_sources() -> dict[str, dict]:
     return sources
 
 
-def closest_snapshot(url: str, attempts: int = 3) -> dict | None:
+def closest_snapshot(url: str, attempts: int = 6) -> dict | None:
     """Query the Wayback availability API, retrying with backoff.
 
-    The API rate-limits under concurrency and returns an empty result rather
-    than an error status when it throttles. Without retries roughly half of a
-    296-URL sweep comes back as a spurious "not archived", so treat an empty
-    response as retryable rather than authoritative.
+    Two distinct failure modes, both of which the API reports as something
+    other than an error the caller would notice:
+
+      * under concurrency it throttles with an HTTP 429 HTML body, which is
+        not JSON at all;
+      * it also returns a well-formed but empty result rather than an error.
+
+    Both are retryable and neither means "no snapshot exists". A sweep that
+    treats them as authoritative silently under-reports coverage by more than
+    half. Raises on exhausted retries so the caller can record "unknown"
+    rather than a false negative.
     """
     for attempt in range(attempts):
         try:
             out = subprocess.run(
-                ["curl", "-sS", "--max-time", str(TIMEOUT), WAYBACK + url],
+                ["curl", "-sS", "--max-time", str(TIMEOUT),
+                 f"{WAYBACK}{url}&timestamp={TARGET_TIMESTAMP}"],
                 capture_output=True,
                 text=True,
                 timeout=TIMEOUT + 15,
             ).stdout
+            if "429" in out[:200] and "<html" in out[:200].lower():
+                raise RuntimeError("throttled")
             snap = json.loads(out).get("archived_snapshots", {}).get("closest")
+        except RuntimeError:
+            snap = None
         except Exception:
             snap = None
         if snap:
             return {"timestamp": snap.get("timestamp"), "archive_url": snap.get("url")}
         if attempt < attempts - 1:
-            time.sleep(1.5 * (attempt + 1))
-    return None
+            time.sleep(2.0 * (attempt + 1))
+    raise RuntimeError(f"no result after {attempts} attempts: {url}")
 
 
 def main() -> None:
@@ -73,20 +91,31 @@ def main() -> None:
     urls = list(sources)
     print(f"Querying Wayback for {len(urls)} referenced source URLs...")
 
-    with ThreadPoolExecutor(4) as pool:
-        snapshots = list(pool.map(closest_snapshot, urls))
+    snapshots = []
+    for n, u in enumerate(urls, 1):
+        try:
+            snapshots.append(closest_snapshot(u))
+        except RuntimeError:
+            snapshots.append("unknown")
+        if n % 25 == 0:
+            print(f"  {n}/{len(urls)}", flush=True)
+        time.sleep(float(os.environ.get("WAYBACK_DELAY", "1.0")))
 
     records = []
     for url, snap in zip(urls, snapshots):
         rec = {"url": url, **sources[url]}
-        rec["archived"] = snap is not None
-        if snap:
+        if snap == "unknown":
+            rec["archived"] = None  # lookup failed; not evidence of absence
+        else:
+            rec["archived"] = snap is not None
+        if snap and snap != "unknown":
             rec["archive_timestamp"] = snap["timestamp"]
             rec["archive_url"] = snap["archive_url"]
         records.append(rec)
 
     records.sort(key=lambda r: r["doc_id"])
-    n_arch = sum(r["archived"] for r in records)
+    n_arch = sum(1 for r in records if r["archived"] is True)
+    n_unknown = sum(1 for r in records if r["archived"] is None)
     payload = {
         "description": (
             "Closest Wayback Machine snapshot for each source URL referenced by "
@@ -99,7 +128,8 @@ def main() -> None:
     }
     OUT.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"  archived:     {n_arch}/{len(records)}")
-    print(f"  not archived: {len(records) - n_arch}")
+    print(f"  not archived: {sum(1 for r in records if r['archived'] is False)}")
+    print(f"  lookup failed (unknown, NOT a negative): {n_unknown}")
     print(f"  wrote {OUT}")
 
 
