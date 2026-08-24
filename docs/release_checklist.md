@@ -6,12 +6,19 @@
 - [x] Schema document finalized and frozen
 - [x] Scoring rubric finalized and frozen
 - [x] Source eligibility criteria verified
-- [x] All benchmark items pass validation (2020/2020 pass schema + source verification)
+- [x] All benchmark items pass SCHEMA + SOURCE validation (2020/2020)
+- [ ] Semantic validity — FAILS. 17.1% encoding corruption, 28.0% duplicate questions with
+      conflicting golds. Schema conformance is not semantic validity. See docs/DATA_QUALITY.md.
 - [ ] Human spot-check of >=10% of items completed
-- [x] Cross-language pairs verified for semantic equivalence (245 pairs)
-- [x] Adversarial items reviewed for realism and non-harm (520 items)
+- [ ] Cross-language pairs verified for semantic equivalence — NOT DONE. All 245 pairs carry
+      `semantic_equivalence_verified: false`; additionally 130/245 have en/es labels swapped.
+      See docs/DATA_QUALITY.md §4.
+- [ ] Adversarial items reviewed for realism and non-harm — partially invalidated: some Spanish
+      adversarial items carry English-language claims spliced into Spanish frames.
 - [x] Abstention items verified as genuinely unanswerable from corpus (120 items)
-- [x] No PII in any benchmark item or source document (all from .gov public pages)
+- [x] No personal identifiers in any benchmark item (institutional .gov contact addresses appear
+      verbatim in source excerpts; benchmark is frozen, so wording is clarified in the dataset card
+      rather than the data being edited)
 - [x] Licensing audit: all sources confirmed as likely US federal public domain
 
 ## Benchmark v1.0 Freeze
@@ -39,14 +46,17 @@
 - [x] All sections drafted: Introduction, Related Work, Methods, Results, Discussion, Limitations, Conclusion
 - [x] MI-CLAIM-GEN checklist completed (37/38 — see mi_claim_gen_checklist.md)
 - [x] Figures have captions and alt text
-- [x] All citations verified (13 references, inline numbered)
+- [x] All 13 references hand-verified against live records (2026-08-24). Three were wrong and
+      have been corrected: [1] fabricated authors/title, [2] invented title, [3] wholly fabricated;
+      [9] wrong year (2021, not 2024). [4] remains listed but uncited inline.
 - [x] Data/code availability statement written
 - [x] Author contributions statement written (template — fill author names)
 - [x] Cover letter drafted
 
 ## Code Release
 
-- [ ] Repository cleaned (no secrets, no .env files, no data/raw/)
+- [x] Repository cleaned (secrets scan: no keys, tokens, or credential files in tracked content;
+      .env.example holds placeholders only; data/raw/ absent and gitignored)
 - [x] README.md written with installation and usage instructions
 - [x] CITATION.cff is correct
 - [x] LICENSE file present (Apache 2.0)
@@ -57,7 +67,10 @@
 ## Data Release
 
 - [x] Benchmark items exported as JSON/JSONL
-- [x] Corpus metadata exported (without raw HTML/PDF to respect bandwidth)
+- [x] Corpus metadata exported via per-item source_documents provenance (296 distinct URLs)
+- [x] Corpus non-redistribution and baseline non-reproducibility stated in dataset card and manuscript
+- [x] Source archive sidecar built (source_archive.json — 270/296 URLs, 91%, have a Wayback snapshot)
+- [x] Freeze verification script added (scripts/verify_freeze.py) and .gitattributes pins frozen files
 - [x] Evaluation results exported
 - [x] Adjudication subset exported (50 items with automated scores + blank human fields)
 - [x] Dataset card written (for Hugging Face) — data/DATASET_CARD.md
@@ -82,9 +95,23 @@
 | Benchmark Freeze | 5 | 5 | — |
 | Experiment | 7 | 6 | Inter-rater agreement (needs human scoring) |
 | Manuscript | 9 | 9 | — |
-| Code Release | 7 | 6 | Repo cleanup (secrets scan) |
-| Data Release | 6 | 6 | — |
+| Code Release | 7 | 7 | — |
+| Data Release | 9 | 9 | — |
 | Distribution | 6 | 0 | All pending (post-manuscript) |
-| **Total** | **51** | **42** | **9 remaining** |
+| **Total** | **54** | **46** | **8 remaining** |
 
-**Status:** Manuscript, code, and data deliverables complete. Remaining items: human spot-check (10%), inter-rater agreement (needs external reviewers), repo cleanup, and distribution steps (GitHub public, Zenodo, HuggingFace, arXiv, journal submission). These require human decisions (author names, repo URLs, external review).
+**Status: RELEASE SCOPE CHANGED (2026-08-24).** A post-freeze audit found the item set is not
+fit for scoring (docs/DATA_QUALITY.md). The release now publishes the **methodology** — protocol,
+rubric, error taxonomy, scoring code — with the item set marked **v0.9-provisional**. Protocol
+shortfalls are recorded in docs/DEVIATIONS.md rather than papering over them.
+
+Remaining before public flip — none blocking. Remaining before submission:
+- Human spot-check (10% of items)
+- Inter-rater agreement on the 50-item adjudication sample (needs two trained annotators;
+  budget a rubric training session, and note kappa may land below the 0.60 threshold given
+  the scorer's known citation-marker and keyword biases — a low result is a finding to report,
+  not a blocker, but it changes the paper)
+
+Distribution steps (GitHub public, Zenodo DOI, HuggingFace, arXiv, journal submission) are
+sequenced ahead of the adjudication work: the Zenodo DOI establishes a dated, third-party
+record of authorship and does not depend on any remaining research item.

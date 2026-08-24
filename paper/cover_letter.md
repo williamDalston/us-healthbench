@@ -14,7 +14,7 @@ We present an open benchmark of 2,020 evaluation items drawn from 319 official d
 
 ## Why PLOS Digital Health
 
-This work sits at the intersection of health informatics, NLP evaluation, and public health equity — a natural fit for the journal's scope. The benchmark is designed to be immediately useful to researchers evaluating production health AI systems, and we release all code, data, and documentation as open resources.
+This work sits at the intersection of health informatics, NLP evaluation, and public health equity — a natural fit for the journal's scope. The benchmark is designed to be immediately useful to researchers evaluating production health AI systems, and we release the evaluation framework, code, and documentation as open resources (the source corpus is not redistributed, and the item set is released as provisional pending correction).
 
 ## Key details
 
@@ -23,7 +23,7 @@ This work sits at the intersection of health informatics, NLP evaluation, and pu
 - **Figures:** 4
 - **Tables:** 4
 - **Supplementary materials:** Scoring rubric, protocol document, MI-CLAIM-GEN checklist
-- **Data availability:** All data, code, and evaluation outputs will be publicly available via GitHub, Zenodo, and Hugging Face upon acceptance.
+- **Data availability:** All released data, code, and evaluation outputs will be publicly available via GitHub, Zenodo, and Hugging Face upon acceptance.
 - **Competing interests:** None declared.
 - **Ethics:** This study uses exclusively publicly available .gov content; no human subjects, no PII, no IRB required (exempt under 45 CFR 46.104(d)(4)).
 - **Funding:** No external funding.
@@ -38,5 +38,5 @@ Thank you for your consideration.
 
 Sincerely,
 William Alston
-[Affiliation]
-[Email]
+Alston Analytics, LLC
+will@alstonanalytics.com

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "us-healthbench"
-version = "0.1.0"
+version = "1.0.0"
 description = "A citation-grounded, multilingual benchmark for evaluating LLM systems on official U.S. public-health guidance."
 readme = "README.md"
 license = {text = "Apache-2.0"}
@@ -22,7 +22,7 @@ keywords = [
     "RAG",
 ]
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 4 - Beta",
     "Intended Audience :: Science/Research",
     "License :: OSI Approved :: Apache Software License",
     "Programming Language :: Python :: 3",

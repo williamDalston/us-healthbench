@@ -16,7 +16,7 @@ Each source document in the corpus is stored as a JSON object.
   "url": "string — canonical URL of the source page",
   "title": "string — page or document title",
   "language": "string — ISO 639-1 code: en | es",
-  "topic": "string — one of the 10 topic area codes",
+  "topic": "string — one of the 11 topic area codes",
   "content_type": "string — one of: webpage, pdf, faq, factsheet",
   "intended_audience": "string — consumer | patient | general_public",
   "last_updated": "string — ISO date (YYYY-MM-DD) or null if unavailable",
@@ -158,7 +158,7 @@ Each scored evaluation result is stored as:
   "output_id": "string — references the model output",
   "item_id": "string — references the benchmark item",
   "system": "string",
-  "evaluator": "string — auto_judge | human_reviewer_1 | human_reviewer_2",
+  "evaluator": "string — scorer identifier; released data uses heuristic_scorer_v1. Original enum — auto_judge | human_reviewer_1 | human_reviewer_2",
   "scores": {
     "factual_correctness": "integer — 0, 1, or 2",
     "source_support": "integer — 0, 1, or 2",

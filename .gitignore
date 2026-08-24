@@ -37,3 +37,6 @@ nul
 
 # Outputs
 *.log
+
+# Private planning notes — never ship
+idea.md

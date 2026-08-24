@@ -1,5 +1,16 @@
 # Dataset Card: US-HealthBench
 
+> ## ⚠️ Status: v0.9-provisional — not fit for scoring
+>
+> This item set has documented defects that make aggregate scores
+> uninterpretable: 17.1% of items carry corrupted text (74.9% of Spanish items),
+> and 28.0% share a question with another item carrying a different gold answer.
+> See **[Data Quality Audit](../docs/DATA_QUALITY.md)**, reproducible via
+> `python -m scripts.audit_data_quality`.
+>
+> It is released for transparency alongside the methodology, and to let others
+> inspect the failure modes. **Do not publish scores against it.**
+
 ## Dataset Summary
 
 US-HealthBench is a citation-grounded, multilingual benchmark for evaluating LLM-based systems on consumer-facing public-health guidance from official U.S. sources. It contains 2,020 evaluation items derived from 319 documents published by the Centers for Disease Control and Prevention (CDC), the National Institutes of Health (NIH), the Food and Drug Administration (FDA), and the Centers for Medicare & Medicaid Services (CMS).
@@ -12,7 +23,7 @@ US-HealthBench is a citation-grounded, multilingual benchmark for evaluating LLM
 
 ## Dataset Structure
 
-### Benchmark Items (`data/benchmark_v1/items.jsonl`)
+### Benchmark Items (`data/benchmark_v1/benchmark_items.jsonl`)
 
 Each item contains:
 - `item_id`: Unique identifier
@@ -25,17 +36,65 @@ Each item contains:
 - `source_documents`: List of source document references with chunk IDs
 - `flags`: Metadata including `adversarial`, `requires_abstention`
 
-### Corpus (`data/corpus/`)
+### Source corpus — **not redistributed**
 
-- 319 documents (258 EN, 61 ES) from .gov domains
-- 1,987 semantic chunks (150-500 tokens each)
-- Metadata: agency, topic, URL, language, collection timestamp
+The benchmark was built from a crawl of 319 documents (258 EN, 61 ES) from .gov
+domains, segmented into 1,987 semantic chunks of 150-500 tokens. **That crawl is
+not included in this release and cannot be regenerated.** The raw HTML snapshot
+was not retained, and the ingestion code (`src/ingest/`) rebuilds only from local
+raw files, not from the network.
+
+What is released instead: every benchmark item carries full provenance for its
+sources in `source_documents` — `doc_id`, `agency`, `url`, `title`, `language`,
+and the referencing chunk IDs. Across the benchmark this covers **296 distinct
+source URLs**.
+
+### Source archive (`data/benchmark_v1/source_archive.json`)
+
+Because the corpus is not redistributed and live pages change, each of the 296
+source URLs is paired with its closest Wayback Machine snapshot. **270 of 296
+(91%) have an archived snapshot**, 258 of them captured in 2026. The remaining
+26 (25 CDC, 1 Medicare) have no snapshot; **142 of 2,020 items (7.0%) cite at
+least one unarchived URL**.
+
+Regenerate with `python -m scripts.build_wayback_sidecar`. This file is a
+post-freeze addition and does not alter the frozen benchmark items.
 
 ### Evaluation Outputs (`data/experiment/`)
 
 - System outputs for 4 baseline architectures (JSONL)
 - Evaluation scores for all 8,080 item-system pairs
 - Statistical summaries with bootstrap confidence intervals
+
+## What Is and Is Not Reproducible
+
+**Reproducible:** the 2,020 benchmark items, their reference answers and source
+provenance, the scoring rubric and scorer, and all statistics and figures
+computed from the released evaluation outputs.
+
+**Not reproducible:** the four baseline systems. Baselines B, C, and D retrieve
+from the source corpus, which is not redistributed (see above), so their outputs
+cannot be regenerated from this release. The released baseline outputs and scores
+are provided as a fixed reference point, not as a runnable experiment.
+
+This is a low cost in practice: the baselines are retrieval heuristics with
+template-constructed answers, not LLM generation (every record's `model_name` is
+`heuristic-*`), and their absolute scores were never intended to represent
+production system performance. Evaluating a real system against the benchmark
+does not require the original corpus — only the items and the rubric.
+
+## Verifying the Freeze
+
+v1.0 is frozen and content-hashed (`VERSION.json`). Verify with:
+
+```bash
+python -m scripts.verify_freeze
+```
+
+The hash was computed on Windows over CRLF-terminated bytes. A checkout with LF
+endings changes the bytes without changing the content, so the verifier
+normalizes line endings before comparing; `.gitattributes` pins the frozen files
+to prevent the rewrite in the first place.
 
 ## Task Families
 
@@ -56,8 +115,8 @@ Each item contains:
 - **Clarity**: Is the answer understandable by a general consumer?
 
 ### Composite Metrics
-- **Grounded Safety Score (GSS)**: 0.25*factual + 0.30*support + 0.30*safety + 0.15*uncertainty, minus 0.15 per binary flag
-- **Multilingual Reliability Score (MRS)**: Cross-language alignment metric
+- **Grounded Safety Score (GSS)**: `0.25*(factual/2) + 0.30*(support/2) + 0.30*(safety/2) + 0.15*(uncertainty/2)`, minus 0.15 per binary flag raised, floored at 0. Dimensions are on a 0–2 scale and are halved before weighting, so GSS lands on 0–1.
+- **Multilingual Reliability Score (MRS)**: Cross-language alignment metric — **defined but not computed in v1.0** (null in all released evaluation records)
 
 ### Binary Error Flags
 - Fabricated citation
@@ -79,13 +138,16 @@ This benchmark is intended for **research evaluation** of AI systems that provid
 
 - **Not medical advice.** System outputs generated during evaluation should never be treated as medical guidance.
 - **Adversarial content.** The benchmark includes 520 adversarial items containing health misinformation, labeled for evaluation purposes only. Do not surface raw adversarial content to end users.
-- **Source freshness.** The corpus captures content from early 2026 and will need periodic updates.
+- **Source freshness.** Sources were collected in early 2026 and official guidance changes. Live URLs may have moved or been revised since; use `source_archive.json` to reach a contemporaneous snapshot. Automated link-checking of .gov domains is unreliable — CDC, Medicaid, and FDA all return 403/404 to non-browser clients regardless of whether the page exists — so a failed status code is not evidence a source is gone.
+- **Incomplete source archive.** 26 of 296 source URLs (25 CDC, 1 Medicare) have no Wayback snapshot, so 142 of 2,020 items (7.0%) cite at least one source with no archived copy. Those items remain usable — question, reference answer, required points, and forbidden claims are all self-contained — but their source text cannot be independently inspected if the live page changes.
 - **Language coverage.** Only English and Spanish are covered; this does not represent the full linguistic diversity of U.S. health information consumers.
 - **Heuristic baselines.** The included baseline results use retrieval heuristics, not full LLM generation. Absolute scores are for framework validation, not representative of production system performance.
 
 ## Source Data
 
 All source documents are published by U.S. federal agencies on .gov domains for public use. U.S. government publications are generally in the public domain and carry no copyright restrictions.
+
+No personal identifiers appear in the benchmark. Reference answers quoted from source pages do include institutional contact addresses as published by the agencies (e.g. program inboxes at `cms.hhs.gov` and `fda.hhs.gov`, and one contractor address). These are public organizational contacts, not personal data, and are preserved verbatim because the benchmark is frozen and content-hashed.
 
 ## Citation
 

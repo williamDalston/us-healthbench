@@ -3,12 +3,15 @@ title: "US-HealthBench: A Citation-Grounded, Multilingual Benchmark for Evaluati
 message: "If you use this benchmark, please cite it as below."
 type: dataset
 authors:
-  - name: "William Alston"
+  - given-names: "William"
+    family-names: "Alston"
+    email: "will@alstonanalytics.com"
+    affiliation: "Alston Analytics, LLC"
 repository-code: "https://github.com/williamDalston/us-healthbench"
 url: "https://github.com/williamDalston/us-healthbench"
 license: Apache-2.0
 version: "1.0.0"
-date-released: "2026-03-19"
+date-released: "2026-03-20"
 keywords:
   - benchmark
   - public-health

@@ -12,7 +12,6 @@ import re
 import time
 from collections import deque
 from dataclasses import dataclass, field
-from datetime import date
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
 
@@ -348,8 +347,24 @@ def infer_topic(url: str, title: str) -> str:
     return "general"
 
 
-def generate_doc_id(agency, topic, seq):
-    year = date.today().year
+# Document IDs embed the collection year. v1.0 was collected in 2026 and its
+# 2,020 benchmark items reference those IDs, so this is pinned rather than
+# derived from date.today(): a re-collection in any later year would otherwise
+# mint IDs that cannot match the frozen benchmark.
+#
+# Pinning the year is necessary but NOT sufficient for reproducing v1.0 IDs.
+# Two other sources of drift remain, and neither is fixed here:
+#   1. `seq` is assigned in crawl order within an (agency, topic) bucket, so a
+#      single page that 404s or is skipped shifts every later ID in that bucket.
+#   2. Chunk IDs are positional (`{doc_id}_c{NN}`, see benchmark/chunker.py), so
+#      any edit to a source page renumbers every chunk after the edit point —
+#      silently, without error.
+# Treat a re-collection as a new corpus version, not as a reproduction of v1.0.
+# A v2 benchmark should content-hash chunk IDs instead of numbering them.
+COLLECTION_YEAR = 2026
+
+
+def generate_doc_id(agency, topic, seq, year=COLLECTION_YEAR):
     topic_short = topic.split("_")[0][:8]
     return f"{agency.lower()}_{topic_short}_{year}_{seq:03d}"
 

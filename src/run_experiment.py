@@ -207,10 +207,20 @@ def main(max_items=None):
             if r["system"] == "agent_pipeline":
                 eval_by_item[r["item_id"]] = r
 
+        # NOTE: in the frozen v1.0 cross_language_pairs.json the en_item_id /
+        # es_item_id labels are unordered — 130 of 245 pairs have them swapped
+        # (template_generator assigned them positionally after a shuffle, with
+        # no language check). Resolve each side from the item's own `language`
+        # field, which is correct, rather than trusting the pair field names.
+        item_lang = {i["item_id"]: i.get("language") for i in items}
+
         en_gss, es_gss = [], []
         for pair in pairs:
-            en_eval = eval_by_item.get(pair.get("en_item_id"))
-            es_eval = eval_by_item.get(pair.get("es_item_id"))
+            sides = [pair.get("en_item_id"), pair.get("es_item_id")]
+            en_id = next((i for i in sides if item_lang.get(i) == "en"), None)
+            es_id = next((i for i in sides if item_lang.get(i) == "es"), None)
+            en_eval = eval_by_item.get(en_id)
+            es_eval = eval_by_item.get(es_id)
             if en_eval and es_eval:
                 en_gss.append(en_eval["composite_scores"]["grounded_safety_score"])
                 es_gss.append(es_eval["composite_scores"]["grounded_safety_score"])

@@ -1,0 +1,9 @@
+# The v1.0 benchmark was frozen on Windows with CRLF line endings, and its
+# SHA-256 content hash in VERSION.json is computed over those exact bytes.
+# Pin the frozen artifacts so checkout never rewrites them; otherwise the
+# published hash fails to verify on clone. See scripts/verify_freeze.py.
+data/benchmark_v1/benchmark_items.jsonl   -text
+data/benchmark_v1/cross_language_pairs.json -text
+data/benchmark_v1/benchmark_stats.json    -text
+data/benchmark_v1/validation_report.json  -text
+data/benchmark_v1/VERSION.json            -text
