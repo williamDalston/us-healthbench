@@ -72,6 +72,31 @@ least one unarchived URL**.
 Regenerate with `python -m scripts.build_wayback_sidecar`. This file is a
 post-freeze addition and does not alter the frozen benchmark items.
 
+### Period-correct source coverage (added 2026-08-24)
+
+`data/benchmark_v1_1_candidate/source_archive_at_freeze.json` pairs each source
+URL with its snapshot **closest to the 2026-03-20 freeze**, rather than closest
+to today. This is a property of the dataset, not of any experiment, and holds
+whether or not a retrieval-based evaluation is ever run against it.
+
+| | URLs (of 296) |
+|---|---|
+| Snapshot within 30 days of the freeze | **263** |
+| Drifted (>30 days after) | 17 |
+| Lookup failed — recorded as unknown, **not** as absent | 16 |
+| Genuinely unarchived | 0 |
+
+Median capture is **2 days before** the freeze. At item level, **897 of 1,058**
+items in the v1.1 candidate cite only contemporaneous sources; 46 cite at least
+one drifted source and 54 include a URL whose lookup did not resolve.
+
+Two cautions carried from how this was produced. The Wayback availability API
+returns the snapshot nearest *the present* unless an explicit `timestamp` is
+supplied; the first version of this sidecar omitted it, which made 244 of 296
+URLs appear drifted when they were not. And the API answers a throttled request
+with an HTTP 429 HTML body, which an earlier version silently recorded as "not
+archived". Failed lookups are now recorded as `null`, never as absence.
+
 ### Evaluation Outputs (`data/experiment/`)
 
 - System outputs for 4 baseline architectures (JSONL)
