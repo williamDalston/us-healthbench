@@ -20,6 +20,53 @@ answer, or whether a Spanish item was written in Spanish.
 this audit, and it is why the release is being restructured around the
 methodology rather than the data.
 
+## Post-publication addendum (2026-08-24): a fifth defect class
+
+Added after the v1.0 paper and DOI. The published manuscript describes the four
+classes found at the time; this note records what was found afterwards. The
+frozen data and the minted record are unchanged.
+
+### 5. Under-identification — prevalence not established
+
+A question too generic to pick out its own gold answer. Example: *"What are the
+key facts about symptoms and stages?"* paired with a gold about Lyme disease, or
+*"What steps should I take regarding health insurance coverage and Medicare?"*
+paired with a gold about section 1915(c) HCBS waivers in emergencies. No system
+could derive that gold from that question.
+
+**Collision detection is blind to it.** Class 3 catches identical question
+strings carrying conflicting golds. Here nothing is duplicated — each question
+is unique — so the item passes every check in this audit and also passes the
+clean-subset filter derived from it.
+
+**It resists automated detection, and that is the substantive finding.** Two
+detectors were tried:
+
+* *Lexical* — flag items whose question shares little vocabulary with its gold.
+  Flags 33.6%, mostly false positives: a sound item whose gold simply uses
+  different words is indistinguishable from a defective one.
+* *Relational* — count how many OTHER items' golds match a question at least as
+  well as its own; flag when many do (`scripts/detect_underspecified.py`).
+  Flags 525 of 1,058 (49.6%) after exempting adversarial items, whose safety
+  refusals share no vocabulary with the question by design.
+
+Hand-inspection of a random sample of the relational flags found roughly half
+are false positives. **The detector is triage-grade, not cut-grade.** The
+threshold was deliberately not tuned until the flagged count looked plausible;
+fitting a detector to an expected prevalence is the failure this audit exists to
+document. Prevalence therefore remains **unmeasured** pending human adjudication
+of the top-ranked flags.
+
+Classes 1-4 are decidable from the record, or from the record set, by code.
+Class 5 is not. A benchmark can pass every automated check in this document and
+still contain items that measure nothing.
+
+### Consequence for the clean subset
+
+`data/benchmark_v1_1_candidate/` (1,058 items, produced by
+`scripts/extract_clean_subset.py`) removes classes 1-4 only. It is **provisional
+pending adjudication** and should not be described as clean.
+
 ## Defect classes
 
 ### 1. Encoding corruption — 345 items (17.1%)

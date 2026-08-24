@@ -8,6 +8,16 @@
 > See **[Data Quality Audit](../docs/DATA_QUALITY.md)**, reproducible via
 > `python -m scripts.audit_data_quality`.
 >
+> **Post-publication addendum (2026-08-24):** a **fifth defect class** was
+> identified after release — *under-identification*, where a question is too
+> generic to pick out its own gold answer. Collision checking cannot see it
+> (nothing is duplicated) and no automated detector tried so far is reliable
+> enough to cut on: the best one flags 49.6% of items and hand-inspection finds
+> roughly half of those are false positives. Prevalence is **unmeasured** pending
+> human adjudication. Any "clean subset" derived from the four original classes,
+> including `data/benchmark_v1_1_candidate/`, is therefore **provisional and
+> should not be described as clean**.
+>
 > It is released for transparency alongside the methodology, and so others can
 > inspect the failure modes directly. The defect taxonomy and audit procedure are
 > written up in [paper/manuscript.md](../paper/manuscript.md).
