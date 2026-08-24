@@ -1,7 +1,7 @@
 cff-version: 1.2.0
-title: "US-HealthBench: A Citation-Grounded, Multilingual Benchmark for Evaluating LLM Systems on Official U.S. Public-Health Guidance"
-message: "If you use this benchmark, please cite it as below."
-type: dataset
+title: "US-HealthBench: an evaluation framework for LLM systems on official U.S. public-health guidance, with a defect audit of the benchmark it produced"
+message: "If you use this framework or the audit, please cite it as below. The item set is provisional and should not be used to score systems."
+type: software
 authors:
   - given-names: "William"
     family-names: "Alston"
@@ -11,18 +11,35 @@ repository-code: "https://github.com/williamDalston/us-healthbench"
 url: "https://github.com/williamDalston/us-healthbench"
 license: Apache-2.0
 version: "1.0.0"
-date-released: "2026-03-20"
+date-released: "2026-08-24"
 keywords:
-  - benchmark
-  - public-health
+  - benchmark-validation
+  - dataset-quality
+  - defect-taxonomy
   - LLM-evaluation
+  - public-health
   - multilingual
   - health-informatics
-  - citation-grounding
+  - measurement-validity
 abstract: >-
-  US-HealthBench is an open benchmark for evaluating large language models
-  on consumer-facing public-health guidance from official U.S. sources
-  (CDC, NIH, FDA, CMS). It includes English and Spanish tasks spanning
-  factual retrieval, consumer action prompts, misinformation rebuttal,
-  and cross-language consistency, scored on factual accuracy, citation
-  support, safety, and multilingual reliability.
+  An open evaluation framework for LLM-based systems answering consumer-facing
+  U.S. public-health questions (CDC, NIH, FDA, CMS) in English and Spanish:
+  a pre-registered protocol, a five-dimension scoring rubric, an error taxonomy
+  for consumer health AI, and a scoring implementation. Released alongside a
+  post-freeze defect audit of the 2,020-item benchmark the framework produced,
+  which passed 2,020/2,020 schema and source validation yet contains template
+  collisions with contradicting gold answers (28.0% of items), encoding
+  corruption (17.1% overall, 74.9% of Spanish items), splice contamination and
+  source pollution. Re-scoring under two matching rules shows the resulting
+  score distortion has no fixed direction: its sign is set by the scorer's
+  matching rule rather than by the defect. The item set is released as
+  provisional and is not fit for scoring systems; the transferable contribution
+  is the defect taxonomy, the detection procedures, and the audit code.
+references:
+  - type: article
+    title: "Schema Validity Is Not Semantic Validity: A Defect Taxonomy for Template-Generated Evaluation Benchmarks"
+    authors:
+      - given-names: "William"
+        family-names: "Alston"
+    year: 2026
+    notes: "Manuscript accompanying this release; see paper/manuscript.md"
